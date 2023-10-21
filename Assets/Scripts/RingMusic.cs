@@ -206,19 +206,19 @@ public class RingMusic : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Note hitNote = notes[0];
-                if (hitNote.noteType == NoteType.Space) PlayNote(hitNote);
+                if (hitNote.noteType == NoteType.Space || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
                 else MissWrongNote();
             }
             else if (Input.GetMouseButtonDown(0))
             {
                 Note hitNote = notes[0];
-                if (hitNote.noteType == NoteType.Left) PlayNote(hitNote);
+                if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
                 else MissWrongNote();
             }
             else if (Input.GetMouseButtonDown(1))
             {
                 Note hitNote = notes[0];
-                if (hitNote.noteType == NoteType.Right) PlayNote(hitNote);
+                if (hitNote.noteType == NoteType.Right || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
                 else MissWrongNote();
             }
         }

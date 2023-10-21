@@ -8,7 +8,8 @@ public class NoteData
     {
         Space,
         Left,
-        Right
+        Right,
+        Any
     }
 
     public NoteType noteType;
