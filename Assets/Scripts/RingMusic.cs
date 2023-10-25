@@ -9,6 +9,7 @@ public class RingMusic : MonoBehaviour
     public GameObject ring;
     public GameObject indicator;
     public GameObject notePrefab;
+    public float ringRadius = 100;
 
     public float songDuration;
     private float songTime;
@@ -38,6 +39,8 @@ public class RingMusic : MonoBehaviour
         songIndex = 0;
         songs = new List<NoteData>[numSongs];
         indicator.GetComponent<Image>().color = songColors[songIndex];
+        indicator.transform.localPosition = new Vector2(0, ringRadius);
+        indicator.SetActive(true);
         songs[0] = new List<NoteData>();
         songs[1] = new List<NoteData>()
         {
@@ -147,7 +150,7 @@ public class RingMusic : MonoBehaviour
     private void MoveNote(Note note)
     {
         float radians = ((note.currentTime / note.loopTime) + 0.25f) * Mathf.PI * 2;
-        note.visual.transform.localPosition = new Vector3(Mathf.Cos(radians), Mathf.Sin(radians)) * 100;
+        note.visual.transform.localPosition = new Vector3(Mathf.Cos(radians), Mathf.Sin(radians)) * ringRadius;
         if (note.currentTime > note.loopTime + leewayOk) finished = note;
     }
 
