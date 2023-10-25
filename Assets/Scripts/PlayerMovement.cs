@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float rotateSpeed;
     public Transform cameraAnchor;
     public float cameraSpeed;
+    public float minCameraAngle = 10;
+    public float maxCameraAngle = 80;
 
     private Rigidbody rb;
     private Animator anim;
@@ -43,8 +45,8 @@ public class PlayerMovement : MonoBehaviour
         cameraAnchor.eulerAngles += new Vector3(-rotationY * cameraSpeed, 0, 0);
 
         // Put bounds on how far up/down the camera can look
-        if (cameraAnchor.eulerAngles.x > 50) cameraAnchor.eulerAngles = new Vector3(50, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
-        if (cameraAnchor.eulerAngles.x < 10) cameraAnchor.eulerAngles = new Vector3(10, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
+        if (cameraAnchor.eulerAngles.x > maxCameraAngle) cameraAnchor.eulerAngles = new Vector3(maxCameraAngle, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
+        if (cameraAnchor.eulerAngles.x < minCameraAngle) cameraAnchor.eulerAngles = new Vector3(minCameraAngle, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
 
         // Save the camera's rotation for later movement calculations
         cameraRotation = cameraAnchor.eulerAngles.y;
@@ -116,6 +118,6 @@ public class PlayerMovement : MonoBehaviour
     private void LateUpdate()
     {
         // Make the amera follow the player after both the camera's rotation and the player's position have been updated
-        cameraAnchor.position = transform.position;
+        cameraAnchor.position = transform.position + Vector3.up;
     }
 }
