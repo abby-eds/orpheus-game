@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Get the X and Y delta of the mouse
-        rotationX = Mathf.Clamp(Input.GetAxis("Mouse X"), -2, 2);
-        rotationY = Mathf.Clamp(Input.GetAxis("Mouse Y"), -2, 2);
+        rotationX = Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
+        rotationY = Mathf.Clamp(Input.GetAxis("Mouse Y"), -1, 1);
 
         // Rotate the camera around the "Up" axis based on mouse X
         cameraAnchor.Rotate(Vector3.up, rotationX * cameraSpeed, Space.World);
