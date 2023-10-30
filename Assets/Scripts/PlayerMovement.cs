@@ -6,8 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
     public float rotateSpeed;
+    public float jumpHeight = 1;
     public Transform cameraAnchor;
+    public Camera playerCam;
     public float cameraSpeed;
+    public float minCameraDistance = 0.5f;
+    public float maxCameraDistance = 5;
     public float minCameraAngle = 10;
     public float maxCameraAngle = 80;
 
@@ -22,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     private float targetRotation;
     private float rotationDelta;
     private bool jump;
+    private bool hasJump;
+    private float jumpVelocity;
+    private Ray footRay;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        jumpVelocity = Mathf.Sqrt(Physics.gravity.magnitude * 2 * jumpHeight);
     }
 
     // Update is called once per frame
@@ -54,12 +62,17 @@ public class PlayerMovement : MonoBehaviour
         // Get the player's movement input
         movementX = Input.GetAxisRaw("Horizontal");
         movementZ = Input.GetAxisRaw("Vertical");
+        if (hasJump && Input.GetKeyDown(KeyCode.Space))
+        {
+            hasJump = false;
+            jump = true;
+        }
     }
 
     private void FixedUpdate()
     {
         // Calculate the player's velocity in regards to movement (ignoring jumping/gravity)
-        Vector3 velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
         // If the player issues movement, calculate movement
         if (movementX != 0 || movementZ != 0)
@@ -103,21 +116,50 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 movement = Quaternion.AngleAxis((cameraRotation + 360) % 360, Vector3.up) * new Vector3(movementX, 0, movementZ).normalized;
 
-            // Make the player move "forward" (relative to which direction they're facing)
-            rb.AddForce(movement * movementSpeed - velocity, ForceMode.VelocityChange);
+            footRay = new Ray(transform.position, movement);
+            Debug.DrawRay(footRay.origin, footRay.direction * 0.5f, Color.red);
+            if (!Physics.Raycast(footRay, out RaycastHit footHit, 0.5f) || hasJump)
+            {
+                rb.AddForce(movement * movementSpeed - horizontalVelocity, ForceMode.VelocityChange);
+            }
         }
         else
         {
             // If the player isn't issuing movement, slow down to a stop
-            rb.AddForce(-velocity, ForceMode.VelocityChange);
+            rb.AddForce(-horizontalVelocity, ForceMode.VelocityChange);
+        }
+        if (jump)
+        {
+            jump = false;
+            rb.AddForce(Vector3.up * jumpVelocity, ForceMode.VelocityChange);
+            anim.SetTrigger("Jump");
         }
         anim.SetFloat("Forwards", movementZ);
         anim.SetFloat("Sideways", movementX);
+
+        Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
+        Debug.DrawRay(cameraRay.origin, cameraRay.direction * maxCameraDistance);
+        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, maxCameraDistance))
+        {
+            playerCam.transform.localPosition = new Vector3(0, 0, -cameraHit.distance + minCameraDistance);
+        }
+        else
+        {
+            playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
+        }
     }
 
     private void LateUpdate()
     {
         // Make the amera follow the player after both the camera's rotation and the player's position have been updated
         cameraAnchor.position = transform.position + Vector3.up;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.contacts[0].normal.y > 0.5f)
+        {
+            hasJump = true;
+        }
     }
 }

@@ -618,6 +618,7 @@ MonoBehaviour:
   hostileBar: {fileID: 9140986782198284959}
   neutralBar: {fileID: 8766343274660105628}
   charmedBar: {fileID: 568227205426285681}
+  asleepBar: {fileID: 2550175146779278366}
 --- !u!1 &3896388533835333425
 GameObject:
   m_ObjectHideFlags: 0

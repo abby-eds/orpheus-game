@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     {
         GameObject hbObject = Instantiate(healthbarPrefab, transform);
         Healthbar hb = hbObject.GetComponent<Healthbar>();
-        hb.enemy = enemy;
+        hb.assignEnemy(enemy.GetComponent<Enemy>());
         healthbars.Add(hb);
     }
 
@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
     {
         foreach(Healthbar h in healthbars)
         {
-            if (h.enemy == enemy)
+            if (h.enemy == enemy.GetComponent<Enemy>())
             {
                 healthbars.Remove(h);
                 Destroy(h.gameObject);

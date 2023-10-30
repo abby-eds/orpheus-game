@@ -14,8 +14,9 @@ public class Note
     public GameObject visual;
     public Color color;
 
-    public Note(float loopTime, bool loop)
+    public Note(NoteType noteType, float loopTime, bool loop)
     {
+        this.noteType = noteType;
         this.loopTime = loopTime;
         this.loop = loop;
     }

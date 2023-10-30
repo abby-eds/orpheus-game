@@ -44,29 +44,29 @@ public class RingMusic : MonoBehaviour
         songs[0] = new List<NoteData>();
         songs[1] = new List<NoteData>()
         {
-            new NoteData(NoteType.Space, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Space, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.5f, true)
         };
         songs[2] = new List<NoteData>()
         {
-            new NoteData(NoteType.Space, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.2f, true),
             new NoteData(NoteType.Left, 0.6f, true),
-            new NoteData(NoteType.Space, 0.2f, true),
-            new NoteData(NoteType.Space, 0.2f, true),
-            new NoteData(NoteType.Space, 0.6f, true),
-            new NoteData(NoteType.Right, 0.2f, true),
-            new NoteData(NoteType.Right, 0.5f, true),
+            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.6f, true),
+            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
         };
         for (int i = 0; i < numNotes; i++)
         {
-            songs[0].Add(new NoteData(NoteType.Space, songDuration / numNotes, true));
+            songs[0].Add(new NoteData(NoteType.Left, songDuration / numNotes, true));
         }
     }
 
@@ -95,44 +95,28 @@ public class RingMusic : MonoBehaviour
         notes.Clear();
     }
 
-    private void HitPerfect()
+    private void HitNote(NoteQuality quality)
     {
-        streak += 2;
+        switch (quality)
+        {
+            case NoteQuality.Perfect: streak += 2; break;
+            case NoteQuality.Great: streak += 1; break;
+            case NoteQuality.Ok: break;
+            case NoteQuality.Early: streak -= 5; break;
+            case NoteQuality.Late: streak -= 5; break;
+            case NoteQuality.Wrong: streak -= 5; break;
+        }
         if (streak > streakMax) streak = streakMax;
-        Debug.Log("<color=yellow><b>Perfect!</b></color>\nStreak: " + streak);
-    }
-
-    private void HitGreat()
-    {
-        streak += 1;
-        if (streak > streakMax) streak = streakMax;
-        Debug.Log("<color=green><b>Great</b></color>\nStreak: " + streak);
-    }
-
-    private void HitOk()
-    {
-        Debug.Log("<color=blue><b>Ok</b></color>\nStreak: " + streak);
-    }
-
-    private void MissEarly()
-    {
-        streak -= 5;
         if (streak < 0) streak = 0;
-        Debug.Log("<color=red><b>Early</b></color>\nStreak: " + streak);
-    }
-
-    private void MissLate()
-    {
-        streak -= 5;
-        if (streak < 0) streak = 0;
-        Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak);
-    }
-
-    private void MissWrongNote()
-    {
-        streak -= 5;
-        if (streak < 0) streak = 0;
-        Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak);
+        switch (quality)
+        {
+            case NoteQuality.Perfect: Debug.Log("<color=yellow><b>Perfect!</b></color>\nStreak: " + streak); break;
+            case NoteQuality.Great: Debug.Log("<color=green><b>Great</b></color>\nStreak: " + streak); break;
+            case NoteQuality.Ok: Debug.Log("<color=blue><b>Ok</b></color>\nStreak: " + streak); break;
+            case NoteQuality.Early: Debug.Log("<color=red><b>Early</b></color>\nStreak: " + streak); break;
+            case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak); break;
+            case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak); break;
+        }
     }
 
     private void RefreshSong()
@@ -160,13 +144,13 @@ public class RingMusic : MonoBehaviour
         float value = Mathf.Abs(hitNote.currentTime - hitNote.loopTime);
         if (value <= leewayOk)
         {
-            if (value < leewayPerfect) HitPerfect();
-            else if (value < leewayGreat) HitGreat();
-            else if (value < leewayOk) HitOk();
+            if (value < leewayPerfect) HitNote(NoteQuality.Perfect);
+            else if (value < leewayGreat) HitNote(NoteQuality.Great);
+            else if (value < leewayOk) HitNote(NoteQuality.Ok);
             if (hitNote.loop) RefreshNote(hitNote);
             else RemoveNote(hitNote);
         }
-        else MissEarly();
+        else HitNote(NoteQuality.Early);
     }
 
     // Update is called once per frame
@@ -199,7 +183,7 @@ public class RingMusic : MonoBehaviour
         {
             if (finished.loop) RefreshNote(finished);
             else RemoveNote(finished);
-            MissLate();
+            HitNote(NoteQuality.Late);
             finished = null;
         }
 
@@ -210,22 +194,23 @@ public class RingMusic : MonoBehaviour
             {
                 Note hitNote = notes[0];
                 if (hitNote.noteType == NoteType.Space || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                else MissWrongNote();
+                else HitNote(NoteQuality.Wrong);
             }
             else if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("Left click");
                 Note hitNote = notes[0];
+                Debug.Log(hitNote.noteType);
                 if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                else MissWrongNote();
+                else HitNote(NoteQuality.Wrong);
             }
             else if (Input.GetMouseButtonDown(1))
             {
                 Note hitNote = notes[0];
                 if (hitNote.noteType == NoteType.Right || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                else MissWrongNote();
+                else HitNote(NoteQuality.Wrong);
             }
         }
-        
 
         // Advance the overall song time and spawn notes as needed
         songTime += Time.deltaTime;
@@ -236,12 +221,27 @@ public class RingMusic : MonoBehaviour
             if (delay <= 0)
             {
                 noteIndex++;
-                Note p = new Note(songDuration, songs[songIndex][noteIndex].loop);
+                Note p = new Note(songs[songIndex][noteIndex].noteType, songDuration, songs[songIndex][noteIndex].loop);
                 notes.Add(p);
                 p.visual = Instantiate(notePrefab, ring.transform);
                 p.visual.GetComponent<FadeIn>().targetColor = songColors[songIndex];
                 delay = songs[songIndex][noteIndex].delay;
             }
         }
+
+        if (songIndex == 0 && streak > 0)
+        {
+            GetComponent<InteractableDetector>().SongOfCharms((streakMax + streak) / 2 * Time.deltaTime);
+        }
+    }
+
+    enum NoteQuality
+    {
+        Wrong,
+        Early,
+        Late,
+        Ok,
+        Great,
+        Perfect,
     }
 }
