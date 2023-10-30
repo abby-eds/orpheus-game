@@ -44,29 +44,29 @@ public class RingMusic : MonoBehaviour
         songs[0] = new List<NoteData>();
         songs[1] = new List<NoteData>()
         {
-            new NoteData(NoteType.Space, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Space, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.5f, true)
         };
         songs[2] = new List<NoteData>()
         {
-            new NoteData(NoteType.Space, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.2f, true),
             new NoteData(NoteType.Left, 0.6f, true),
-            new NoteData(NoteType.Space, 0.2f, true),
-            new NoteData(NoteType.Space, 0.2f, true),
-            new NoteData(NoteType.Space, 0.6f, true),
-            new NoteData(NoteType.Right, 0.2f, true),
-            new NoteData(NoteType.Right, 0.5f, true),
+            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.6f, true),
+            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
         };
         for (int i = 0; i < numNotes; i++)
         {
-            songs[0].Add(new NoteData(NoteType.Space, songDuration / numNotes, true));
+            songs[0].Add(new NoteData(NoteType.Left, songDuration / numNotes, true));
         }
     }
 
@@ -116,10 +116,6 @@ public class RingMusic : MonoBehaviour
             case NoteQuality.Early: Debug.Log("<color=red><b>Early</b></color>\nStreak: " + streak); break;
             case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak); break;
             case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak); break;
-        }
-        if (quality >= NoteQuality.Ok && songIndex == 0)
-        {
-            GetComponent<InteractableDetector>().SongOfCharms(streak);
         }
     }
 
@@ -202,7 +198,9 @@ public class RingMusic : MonoBehaviour
             }
             else if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("Left click");
                 Note hitNote = notes[0];
+                Debug.Log(hitNote.noteType);
                 if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
                 else HitNote(NoteQuality.Wrong);
             }
@@ -213,7 +211,6 @@ public class RingMusic : MonoBehaviour
                 else HitNote(NoteQuality.Wrong);
             }
         }
-        
 
         // Advance the overall song time and spawn notes as needed
         songTime += Time.deltaTime;
@@ -224,12 +221,17 @@ public class RingMusic : MonoBehaviour
             if (delay <= 0)
             {
                 noteIndex++;
-                Note p = new Note(songDuration, songs[songIndex][noteIndex].loop);
+                Note p = new Note(songs[songIndex][noteIndex].noteType, songDuration, songs[songIndex][noteIndex].loop);
                 notes.Add(p);
                 p.visual = Instantiate(notePrefab, ring.transform);
                 p.visual.GetComponent<FadeIn>().targetColor = songColors[songIndex];
                 delay = songs[songIndex][noteIndex].delay;
             }
+        }
+
+        if (songIndex == 0 && streak > 0)
+        {
+            GetComponent<InteractableDetector>().SongOfCharms((streakMax + streak) / 2 * Time.deltaTime);
         }
     }
 

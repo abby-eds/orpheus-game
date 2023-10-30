@@ -33,11 +33,9 @@ public class Enemy : MonoBehaviour
         if (willpowerRegen > 0 && willpower < maxWillpower)
         {
             willpower += willpowerRegen * Time.deltaTime;
-            if (willpower > maxWillpower)
-            {
-                willpower = maxWillpower;
-            }
+            if (willpower > maxWillpower)  willpower = maxWillpower;
         }
+        
     }
 
     public void ApplyCharm(float charmAmount)

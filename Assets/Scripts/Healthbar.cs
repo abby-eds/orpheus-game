@@ -20,7 +20,10 @@ public class Healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        asleepBar.value = enemy.willpower;
+        charmedBar.value = enemy.willpower;
+        neutralBar.value = enemy.willpower;
+        hostileBar.value = enemy.willpower;
     }
 
     public void assignEnemy(Enemy enemy)
@@ -34,5 +37,9 @@ public class Healthbar : MonoBehaviour
         neutralBar.maxValue = enemy.neutralThreshold;
         hostileBar.minValue = enemy.neutralThreshold;
         hostileBar.maxValue = enemy.maxWillpower;
+        asleepBar.value = enemy.willpower;
+        charmedBar.value = enemy.willpower;
+        neutralBar.value = enemy.willpower;
+        hostileBar.value = enemy.willpower;
     }
 }
