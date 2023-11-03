@@ -17,7 +17,13 @@ public class Enemy : MonoBehaviour
     public float charmedThreshold = 50;
     public float neutralThreshold = 75;
     public float maxWillpower = 100;
-    public float willpowerRegen;
+    public float willpowerRegen = 0;
+
+    public float immunityDuration = 3;
+    private float immunityTime = 0;
+
+    public float resistaceDuration = 3;
+    public float resistanceTime = 0;
 
     private EnemyStatus status;
 
@@ -35,19 +41,39 @@ public class Enemy : MonoBehaviour
             willpower += willpowerRegen * Time.deltaTime;
             if (willpower > maxWillpower)  willpower = maxWillpower;
         }
-        
+        if (immunityTime > 0)
+        {
+            immunityTime -= Time.deltaTime;
+            if (immunityTime < 0) immunityTime = 0;
+        }
+        else if (resistanceTime > 0)
+        {
+            resistanceTime -= Time.deltaTime;
+            if (resistanceTime < 0) resistanceTime = 0;
+        }
+        UpdateStatus();
     }
 
     public void ApplyCharm(float charmAmount)
     {
-        willpower -= charmAmount;
+        if (immunityTime <= 0)
+        {
+            willpower -= charmAmount * (1 - (resistanceTime / resistaceDuration));
+        }
     }
 
     private void UpdateStatus()
     {
-        if (willpower < sleepThreshold) status = EnemyStatus.Asleep;
-        else if (willpower < charmedThreshold) status = EnemyStatus.Charmed;
-        else if (willpower < neutralThreshold) status = EnemyStatus.Neutral;
-        else status = EnemyStatus.Hostile;
+        EnemyStatus newStatus;
+        if (willpower < sleepThreshold) newStatus = EnemyStatus.Asleep;
+        else if (willpower < charmedThreshold) newStatus = EnemyStatus.Charmed;
+        else if (willpower < neutralThreshold) newStatus = EnemyStatus.Neutral;
+        else newStatus = EnemyStatus.Hostile;
+        if (status != newStatus)
+        {
+            status = newStatus;
+            immunityTime = immunityDuration;
+            resistanceTime = resistaceDuration;
+        }
     }
 }

@@ -21,6 +21,14 @@ public class RingMusic : MonoBehaviour
     private int streak;
     public int streakMax;
 
+    public int streakPerfect;
+    public int streakGreat;
+    public int streakOk;
+    public int streakWrong;
+    public int streakEarly;
+    public int streakLate;
+    public float charmMultiplier;
+
     public int numNotes;
     private List<Note> notes = new List<Note>();
     private Note finished = null;
@@ -99,12 +107,12 @@ public class RingMusic : MonoBehaviour
     {
         switch (quality)
         {
-            case NoteQuality.Perfect: streak += 2; break;
-            case NoteQuality.Great: streak += 1; break;
-            case NoteQuality.Ok: break;
-            case NoteQuality.Early: streak -= 5; break;
-            case NoteQuality.Late: streak -= 5; break;
-            case NoteQuality.Wrong: streak -= 5; break;
+            case NoteQuality.Perfect: streak += streakPerfect; break;
+            case NoteQuality.Great: streak += streakGreat; break;
+            case NoteQuality.Ok: streak += streakOk; break;
+            case NoteQuality.Early: streak += streakEarly; break;
+            case NoteQuality.Late: streak += streakLate; break;
+            case NoteQuality.Wrong: streak += streakWrong; break;
         }
         if (streak > streakMax) streak = streakMax;
         if (streak < 0) streak = 0;
@@ -198,9 +206,7 @@ public class RingMusic : MonoBehaviour
             }
             else if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Left click");
                 Note hitNote = notes[0];
-                Debug.Log(hitNote.noteType);
                 if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
                 else HitNote(NoteQuality.Wrong);
             }
@@ -231,15 +237,15 @@ public class RingMusic : MonoBehaviour
 
         if (songIndex == 0 && streak > 0)
         {
-            GetComponent<InteractableDetector>().SongOfCharms((streakMax + streak) / 2 * Time.deltaTime);
+            GetComponent<InteractableDetector>().SongOfCharms((streakMax + streak) * charmMultiplier / streakMax * Time.deltaTime);
         }
     }
 
     enum NoteQuality
     {
-        Wrong,
-        Early,
         Late,
+        Early,
+        Wrong,
         Ok,
         Great,
         Perfect,

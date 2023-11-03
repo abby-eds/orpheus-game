@@ -354,6 +354,9 @@ MonoBehaviour:
   neutralThreshold: 75
   maxWillpower: 100
   willpowerRegen: 0
+  immunityDuration: 3
+  resistaceDuration: 3
+  resistanceTime: 0
 --- !u!1 &587406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +483,9 @@ MonoBehaviour:
   neutralThreshold: 75
   maxWillpower: 100
   willpowerRegen: 0
+  immunityDuration: 3
+  resistaceDuration: 3
+  resistanceTime: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1510,9 @@ MonoBehaviour:
   neutralThreshold: 75
   maxWillpower: 100
   willpowerRegen: 0
+  immunityDuration: 3
+  resistaceDuration: 3
+  resistanceTime: 0
 --- !u!1 &1767570872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,7 +6119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7523657059774044258}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a346043f164c6d48809912eea4b3564, type: 3}
   m_Name: 
@@ -6123,7 +6132,14 @@ MonoBehaviour:
   leewayPerfect: 0.05
   leewayGreat: 0.1
   leewayOk: 0.2
-  streakMax: 10
+  streakMax: 20
+  streakPerfect: 2
+  streakGreat: 1
+  streakOk: 0
+  streakWrong: -5
+  streakEarly: -10
+  streakLate: -10
+  charmMultiplier: 5
   numNotes: 6
   numSongs: 3
   songColors:
