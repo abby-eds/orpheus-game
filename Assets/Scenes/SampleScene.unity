@@ -356,7 +356,6 @@ MonoBehaviour:
   willpowerRegen: 0
   immunityDuration: 3
   resistaceDuration: 3
-  resistanceTime: 0
 --- !u!1 &587406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +473,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 587406473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d384ab0fcd94bdf488b390f28e377e99, type: 3}
+  m_Script: {fileID: 11500000, guid: c237138bef8cb954a936b0da47299358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   willpower: 100
@@ -485,7 +484,6 @@ MonoBehaviour:
   willpowerRegen: 0
   immunityDuration: 3
   resistaceDuration: 3
-  resistanceTime: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1510,6 @@ MonoBehaviour:
   willpowerRegen: 0
   immunityDuration: 3
   resistaceDuration: 3
-  resistanceTime: 0
 --- !u!1 &1767570872
 GameObject:
   m_ObjectHideFlags: 0

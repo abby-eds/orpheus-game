@@ -23,9 +23,9 @@ public class Enemy : MonoBehaviour
     private float immunityTime = 0;
 
     public float resistaceDuration = 3;
-    public float resistanceTime = 0;
+    private float resistanceTime = 0;
 
-    private EnemyStatus status;
+    public EnemyStatus Status { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -69,11 +69,39 @@ public class Enemy : MonoBehaviour
         else if (willpower < charmedThreshold) newStatus = EnemyStatus.Charmed;
         else if (willpower < neutralThreshold) newStatus = EnemyStatus.Neutral;
         else newStatus = EnemyStatus.Hostile;
-        if (status != newStatus)
+        if (Status != newStatus)
         {
-            status = newStatus;
+            Status = newStatus;
             immunityTime = immunityDuration;
             resistanceTime = resistaceDuration;
+            switch (Status)
+            {
+                case EnemyStatus.Hostile: OnHostile(); break;
+                case EnemyStatus.Neutral: OnNeutral(); break;
+                case EnemyStatus.Charmed: OnCharmed(); break;
+                case EnemyStatus.Asleep: OnAsleep(); break;
+            }
         }
+    }
+
+
+    protected virtual void OnHostile()
+    {
+        Debug.Log("OnHostile: This method should be overwritten");
+    }
+
+    protected virtual void OnNeutral()
+    {
+        Debug.Log("OnNeutral: This method should be overwritten");
+    }
+
+    protected virtual void OnCharmed()
+    {
+        Debug.Log("OnCharmed: This method should be overwritten");
+    }
+
+    protected virtual void OnAsleep()
+    {
+        Debug.Log("OnAsleep: This method should be overwritten");
     }
 }
