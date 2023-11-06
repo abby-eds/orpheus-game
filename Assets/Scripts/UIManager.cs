@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     {
         GameObject hbObject = Instantiate(healthbarPrefab, transform);
         Healthbar hb = hbObject.GetComponent<Healthbar>();
-        hb.assignEnemy(enemy.GetComponent<Enemy>());
+        hb.AssignEnemy(enemy.GetComponent<Enemy>());
         healthbars.Add(hb);
     }
 

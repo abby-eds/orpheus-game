@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     }
 
     public float willpower = 100;
-    public float sleepThreshold = 25;
+    public float asleepThreshold = 25;
     public float charmedThreshold = 50;
     public float neutralThreshold = 75;
     public float maxWillpower = 100;
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public float immunityDuration = 3;
     private float immunityTime = 0;
 
-    public float resistaceDuration = 3;
+    public float resistaceDuration = 0;
     private float resistanceTime = 0;
 
     public EnemyStatus Status { get; private set; }
@@ -30,11 +30,11 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (sleepThreshold > charmedThreshold || charmedThreshold > neutralThreshold) Debug.LogError("ERROR IN ASSIGNING CHARM THRESHOLDS");
+        if (asleepThreshold > charmedThreshold || charmedThreshold > neutralThreshold) Debug.LogError("ERROR IN ASSIGNING CHARM THRESHOLDS");
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (willpowerRegen > 0 && willpower < maxWillpower)
         {
@@ -58,14 +58,21 @@ public class Enemy : MonoBehaviour
     {
         if (immunityTime <= 0)
         {
-            willpower -= charmAmount * (1 - (resistanceTime / resistaceDuration));
+            if (resistaceDuration > 0)
+            {
+                willpower -= charmAmount * (1 - (resistanceTime / resistaceDuration));
+            }
+            else
+            {
+                willpower -= charmAmount;
+            }
         }
     }
 
     private void UpdateStatus()
     {
         EnemyStatus newStatus;
-        if (willpower < sleepThreshold) newStatus = EnemyStatus.Asleep;
+        if (willpower < asleepThreshold) newStatus = EnemyStatus.Asleep;
         else if (willpower < charmedThreshold) newStatus = EnemyStatus.Charmed;
         else if (willpower < neutralThreshold) newStatus = EnemyStatus.Neutral;
         else newStatus = EnemyStatus.Hostile;

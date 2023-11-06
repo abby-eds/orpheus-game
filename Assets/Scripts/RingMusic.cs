@@ -6,28 +6,16 @@ using static NoteData;
 
 public class RingMusic : MonoBehaviour
 {
+    [Header("GameObject References")]
     public GameObject ring;
     public GameObject indicator;
     public GameObject notePrefab;
     public float ringRadius = 100;
 
+    [Header("Song Settings")]
     public float songDuration;
     private float songTime;
     private float delay;
-
-    public float leewayPerfect;
-    public float leewayGreat;
-    public float leewayOk;
-    private int streak;
-    public int streakMax;
-
-    public int streakPerfect;
-    public int streakGreat;
-    public int streakOk;
-    public int streakWrong;
-    public int streakEarly;
-    public int streakLate;
-    public float charmMultiplier;
 
     public int numNotes;
     private List<Note> notes = new List<Note>();
@@ -38,6 +26,29 @@ public class RingMusic : MonoBehaviour
     private List<NoteData>[] songs;
     public List<Color> songColors;
     private int songIndex;
+
+    [Header("Leeway/Difficulty Settings")]
+    public float leewayPerfect;
+    public float leewayGreat;
+    public float leewayOk;
+
+    [Header("Streak Settings")]
+    private int streak;
+    public int streakPerfect;
+    public int streakGreat;
+    public int streakOk;
+    public int streakWrong;
+    public int streakEarly;
+    public int streakLate;
+    public int level2Threshold;
+    public int level3Threshold;
+    public int streakMax;
+    private int songLevel;
+
+    [Header("Song Multipliers")]
+    public float charmMultiplier;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -103,6 +114,9 @@ public class RingMusic : MonoBehaviour
         notes.Clear();
     }
 
+    /// <summary>
+    ///  Updates the player's streak based on note quality
+    /// </summary>
     private void HitNote(NoteQuality quality)
     {
         switch (quality)
@@ -114,22 +128,30 @@ public class RingMusic : MonoBehaviour
             case NoteQuality.Late: streak += streakLate; break;
             case NoteQuality.Wrong: streak += streakWrong; break;
         }
+
         if (streak > streakMax) streak = streakMax;
         if (streak < 0) streak = 0;
+
+        if (streak >= level3Threshold) songLevel = 3;
+        else if (streak >= level2Threshold) songLevel = 2;
+        else if (streak > 0) songLevel = 1;
+        else songLevel = 0;
+
         switch (quality)
         {
-            case NoteQuality.Perfect: Debug.Log("<color=yellow><b>Perfect!</b></color>\nStreak: " + streak); break;
-            case NoteQuality.Great: Debug.Log("<color=green><b>Great</b></color>\nStreak: " + streak); break;
-            case NoteQuality.Ok: Debug.Log("<color=blue><b>Ok</b></color>\nStreak: " + streak); break;
-            case NoteQuality.Early: Debug.Log("<color=red><b>Early</b></color>\nStreak: " + streak); break;
-            case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak); break;
-            case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak); break;
+            case NoteQuality.Perfect: Debug.Log("<color=yellow><b>Perfect!</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
+            case NoteQuality.Great: Debug.Log("<color=green><b>Great</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
+            case NoteQuality.Ok: Debug.Log("<color=blue><b>Ok</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
+            case NoteQuality.Early: Debug.Log("<color=red><b>Early</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
+            case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
+            case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
         }
     }
 
     private void RefreshSong()
     {
         songTime = 0;
+        songLevel = 0;
         delay = 1;
         noteIndex = -1;
         RemoveAllNotes();
@@ -146,6 +168,9 @@ public class RingMusic : MonoBehaviour
         if (note.currentTime > note.loopTime + leewayOk) finished = note;
     }
 
+    /// <summary>
+    ///  Calculates what occurs when the player inputs a note
+    /// </summary>
     private void PlayNote(Note hitNote)
     {
         // Calculate how close the player was to perfect timing
@@ -174,7 +199,7 @@ public class RingMusic : MonoBehaviour
             else if (Input.mouseScrollDelta.y < 0)
             {
                 songIndex--;
-                if (songIndex < 0)songIndex = numSongs - 1;
+                if (songIndex < 0) songIndex = numSongs - 1;
             }
             RefreshSong();
         }
@@ -235,9 +260,9 @@ public class RingMusic : MonoBehaviour
             }
         }
 
-        if (songIndex == 0 && streak > 0)
+        if (songIndex == 0 && songLevel > 0)
         {
-            GetComponent<InteractableDetector>().SongOfCharms((streakMax + streak) * charmMultiplier / streakMax * Time.deltaTime);
+            GetComponent<InteractableDetector>().SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
         }
     }
 

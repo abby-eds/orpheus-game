@@ -355,7 +355,7 @@ MonoBehaviour:
   maxWillpower: 100
   willpowerRegen: 0
   immunityDuration: 3
-  resistaceDuration: 3
+  resistaceDuration: 0
 --- !u!1 &587406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
   maxWillpower: 100
   willpowerRegen: 0
   immunityDuration: 3
-  resistaceDuration: 3
+  resistaceDuration: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1509,7 @@ MonoBehaviour:
   maxWillpower: 100
   willpowerRegen: 0
   immunityDuration: 3
-  resistaceDuration: 3
+  resistaceDuration: 0
 --- !u!1 &1767570872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6126,23 +6126,25 @@ MonoBehaviour:
   notePrefab: {fileID: 831845964333837362, guid: f6c578c1ee6b03040b260263693f9c2f, type: 3}
   ringRadius: 200
   songDuration: 3
-  leewayPerfect: 0.05
-  leewayGreat: 0.1
-  leewayOk: 0.2
-  streakMax: 20
-  streakPerfect: 2
-  streakGreat: 1
-  streakOk: 0
-  streakWrong: -5
-  streakEarly: -10
-  streakLate: -10
-  charmMultiplier: 5
   numNotes: 6
   numSongs: 3
   songColors:
   - {r: 0, g: 0, b: 1, a: 0.5019608}
   - {r: 0, g: 1, b: 0, a: 0.5019608}
   - {r: 1, g: 0, b: 0, a: 0.5019608}
+  leewayPerfect: 0.05
+  leewayGreat: 0.1
+  leewayOk: 0.2
+  streakPerfect: 2
+  streakGreat: 1
+  streakOk: 0
+  streakWrong: -4
+  streakEarly: -8
+  streakLate: -8
+  level2Threshold: 8
+  level3Threshold: 16
+  streakMax: 16
+  charmMultiplier: 5
 --- !u!135 &7523657059774044263
 SphereCollider:
   m_ObjectHideFlags: 0
