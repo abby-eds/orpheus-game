@@ -6,8 +6,13 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager UI { get; private set; }
-    public List<Healthbar> healthbars;
+    private List<Healthbar> healthbars = new List<Healthbar>();
+    public GameObject healthbarParent;
     public GameObject healthbarPrefab;
+
+    [Header("Menus")]
+    public GameObject pauseMenu;
+    private bool paused;
 
     private void Awake()
     {
@@ -30,6 +35,13 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            paused = !paused;
+            if (paused) Time.timeScale = 0;
+            else Time.timeScale = 1;
+            pauseMenu.SetActive(paused);
+        }
         foreach(Healthbar h in healthbars)
         {
             h.transform.localPosition = (Camera.main.WorldToScreenPoint(h.charmable.transform.position + Vector3.up * 1.5f) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
@@ -38,7 +50,7 @@ public class UIManager : MonoBehaviour
 
     public void AddHealthbar(Charmable charmable)
     {
-        GameObject hbObject = Instantiate(healthbarPrefab, transform);
+        GameObject hbObject = Instantiate(healthbarPrefab, healthbarParent.transform);
         Healthbar hb = hbObject.GetComponent<Healthbar>();
         hb.AssignEnemy(charmable);
         healthbars.Add(hb);

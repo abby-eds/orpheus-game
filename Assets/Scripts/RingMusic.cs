@@ -102,8 +102,8 @@ public class RingMusic : MonoBehaviour
     /// </summary>
     private void RemoveNote(Note note)
     {
-        notes.Remove(note);
         Destroy(note.visual);
+        notes.Remove(note);
     }
 
     private void RemoveAllNotes()

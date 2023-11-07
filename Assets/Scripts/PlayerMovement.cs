@@ -42,30 +42,33 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get the X and Y delta of the mouse
-        rotationX = Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
-        rotationY = Mathf.Clamp(Input.GetAxis("Mouse Y"), -1, 1);
-
-        // Rotate the camera around the "Up" axis based on mouse X
-        cameraAnchor.Rotate(Vector3.up, rotationX * cameraSpeed, Space.World);
-
-        // Rotate the camera by X euler angles to look up/down
-        cameraAnchor.eulerAngles += new Vector3(-rotationY * cameraSpeed, 0, 0);
-
-        // Put bounds on how far up/down the camera can look
-        if (cameraAnchor.eulerAngles.x > maxCameraAngle) cameraAnchor.eulerAngles = new Vector3(maxCameraAngle, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
-        if (cameraAnchor.eulerAngles.x < minCameraAngle) cameraAnchor.eulerAngles = new Vector3(minCameraAngle, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
-
-        // Save the camera's rotation for later movement calculations
-        cameraRotation = cameraAnchor.eulerAngles.y;
-
-        // Get the player's movement input
-        movementX = Input.GetAxisRaw("Horizontal");
-        movementZ = Input.GetAxisRaw("Vertical");
-        if (hasJump && Input.GetKeyDown(KeyCode.Space))
+        if (Time.deltaTime > 0)
         {
-            hasJump = false;
-            jump = true;
+            // Get the X and Y delta of the mouse
+            rotationX = Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
+            rotationY = Mathf.Clamp(Input.GetAxis("Mouse Y"), -1, 1);
+
+            // Rotate the camera around the "Up" axis based on mouse X
+            cameraAnchor.Rotate(Vector3.up, rotationX * cameraSpeed, Space.World);
+
+            // Rotate the camera by X euler angles to look up/down
+            cameraAnchor.eulerAngles += new Vector3(-rotationY * cameraSpeed, 0, 0);
+
+            // Put bounds on how far up/down the camera can look
+            if (cameraAnchor.eulerAngles.x > maxCameraAngle) cameraAnchor.eulerAngles = new Vector3(maxCameraAngle, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
+            if (cameraAnchor.eulerAngles.x < minCameraAngle) cameraAnchor.eulerAngles = new Vector3(minCameraAngle, cameraAnchor.eulerAngles.y, cameraAnchor.eulerAngles.z);
+
+            // Save the camera's rotation for later movement calculations
+            cameraRotation = cameraAnchor.eulerAngles.y;
+
+            // Get the player's movement input
+            movementX = Input.GetAxisRaw("Horizontal");
+            movementZ = Input.GetAxisRaw("Vertical");
+            if (hasJump && Input.GetKeyDown(KeyCode.Space))
+            {
+                hasJump = false;
+                jump = true;
+            }
         }
     }
 
