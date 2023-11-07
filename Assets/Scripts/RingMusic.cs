@@ -48,8 +48,6 @@ public class RingMusic : MonoBehaviour
     [Header("Song Multipliers")]
     public float charmMultiplier;
 
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -260,9 +258,11 @@ public class RingMusic : MonoBehaviour
             }
         }
 
-        if (songIndex == 0 && songLevel > 0)
+        if (songLevel > 0)
         {
-            GetComponent<InteractableDetector>().SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
+            if (songIndex == 0) GetComponent<InteractableDetector>().SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
+            else if (songIndex == 1) GetComponent<InteractableDetector>().SongOfDead(songLevel);
+            else if (songIndex == 2) GetComponent<InteractableDetector>().SongOfSculpting(songLevel);
         }
     }
 

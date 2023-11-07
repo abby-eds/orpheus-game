@@ -32,23 +32,23 @@ public class UIManager : MonoBehaviour
     {
         foreach(Healthbar h in healthbars)
         {
-            h.transform.localPosition = (Camera.main.WorldToScreenPoint(h.enemy.transform.position + Vector3.up * 1.5f) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
+            h.transform.localPosition = (Camera.main.WorldToScreenPoint(h.charmable.transform.position + Vector3.up * 1.5f) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
         }
     }
 
-    public void AddEnemy(GameObject enemy)
+    public void AddHealthbar(Charmable charmable)
     {
         GameObject hbObject = Instantiate(healthbarPrefab, transform);
         Healthbar hb = hbObject.GetComponent<Healthbar>();
-        hb.AssignEnemy(enemy.GetComponent<Enemy>());
+        hb.AssignEnemy(charmable);
         healthbars.Add(hb);
     }
 
-    public void RemoveEnemy(GameObject enemy)
+    public void RemoveHealthbar(Charmable charmable)
     {
         foreach(Healthbar h in healthbars)
         {
-            if (h.enemy == enemy.GetComponent<Enemy>())
+            if (h.charmable == charmable)
             {
                 healthbars.Remove(h);
                 Destroy(h.gameObject);

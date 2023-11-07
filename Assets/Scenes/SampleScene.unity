@@ -242,8 +242,8 @@ GameObject:
   - component: {fileID: 491420193}
   - component: {fileID: 491420197}
   m_Layer: 0
-  m_Name: Enemy (2)
-  m_TagString: Enemy
+  m_Name: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,17 +345,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 491420192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d384ab0fcd94bdf488b390f28e377e99, type: 3}
+  m_Script: {fileID: 11500000, guid: c237138bef8cb954a936b0da47299358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  willpower: 100
-  sleepThreshold: 25
-  charmedThreshold: 50
-  neutralThreshold: 75
-  maxWillpower: 100
-  willpowerRegen: 0
-  immunityDuration: 3
-  resistaceDuration: 0
+  willpower: 120
+  asleepThreshold: 30
+  charmedThreshold: 60
+  neutralThreshold: 90
+  maxWillpower: 120
+  asleepRegen: 1
+  charmedRegen: 1
+  neutralRegen: 0
+  hostileRegen: 0
+  regenDelayDuration: 5
+  immunityDuration: 0
+  resistaceDuration: 1
 --- !u!1 &587406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,8 +374,8 @@ GameObject:
   - component: {fileID: 587406474}
   - component: {fileID: 587406478}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: Elite Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -419,7 +423,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5af08c738db7d44dfa8c97bc257b4125, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,14 +480,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c237138bef8cb954a936b0da47299358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  willpower: 100
-  sleepThreshold: 25
-  charmedThreshold: 50
-  neutralThreshold: 75
-  maxWillpower: 100
-  willpowerRegen: 0
-  immunityDuration: 3
-  resistaceDuration: 0
+  willpower: 120
+  asleepThreshold: 30
+  charmedThreshold: 60
+  neutralThreshold: 90
+  maxWillpower: 120
+  asleepRegen: 6
+  charmedRegen: 3
+  neutralRegen: 2
+  hostileRegen: 1
+  regenDelayDuration: 5
+  immunityDuration: 0
+  resistaceDuration: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +603,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &725076869
 MeshCollider:
@@ -855,7 +863,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &866481551
 MeshCollider:
@@ -961,7 +969,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &904946012
 MeshCollider:
@@ -1108,7 +1116,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1187,7 +1195,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1265720168
 MeshCollider:
@@ -1293,7 +1301,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1403557998
 MeshCollider:
@@ -1396,8 +1404,8 @@ GameObject:
   - component: {fileID: 1513515587}
   - component: {fileID: 1513515591}
   m_Layer: 0
-  m_Name: Enemy (1)
-  m_TagString: Enemy
+  m_Name: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1499,17 +1507,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1513515586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d384ab0fcd94bdf488b390f28e377e99, type: 3}
+  m_Script: {fileID: 11500000, guid: c237138bef8cb954a936b0da47299358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  willpower: 100
-  sleepThreshold: 25
-  charmedThreshold: 50
-  neutralThreshold: 75
-  maxWillpower: 100
-  willpowerRegen: 0
-  immunityDuration: 3
-  resistaceDuration: 0
+  willpower: 120
+  asleepThreshold: 30
+  charmedThreshold: 60
+  neutralThreshold: 90
+  maxWillpower: 120
+  asleepRegen: 1
+  charmedRegen: 1
+  neutralRegen: 0
+  hostileRegen: 0
+  regenDelayDuration: 5
+  immunityDuration: 0
+  resistaceDuration: 1
 --- !u!1 &1767570872
 GameObject:
   m_ObjectHideFlags: 0

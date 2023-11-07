@@ -138,15 +138,13 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Sideways", movementX);
 
         Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
-        Debug.DrawRay(cameraRay.origin, cameraRay.direction * maxCameraDistance);
-        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, maxCameraDistance))
+        Debug.DrawRay(cameraRay.origin, cameraRay.direction * (maxCameraDistance + 1));
+        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, maxCameraDistance + 1))
         {
-            playerCam.transform.localPosition = new Vector3(0, 0, -cameraHit.distance + minCameraDistance);
+            if (cameraHit.collider.gameObject.isStatic) playerCam.transform.localPosition = new Vector3(0, 0, -cameraHit.distance + minCameraDistance);
+            else playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
         }
-        else
-        {
-            playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
-        }
+        else playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
     }
 
     private void LateUpdate()
