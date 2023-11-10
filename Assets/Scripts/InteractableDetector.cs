@@ -5,7 +5,10 @@ using UnityEngine;
 public class InteractableDetector : MonoBehaviour
 {
     public float detectRadius = 5;
-    private List<Enemy> enemies = new List<Enemy>();
+    private List<Charmable> charmables = new List<Charmable>();
+    private List<Spectral> spectrals = new List<Spectral>();
+    private List<Sculptable> sculptables = new List<Sculptable>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,27 +23,53 @@ public class InteractableDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        Charmable charmable = other.GetComponent<Charmable>();
+        Spectral spectral = other.GetComponent<Spectral>();
+        Sculptable sculptable = other.GetComponent<Sculptable>();
+        if (charmable != null)
         {
-            enemies.Add(other.GetComponent<Enemy>());
-            UIManager.UI.AddEnemy(other.gameObject);
+            charmables.Add(charmable);
+            UIManager.UI.AddHealthbar(charmable);
         }
+        if (spectral != null) spectrals.Add(spectral);
+        if (sculptable != null) sculptables.Add(sculptable);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        Charmable charmable = other.GetComponent<Charmable>();
+        Spectral spectral = other.GetComponent<Spectral>();
+        Sculptable sculptable = other.GetComponent<Sculptable>();
+        if (charmable != null)
         {
-            enemies.Remove(other.GetComponent<Enemy>());
-            UIManager.UI.RemoveEnemy(other.gameObject);
+            charmables.Remove(charmable);
+            UIManager.UI.RemoveHealthbar(charmable);
         }
+        if (spectral != null) spectrals.Add(spectral);
+        if (sculptable != null) sculptables.Add(sculptable);
     }
 
     public void SongOfCharms(float power)
     {
-        foreach(Enemy e in enemies)
+        foreach(Charmable c in charmables)
         {
-            e.ApplyCharm(power);
+            c.ApplySongOfCharms(power);
+        }
+    }
+
+    public void SongOfDead(int level)
+    {
+        foreach(Spectral s in spectrals)
+        {
+            s.ApplySongOfDead(level);
+        }
+    }
+
+    public void SongOfSculpting(int level)
+    {
+        foreach(Sculptable s in sculptables)
+        {
+            s.ApplySongOfSculpting(level);
         }
     }
 }

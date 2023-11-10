@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour
 {
-    public Enemy enemy;
+    public Charmable charmable;
     public Slider hostileBar;
     public Slider neutralBar;
     public Slider charmedBar;
@@ -20,26 +20,30 @@ public class Healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        asleepBar.value = enemy.willpower;
-        charmedBar.value = enemy.willpower;
-        neutralBar.value = enemy.willpower;
-        hostileBar.value = enemy.willpower;
+        hostileBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Hostile);
+        neutralBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Neutral);
+        charmedBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Charmed);
+        asleepBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Asleep);
+        asleepBar.value = charmable.willpower;
+        charmedBar.value = charmable.willpower;
+        neutralBar.value = charmable.willpower;
+        hostileBar.value = charmable.willpower;
     }
 
-    public void assignEnemy(Enemy enemy)
+    public void AssignEnemy(Charmable charmable)
     {
-        this.enemy = enemy;
+        this.charmable = charmable;
         asleepBar.minValue = 0;
-        asleepBar.maxValue = enemy.sleepThreshold;
-        charmedBar.minValue = enemy.sleepThreshold;
-        charmedBar.maxValue = enemy.charmedThreshold;
-        neutralBar.minValue = enemy.charmedThreshold;
-        neutralBar.maxValue = enemy.neutralThreshold;
-        hostileBar.minValue = enemy.neutralThreshold;
-        hostileBar.maxValue = enemy.maxWillpower;
-        asleepBar.value = enemy.willpower;
-        charmedBar.value = enemy.willpower;
-        neutralBar.value = enemy.willpower;
-        hostileBar.value = enemy.willpower;
+        asleepBar.maxValue = charmable.asleepThreshold;
+        charmedBar.minValue = charmable.asleepThreshold;
+        charmedBar.maxValue = charmable.charmedThreshold;
+        neutralBar.minValue = charmable.charmedThreshold;
+        neutralBar.maxValue = charmable.neutralThreshold;
+        hostileBar.minValue = charmable.neutralThreshold;
+        hostileBar.maxValue = charmable.maxWillpower;
+        asleepBar.value = charmable.willpower;
+        charmedBar.value = charmable.willpower;
+        neutralBar.value = charmable.willpower;
+        hostileBar.value = charmable.willpower;
     }
 }
