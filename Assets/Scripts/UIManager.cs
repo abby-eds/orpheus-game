@@ -12,7 +12,10 @@ public class UIManager : MonoBehaviour
 
     [Header("Menus")]
     public GameObject pauseMenu;
+    public GameObject controlsMenu;
+    public GameObject settingsMenu;
     private bool paused;
+    private bool backMenu;
 
     private void Awake()
     {
@@ -37,10 +40,9 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            paused = !paused;
-            if (paused) Time.timeScale = 0;
-            else Time.timeScale = 1;
-            pauseMenu.SetActive(paused);
+            if (backMenu) BackToPauseMenu();
+            else if (paused) Unpause();
+            else Pause();
         }
         foreach(Healthbar h in healthbars)
         {
@@ -67,5 +69,53 @@ public class UIManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void Pause()
+    {
+        paused = true;
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Unpause()
+    {
+        paused = false;
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void BackToPauseMenu()
+    {
+        backMenu = false;
+        pauseMenu.SetActive(true);
+        controlsMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+    }
+
+    public void ToControlsMenu()
+    {
+        backMenu = true;
+        controlsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void ToSettingsMenu()
+    {
+        backMenu = true;
+        settingsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }
