@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public float maxWillpower = 100;
     public float willpowerRegen;
 
-    private EnemyStatus status;
+   private EnemyStatus status;
 
     // Start is called before the first frame update
     void Start()
