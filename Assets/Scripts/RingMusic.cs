@@ -80,7 +80,6 @@ public class RingMusic : MonoBehaviour
             songs[0].Add(new NoteData(NoteType.Left, 3f / numNotes, true));
         }
         songDuration = GetSongDuration();
-        Debug.Log(songDuration);
     }
 
     private float GetSongDuration()
@@ -88,7 +87,6 @@ public class RingMusic : MonoBehaviour
         float duration = 0;
         foreach (NoteData n in songs[songIndex])
         {
-            Debug.Log(n.delay);
             duration += n.delay;
         }
         return duration;
