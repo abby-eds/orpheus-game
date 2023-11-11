@@ -2830,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 415204, guid: a653d3366756c8641befacf512a2be62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.346
+      value: -8.293
       objectReference: {fileID: 0}
     - target: {fileID: 415204, guid: a653d3366756c8641befacf512a2be62, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10174,8 +10174,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041410422}
-  - component: {fileID: 2041410421}
   - component: {fileID: 2041410420}
+  - component: {fileID: 2041410424}
+  - component: {fileID: 2041410425}
   m_Layer: 0
   m_Name: HouseDoor
   m_TagString: Untagged
@@ -10195,7 +10196,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea3ffe8771a14e4db5e981c85238062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &2041410421
+  hasKey: 0
+  nearby: 0
+--- !u!4 &2041410422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041410419}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.8660824, y: -0.9075807, z: 1.4756033}
+  m_LocalScale: {x: 0.6050538, y: 0.6050538, z: 0.6050538}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1881685129}
+  m_Father: {fileID: 805277888}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &2041410424
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -10205,7 +10224,7 @@ Animator:
   m_GameObject: {fileID: 2041410419}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf84bdbe4a6bd0f4d82f4dd2ebbcb9cf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9f7d17e1e49055f4cb2bed1f4b738c01, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10216,22 +10235,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!4 &2041410422
-Transform:
+--- !u!65 &2041410425
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041410419}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.61728483, z: -0, w: 0.7867398}
-  m_LocalPosition: {x: 1.8660824, y: -0.9075807, z: 1.4756033}
-  m_LocalScale: {x: 0.6050538, y: 0.6050538, z: 0.6050538}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1881685129}
-  m_Father: {fileID: 805277888}
-  m_LocalEulerAnglesHint: {x: 0, y: 103.76, z: 0}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2043563595
 GameObject:
   m_ObjectHideFlags: 0
