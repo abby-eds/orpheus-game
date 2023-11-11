@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 {
     public bool hasKey = false;
     public bool nearby = false;
+    private bool open = false;
     private Animator anim;
 
     private void Start()
@@ -15,15 +16,16 @@ public class Door : MonoBehaviour
     }
     private void Update()
     {
-        if (nearby && hasKey && Input.GetKeyDown(KeyCode.T))
+        if (nearby && Input.GetKeyDown(KeyCode.E))
         {
-            anim.SetBool("Open", true);
+            open = !open;
+            anim.SetBool("Open", open);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             nearby = true;
         }
@@ -31,7 +33,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             nearby = false;
         }
