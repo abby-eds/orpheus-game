@@ -6,10 +6,12 @@ using static NoteData;
 
 public class RingMusic : MonoBehaviour
 {
-    [Header("GameObject References")]
+    [Header("Object References")]
     public GameObject ring;
     public GameObject indicator;
     public GameObject notePrefab;
+    private Animator anim;
+    private InteractableDetector interactions;
     public float ringRadius = 100;
 
     [Header("Song Settings")]
@@ -51,6 +53,8 @@ public class RingMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+        interactions = GetComponent<InteractableDetector>();
         delay = 1;
         noteIndex = -1;
         songIndex = 0;
@@ -62,29 +66,30 @@ public class RingMusic : MonoBehaviour
         songs[1] = new List<NoteData>()
         {
             new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.25f, true),
-            new NoteData(NoteType.Left, 0.25f, true),
             new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.25f, true),
-            new NoteData(NoteType.Left, 0.25f, true),
-            new NoteData(NoteType.Left, 0.5f, true)
         };
         songs[2] = new List<NoteData>()
         {
             new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.2f, true),
-            new NoteData(NoteType.Left, 0.6f, true),
-            new NoteData(NoteType.Left, 0.2f, true),
-            new NoteData(NoteType.Left, 0.2f, true),
-            new NoteData(NoteType.Left, 0.6f, true),
-            new NoteData(NoteType.Left, 0.2f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
             new NoteData(NoteType.Left, 0.5f, true),
         };
         for (int i = 0; i < numNotes; i++)
         {
-            songs[0].Add(new NoteData(NoteType.Left, songDuration / numNotes, true));
+            songs[0].Add(new NoteData(NoteType.Left, 3f / numNotes, true));
         }
+        songDuration = GetSongDuration();
+    }
+
+    private float GetSongDuration()
+    {
+        float duration = 0;
+        foreach (NoteData n in songs[songIndex])
+        {
+            duration += n.delay;
+        }
+        return duration;
     }
 
     /// <summary>
@@ -117,11 +122,14 @@ public class RingMusic : MonoBehaviour
     /// </summary>
     private void HitNote(NoteQuality quality)
     {
+        int streakEnabled = (songIndex == 0 && interactions.CharmablesInRange())
+                          || (songIndex == 1 && interactions.SpectralsInRange())
+                          || (songIndex == 2 && interactions.SculptablesInRange()) ? 1 : 0;
         switch (quality)
         {
-            case NoteQuality.Perfect: streak += streakPerfect; break;
-            case NoteQuality.Great: streak += streakGreat; break;
-            case NoteQuality.Ok: streak += streakOk; break;
+            case NoteQuality.Perfect: streak += streakPerfect * streakEnabled; break;
+            case NoteQuality.Great: streak += streakGreat * streakEnabled; break;
+            case NoteQuality.Ok: streak += streakOk * streakEnabled; break;
             case NoteQuality.Early: streak += streakEarly; break;
             case NoteQuality.Late: streak += streakLate; break;
             case NoteQuality.Wrong: streak += streakWrong; break;
@@ -144,6 +152,8 @@ public class RingMusic : MonoBehaviour
             case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
             case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
         }
+        if (streak > 0) anim.SetBool("Playing Song", true);
+        else anim.SetBool("Playing Song", false);
     }
 
     private void RefreshSong()
@@ -154,6 +164,7 @@ public class RingMusic : MonoBehaviour
         noteIndex = -1;
         RemoveAllNotes();
         indicator.GetComponent<Image>().color = songColors[songIndex];
+        songDuration = GetSongDuration();
     }
 
     /// <summary>
@@ -187,82 +198,85 @@ public class RingMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.mouseScrollDelta.y != 0)
+        if (Time.timeScale > 0)
         {
-            if (Input.mouseScrollDelta.y > 0)
+            if (Input.mouseScrollDelta.y != 0)
             {
-                songIndex++;
-                if (songIndex >= numSongs) songIndex = 0;
+                if (Input.mouseScrollDelta.y > 0)
+                {
+                    songIndex++;
+                    if (songIndex >= numSongs) songIndex = 0;
+                }
+                else if (Input.mouseScrollDelta.y < 0)
+                {
+                    songIndex--;
+                    if (songIndex < 0) songIndex = numSongs - 1;
+                }
+                RefreshSong();
             }
-            else if (Input.mouseScrollDelta.y < 0)
-            {
-                songIndex--;
-                if (songIndex < 0) songIndex = numSongs - 1;
-            }
-            RefreshSong();
-        }
 
-        // Update time for all notes
-        foreach (Note p in notes)
-        {
-            p.currentTime += Time.deltaTime;
-            MoveNote(p);
-        }
-
-        // If a note has "finished", handle it
-        if (finished != null)
-        {
-            if (finished.loop) RefreshNote(finished);
-            else RemoveNote(finished);
-            HitNote(NoteQuality.Late);
-            finished = null;
-        }
-
-        // Check for player input and play a note
-        if (notes.Count > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            // Update time for all notes
+            foreach (Note p in notes)
             {
-                Note hitNote = notes[0];
-                if (hitNote.noteType == NoteType.Space || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                else HitNote(NoteQuality.Wrong);
+                p.currentTime += Time.deltaTime;
+                MoveNote(p);
             }
-            else if (Input.GetMouseButtonDown(0))
-            {
-                Note hitNote = notes[0];
-                if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                else HitNote(NoteQuality.Wrong);
-            }
-            else if (Input.GetMouseButtonDown(1))
-            {
-                Note hitNote = notes[0];
-                if (hitNote.noteType == NoteType.Right || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                else HitNote(NoteQuality.Wrong);
-            }
-        }
 
-        // Advance the overall song time and spawn notes as needed
-        songTime += Time.deltaTime;
-        if (songTime >= songDuration) songTime -= songDuration;
-        if (noteIndex + 1 < songs[songIndex].Count)
-        {
-            delay -= Time.deltaTime;
-            if (delay <= 0)
+            // If a note has "finished", handle it
+            if (finished != null)
             {
-                noteIndex++;
-                Note p = new Note(songs[songIndex][noteIndex].noteType, songDuration, songs[songIndex][noteIndex].loop);
-                notes.Add(p);
-                p.visual = Instantiate(notePrefab, ring.transform);
-                p.visual.GetComponent<FadeIn>().targetColor = songColors[songIndex];
-                delay = songs[songIndex][noteIndex].delay;
+                if (finished.loop) RefreshNote(finished);
+                else RemoveNote(finished);
+                HitNote(NoteQuality.Late);
+                finished = null;
             }
-        }
 
-        if (songLevel > 0)
-        {
-            if (songIndex == 0) GetComponent<InteractableDetector>().SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
-            else if (songIndex == 1) GetComponent<InteractableDetector>().SongOfDead(songLevel);
-            else if (songIndex == 2) GetComponent<InteractableDetector>().SongOfSculpting(songLevel);
+            // Check for player input and play a note
+            if (notes.Count > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Note hitNote = notes[0];
+                    if (hitNote.noteType == NoteType.Space || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
+                    else HitNote(NoteQuality.Wrong);
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    Note hitNote = notes[0];
+                    if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
+                    else HitNote(NoteQuality.Wrong);
+                }
+                else if (Input.GetMouseButtonDown(1))
+                {
+                    Note hitNote = notes[0];
+                    if (hitNote.noteType == NoteType.Right || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
+                    else HitNote(NoteQuality.Wrong);
+                }
+            }
+
+            // Advance the overall song time and spawn notes as needed
+            songTime += Time.deltaTime;
+            if (songTime >= songDuration) songTime -= songDuration;
+            if (noteIndex + 1 < songs[songIndex].Count)
+            {
+                delay -= Time.deltaTime;
+                if (delay <= 0)
+                {
+                    noteIndex++;
+                    Note p = new Note(songs[songIndex][noteIndex].noteType, songDuration, songs[songIndex][noteIndex].loop);
+                    notes.Add(p);
+                    p.visual = Instantiate(notePrefab, ring.transform);
+                    p.visual.GetComponent<FadeIn>().targetColor = songColors[songIndex];
+                    delay = songs[songIndex][noteIndex].delay;
+                }
+            }
+
+            if (songLevel > 0)
+            {
+                if (songIndex == 0) interactions.SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
+                else if (songIndex == 1) interactions.SongOfDead(songLevel);
+                else if (songIndex == 2) interactions.SongOfSculpting(songLevel);
+            }
         }
     }
 

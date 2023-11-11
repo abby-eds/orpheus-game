@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.deltaTime > 0)
+        if (Time.timeScale > 0)
         {
             // Get the X and Y delta of the mouse
             rotationX = Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);

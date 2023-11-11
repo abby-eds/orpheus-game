@@ -49,6 +49,21 @@ public class InteractableDetector : MonoBehaviour
         if (sculptable != null) sculptables.Add(sculptable);
     }
 
+    public bool CharmablesInRange()
+    {
+        return !(charmables.Count == 0);
+    }
+
+    public bool SpectralsInRange()
+    {
+        return !(spectrals.Count == 0);
+    }
+
+    public bool SculptablesInRange()
+    {
+        return !(sculptables.Count == 0);
+    }
+
     public void SongOfCharms(float power)
     {
         foreach(Charmable c in charmables)
