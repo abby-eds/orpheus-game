@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private Animator anim;
+    private PlayerHealth playerHealth;
     private float movementX;
     private float movementZ;
     private float rotationX;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        playerHealth = GetComponent<PlayerHealth>();
         jumpVelocity = Mathf.Sqrt(Physics.gravity.magnitude * 2 * jumpHeight);
     }
 
@@ -62,12 +64,21 @@ public class PlayerMovement : MonoBehaviour
             cameraRotation = cameraAnchor.eulerAngles.y;
 
             // Get the player's movement input
-            movementX = Input.GetAxisRaw("Horizontal");
-            movementZ = Input.GetAxisRaw("Vertical");
-            if (hasJump && Input.GetKeyDown(KeyCode.Space))
+            if (!playerHealth.dead)
             {
-                hasJump = false;
-                jump = true;
+                movementX = Input.GetAxisRaw("Horizontal");
+                movementZ = Input.GetAxisRaw("Vertical");
+                if (hasJump && Input.GetKeyDown(KeyCode.Space))
+                {
+                    hasJump = false;
+                    jump = true;
+                }
+            }
+            else
+            {
+                movementX = 0;
+                movementZ = 0;
+                jump = false;
             }
         }
     }

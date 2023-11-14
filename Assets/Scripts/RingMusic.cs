@@ -11,6 +11,7 @@ public class RingMusic : MonoBehaviour
     public GameObject indicator;
     public GameObject notePrefab;
     private Animator anim;
+    private PlayerHealth playerHealth;
     private InteractableDetector interactions;
     public float ringRadius = 100;
 
@@ -54,6 +55,7 @@ public class RingMusic : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerHealth = GetComponent<PlayerHealth>();
         interactions = GetComponent<InteractableDetector>();
         delay = 1;
         noteIndex = -1;
@@ -152,7 +154,7 @@ public class RingMusic : MonoBehaviour
             case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
             case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
         }
-        if (streak > 0) anim.SetBool("Playing Song", true);
+        if (streak > 0 && !playerHealth.dead) anim.SetBool("Playing Song", true);
         else anim.SetBool("Playing Song", false);
     }
 
@@ -200,21 +202,6 @@ public class RingMusic : MonoBehaviour
     {
         if (Time.timeScale > 0)
         {
-            if (Input.mouseScrollDelta.y != 0)
-            {
-                if (Input.mouseScrollDelta.y > 0)
-                {
-                    songIndex++;
-                    if (songIndex >= numSongs) songIndex = 0;
-                }
-                else if (Input.mouseScrollDelta.y < 0)
-                {
-                    songIndex--;
-                    if (songIndex < 0) songIndex = numSongs - 1;
-                }
-                RefreshSong();
-            }
-
             // Update time for all notes
             foreach (Note p in notes)
             {
@@ -229,29 +216,6 @@ public class RingMusic : MonoBehaviour
                 else RemoveNote(finished);
                 HitNote(NoteQuality.Late);
                 finished = null;
-            }
-
-            // Check for player input and play a note
-            if (notes.Count > 0)
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Note hitNote = notes[0];
-                    if (hitNote.noteType == NoteType.Space || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                    else HitNote(NoteQuality.Wrong);
-                }
-                else if (Input.GetMouseButtonDown(0))
-                {
-                    Note hitNote = notes[0];
-                    if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                    else HitNote(NoteQuality.Wrong);
-                }
-                else if (Input.GetMouseButtonDown(1))
-                {
-                    Note hitNote = notes[0];
-                    if (hitNote.noteType == NoteType.Right || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
-                    else HitNote(NoteQuality.Wrong);
-                }
             }
 
             // Advance the overall song time and spawn notes as needed
@@ -271,11 +235,53 @@ public class RingMusic : MonoBehaviour
                 }
             }
 
-            if (songLevel > 0)
+            if (!playerHealth.dead)
             {
-                if (songIndex == 0) interactions.SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
-                else if (songIndex == 1) interactions.SongOfDead(songLevel);
-                else if (songIndex == 2) interactions.SongOfSculpting(songLevel);
+                // Check for player input to switch songs
+                if (Input.mouseScrollDelta.y != 0)
+                {
+                    if (Input.mouseScrollDelta.y > 0)
+                    {
+                        songIndex++;
+                        if (songIndex >= numSongs) songIndex = 0;
+                    }
+                    else if (Input.mouseScrollDelta.y < 0)
+                    {
+                        songIndex--;
+                        if (songIndex < 0) songIndex = numSongs - 1;
+                    }
+                    RefreshSong();
+                }
+
+                // Check for player input and play a note
+                if (notes.Count > 0)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        Note hitNote = notes[0];
+                        if (hitNote.noteType == NoteType.Space || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
+                        else HitNote(NoteQuality.Wrong);
+                    }
+                    else if (Input.GetMouseButtonDown(0))
+                    {
+                        Note hitNote = notes[0];
+                        if (hitNote.noteType == NoteType.Left || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
+                        else HitNote(NoteQuality.Wrong);
+                    }
+                    else if (Input.GetMouseButtonDown(1))
+                    {
+                        Note hitNote = notes[0];
+                        if (hitNote.noteType == NoteType.Right || hitNote.noteType == NoteType.Any) PlayNote(hitNote);
+                        else HitNote(NoteQuality.Wrong);
+                    }
+                }
+
+                if (songLevel > 0)
+                {
+                    if (songIndex == 0) interactions.SongOfCharms((1 + songLevel) / 2f * charmMultiplier * Time.deltaTime);
+                    else if (songIndex == 1) interactions.SongOfDead(songLevel);
+                    else if (songIndex == 2) interactions.SongOfSculpting(songLevel);
+                }
             }
         }
     }
