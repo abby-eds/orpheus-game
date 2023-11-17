@@ -27,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
     private float targetRotation;
     private float rotationDelta;
     private bool jump;
-    private bool hasJump;
+    private bool airborne;
     private float jumpVelocity;
+    private bool grounded;
     private Ray footRay;
 
     // Start is called before the first frame update
@@ -68,9 +69,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 movementX = Input.GetAxisRaw("Horizontal");
                 movementZ = Input.GetAxisRaw("Vertical");
-                if (hasJump && Input.GetKeyDown(KeyCode.Space))
+                if (grounded && Input.GetKeyDown(KeyCode.Space))
                 {
-                    hasJump = false;
                     jump = true;
                 }
             }
@@ -130,9 +130,9 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 movement = Quaternion.AngleAxis((cameraRotation + 360) % 360, Vector3.up) * new Vector3(movementX, 0, movementZ).normalized;
 
-            footRay = new Ray(transform.position, movement);
+            footRay = new Ray(transform.position + Vector3.up, movement);
             Debug.DrawRay(footRay.origin, footRay.direction * 0.5f, Color.red);
-            if (!Physics.Raycast(footRay, out RaycastHit footHit, 0.5f) || hasJump)
+            if (airborne || grounded) // This looks dumb but it excludes the case of when you're in contact with a slope
             {
                 rb.AddForce(movement * movementSpeed - horizontalVelocity, ForceMode.VelocityChange);
             }
@@ -153,12 +153,13 @@ public class PlayerMovement : MonoBehaviour
 
         Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
         Debug.DrawRay(cameraRay.origin, cameraRay.direction * (maxCameraDistance + 1));
-        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, maxCameraDistance + 1))
+        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, maxCameraDistance + 1, LayerMask.GetMask("Terrain")))
         {
-            if (cameraHit.collider.gameObject.isStatic) playerCam.transform.localPosition = new Vector3(0, 0, -cameraHit.distance + minCameraDistance);
-            else playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
+            playerCam.transform.localPosition = new Vector3(0, 0, -cameraHit.distance + minCameraDistance);
         }
         else playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
+        Debug.Log("Grounded: " + grounded + " , Airborne: " + airborne);
+        grounded = false;
     }
 
     private void LateUpdate()
@@ -167,11 +168,19 @@ public class PlayerMovement : MonoBehaviour
         cameraAnchor.position = transform.position + Vector3.up;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if (collision.contacts[0].normal.y > 0.5f)
+        airborne = true;
+        foreach (ContactPoint contact in collision.contacts)
         {
-            hasJump = true;
+            if (contact.normal.y > 0.7f)
+            {
+                grounded = true;
+            }
+            if (contact.normal.y > 0)
+            {
+                airborne = false;
+            }
         }
     }
 }
