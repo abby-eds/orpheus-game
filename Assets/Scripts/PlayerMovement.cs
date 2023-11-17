@@ -27,10 +27,11 @@ public class PlayerMovement : MonoBehaviour
     private float targetRotation;
     private float rotationDelta;
     private bool jump;
-    private bool airborne;
     private float jumpVelocity;
     private bool grounded;
-    private Ray footRay;
+    private bool blocked;
+    // private Ray footRay;
+    private Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
@@ -127,12 +128,13 @@ public class PlayerMovement : MonoBehaviour
 
             // Rotate the player accordingly
             transform.Rotate(Vector3.up, rotationDelta);
+            cameraAnchor.Rotate(Vector3.up, -rotationDelta, Space.World);
 
-            Vector3 movement = Quaternion.AngleAxis((cameraRotation + 360) % 360, Vector3.up) * new Vector3(movementX, 0, movementZ).normalized;
+            movement = Quaternion.AngleAxis((cameraRotation + 360) % 360, Vector3.up) * new Vector3(movementX, 0, movementZ).normalized;
 
-            footRay = new Ray(transform.position + Vector3.up, movement);
-            Debug.DrawRay(footRay.origin, footRay.direction * 0.5f, Color.red);
-            if (airborne || grounded) // This looks dumb but it excludes the case of when you're in contact with a slope
+            // footRay = new Ray(transform.position + Vector3.up, movement);
+            // Debug.DrawRay(footRay.origin, footRay.direction * 0.5f, Color.red);
+            if (!blocked) // This looks dumb but it excludes the case of when you're in contact with a slope
             {
                 rb.AddForce(movement * movementSpeed - horizontalVelocity, ForceMode.VelocityChange);
             }
@@ -141,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // If the player isn't issuing movement, slow down to a stop
             rb.AddForce(-horizontalVelocity, ForceMode.VelocityChange);
+            movement = Vector3.zero;
         }
         if (jump)
         {
@@ -153,13 +156,16 @@ public class PlayerMovement : MonoBehaviour
 
         Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
         Debug.DrawRay(cameraRay.origin, cameraRay.direction * (maxCameraDistance + 1));
-        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, maxCameraDistance + 1, LayerMask.GetMask("Terrain")))
+        RaycastHit[] cameraHits = Physics.RaycastAll(cameraRay, maxCameraDistance + 1, LayerMask.GetMask("Terrain"));
+        float distance = maxCameraDistance;
+        foreach(RaycastHit hit in cameraHits)
         {
-            playerCam.transform.localPosition = new Vector3(0, 0, -cameraHit.distance + minCameraDistance);
+            if (!hit.collider.isTrigger && hit.distance - minCameraDistance < distance) distance = hit.distance - minCameraDistance; 
         }
-        else playerCam.transform.localPosition = new Vector3(0, 0, -maxCameraDistance);
-        Debug.Log("Grounded: " + grounded + " , Airborne: " + airborne);
+        playerCam.transform.localPosition = new Vector3(0, 0, -distance);
+        // Debug.Log("Grounded: " + grounded);
         grounded = false;
+        blocked = false;
     }
 
     private void LateUpdate()
@@ -170,16 +176,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        airborne = true;
         foreach (ContactPoint contact in collision.contacts)
         {
             if (contact.normal.y > 0.7f)
             {
                 grounded = true;
             }
-            if (contact.normal.y > 0)
+            Vector2 movement2d = new Vector2(movement.x, movement.z);
+            Vector2 contact2d = new Vector2(contact.normal.x, contact.normal.z);
+            if(Vector2.Dot(movement2d, contact2d) < -0.1f && contact2d.magnitude > 0.7f)
             {
-                airborne = false;
+                blocked = true;
             }
         }
     }

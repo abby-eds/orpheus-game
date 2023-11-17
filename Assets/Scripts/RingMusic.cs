@@ -11,6 +11,7 @@ public class RingMusic : MonoBehaviour
     public GameObject indicator;
     public GameObject notePrefab;
     private Animator anim;
+    private Animator lyreAnim;
     private PlayerHealth playerHealth;
     private InteractableDetector interactions;
     public float ringRadius = 100;
@@ -55,6 +56,7 @@ public class RingMusic : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        lyreAnim = transform.GetChild(0).GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
         interactions = GetComponent<InteractableDetector>();
         delay = 1;
@@ -154,8 +156,16 @@ public class RingMusic : MonoBehaviour
             case NoteQuality.Late: Debug.Log("<color=red><b>Late</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
             case NoteQuality.Wrong: Debug.Log("<color=red><b>Wrong Note</b></color>\nStreak: " + streak + " | Song Level: " + songLevel); break;
         }
-        if (streak > 0 && !playerHealth.dead) anim.SetBool("Playing Song", true);
-        else anim.SetBool("Playing Song", false);
+        if (streak > 0 && !playerHealth.dead)
+        {
+            anim.SetBool("Playing Song", true);
+            lyreAnim.SetBool("IsPlaying", true);
+        }
+        else
+        {
+            anim.SetBool("Playing Song", false);
+            lyreAnim.SetBool("IsPlaying", false);
+        }
     }
 
     private void RefreshSong()
