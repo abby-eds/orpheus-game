@@ -20743,6 +20743,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249958118581681425, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9ba681041df0cc84fb0a4c3520d030ff, type: 2}
     - target: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
       propertyPath: m_Name
       value: Gate Guard
