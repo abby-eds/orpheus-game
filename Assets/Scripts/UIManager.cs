@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     private List<Healthbar> healthbars = new List<Healthbar>();
     public GameObject healthbarParent;
     public GameObject healthbarPrefab;
+    public AudioSource backgroundSong;
+    public AudioSource instrumentSong;
 
     [Header("Menus")]
     public GameObject pauseMenu;
@@ -75,6 +77,8 @@ public class UIManager : MonoBehaviour
     {
         paused = true;
         Time.timeScale = 0;
+        backgroundSong.Pause();
+        instrumentSong.Pause();
         pauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
@@ -83,6 +87,8 @@ public class UIManager : MonoBehaviour
     {
         paused = false;
         Time.timeScale = 1;
+        backgroundSong.UnPause();
+        instrumentSong.UnPause();
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
