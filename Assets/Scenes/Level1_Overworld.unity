@@ -492,6 +492,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4090245462202286094, guid: e91522214e45bfb41a6b72b4c03cfec6, type: 3}
   m_PrefabInstance: {fileID: 24021077}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &26011735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+  m_PrefabInstance: {fileID: 1908725452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &26011740
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26011735}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: -0.11
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &26011741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26011735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15436f1ceebdfd6468568ed91e524563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  willpower: 90
+  asleepThreshold: 30
+  charmedThreshold: 60
+  neutralThreshold: 90
+  maxWillpower: 120
+  asleepRegen: 6
+  charmedRegen: 1
+  neutralRegen: 0
+  hostileRegen: 0
+  regenDelayDuration: 3
+  immunityDuration: 0
+  resistaceDuration: 1
 --- !u!1001 &40437332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20644,6 +20695,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906301801}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1908725452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 299.442
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7933535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.60876125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      propertyPath: m_Name
+      value: Gate Guard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 26011740}
+    - targetCorrespondingSourceObject: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 26011741}
+  m_SourcePrefab: {fileID: 100100000, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
 --- !u!1001 &1911342134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23683,100 +23797,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e682b966e3f644392ffbfab511e0e2, type: 3}
---- !u!1001 &1549817533445871520
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 299.442
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -33.041
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7933535
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.60876125
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662364734705612741, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      propertyPath: m_Name
-      value: Gate Guard
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4903238852695554033}
-  m_SourcePrefab: {fileID: 100100000, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
---- !u!1 &1846530522424178480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8764805876951503156, guid: f34034f3a3af3b04bbccb32fa118c1a1, type: 3}
-  m_PrefabInstance: {fileID: 1549817533445871520}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4903238852695554033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846530522424178480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15436f1ceebdfd6468568ed91e524563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  willpower: 90
-  asleepThreshold: 30
-  charmedThreshold: 60
-  neutralThreshold: 90
-  maxWillpower: 120
-  asleepRegen: 6
-  charmedRegen: 1
-  neutralRegen: 0
-  hostileRegen: 0
-  regenDelayDuration: 3
-  immunityDuration: 0
-  resistaceDuration: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 236320351}
-  - {fileID: 1549817533445871520}
   - {fileID: 1989338458}
   - {fileID: 1981717133}
+  - {fileID: 1908725452}
