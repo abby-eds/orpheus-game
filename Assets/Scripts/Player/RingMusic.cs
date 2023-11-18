@@ -62,7 +62,7 @@ public class RingMusic : MonoBehaviour
         lyreAnim = transform.GetChild(0).GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
         interactions = GetComponent<InteractableDetector>();
-        delay = 0f;
+        delay = 1f;
         noteIndex = -1;
         songIndex = 0;
         songs = new List<NoteData>[numSongs];
