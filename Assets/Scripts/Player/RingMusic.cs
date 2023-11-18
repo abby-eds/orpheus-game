@@ -22,6 +22,7 @@ public class RingMusic : MonoBehaviour
     public float songDuration;
     private float songTime;
     private float delay;
+    private float songVolume = 0;
 
     public int numNotes;
     private List<Note> notes = new List<Note>();
@@ -61,30 +62,36 @@ public class RingMusic : MonoBehaviour
         lyreAnim = transform.GetChild(0).GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
         interactions = GetComponent<InteractableDetector>();
-        delay = 1;
+        delay = 0f;
         noteIndex = -1;
         songIndex = 0;
         songs = new List<NoteData>[numSongs];
         indicator.GetComponent<Image>().color = songColors[songIndex];
         indicator.transform.localPosition = new Vector2(0, ringRadius);
         indicator.SetActive(true);
-        songs[0] = new List<NoteData>();
-        songs[1] = new List<NoteData>()
+        songs[0] = new List<NoteData>()
         {
-            new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.5f, true),
+            new NoteData(NoteType.Left, 0.6f, true),
+            new NoteData(NoteType.Left, 1.2f, true),
+            new NoteData(NoteType.Left, 0.6f, true),
+            new NoteData(NoteType.Left, 1.2f, true),
         };
-        songs[2] = new List<NoteData>()
-        {
-            new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.5f, true),
-            new NoteData(NoteType.Left, 0.5f, true),
-        };
-        for (int i = 0; i < numNotes; i++)
-        {
-            songs[0].Add(new NoteData(NoteType.Left, 3f / numNotes, true));
-        }
+        //songs[1] = new List<NoteData>()
+        //{
+        //    new NoteData(NoteType.Left, 0.5f, true),
+        //    new NoteData(NoteType.Left, 0.5f, true),
+        //};
+        //songs[2] = new List<NoteData>()
+        //{
+        //    new NoteData(NoteType.Left, 0.5f, true),
+        //    new NoteData(NoteType.Left, 0.5f, true),
+        //    new NoteData(NoteType.Left, 0.5f, true),
+        //    new NoteData(NoteType.Left, 0.5f, true),
+        //};
+        //for (int i = 0; i < numNotes; i++)
+        //{
+        //    songs[0].Add(new NoteData(NoteType.Left, 3f / numNotes, true));
+        //}
         songDuration = GetSongDuration();
     }
 
@@ -144,7 +151,9 @@ public class RingMusic : MonoBehaviour
         if (streak > streakMax) streak = streakMax;
         if (streak < 0) streak = 0;
 
-        instrumentSong.volume = (float)streak / streakMax;
+        if (streak > 0) songVolume = 0.5f + 0.5f * streak / streakMax;
+        else songVolume = 0;
+        
 
         if (streak >= level3Threshold) songLevel = 3;
         else if (streak >= level2Threshold) songLevel = 2;
@@ -176,7 +185,7 @@ public class RingMusic : MonoBehaviour
     {
         songTime = 0;
         songLevel = 0;
-        delay = 1;
+        delay = 0f;
         noteIndex = -1;
         RemoveAllNotes();
         indicator.GetComponent<Image>().color = songColors[songIndex];
@@ -216,6 +225,29 @@ public class RingMusic : MonoBehaviour
     {
         if (Time.timeScale > 0)
         {
+            // Advance the overall song time and spawn notes as needed
+            songTime += Time.deltaTime;
+            if (songTime >= songDuration) songTime -= songDuration;
+            if (noteIndex + 1 < songs[songIndex].Count)
+            {
+                delay -= Time.deltaTime;
+                if (delay <= 0)
+                {
+                    Debug.Log("Spawning Note");
+                    if (noteIndex == -1)
+                    {
+                        backgroundSong.Play();
+                        instrumentSong.Play();
+                    }
+                    noteIndex++;
+                    Note p = new Note(songs[songIndex][noteIndex].noteType, songDuration, songs[songIndex][noteIndex].loop);
+                    notes.Add(p);
+                    p.visual = Instantiate(notePrefab, ring.transform);
+                    p.visual.GetComponent<FadeIn>().targetColor = songColors[songIndex];
+                    delay = songs[songIndex][noteIndex].delay;
+                }
+            }
+
             // Update time for all notes
             foreach (Note p in notes)
             {
@@ -230,23 +262,6 @@ public class RingMusic : MonoBehaviour
                 else RemoveNote(finished);
                 HitNote(NoteQuality.Late);
                 finished = null;
-            }
-
-            // Advance the overall song time and spawn notes as needed
-            songTime += Time.deltaTime;
-            if (songTime >= songDuration) songTime -= songDuration;
-            if (noteIndex + 1 < songs[songIndex].Count)
-            {
-                delay -= Time.deltaTime;
-                if (delay <= 0)
-                {
-                    noteIndex++;
-                    Note p = new Note(songs[songIndex][noteIndex].noteType, songDuration, songs[songIndex][noteIndex].loop);
-                    notes.Add(p);
-                    p.visual = Instantiate(notePrefab, ring.transform);
-                    p.visual.GetComponent<FadeIn>().targetColor = songColors[songIndex];
-                    delay = songs[songIndex][noteIndex].delay;
-                }
             }
 
             if (!playerHealth.dead)
@@ -298,6 +313,7 @@ public class RingMusic : MonoBehaviour
                 }
             }
         }
+        instrumentSong.volume = Mathf.Lerp(instrumentSong.volume, songVolume, 0.1f);
     }
 
     enum NoteQuality

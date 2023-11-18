@@ -20,7 +20,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music
+  m_Name: BackgroundMusic
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ff6d970c2b70327438427013450fae6e
   m_Children: []
@@ -33,6 +33,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-6043361278357623787
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8fdc966946490314cb80262dc11fb923
+  m_EffectName: Attenuation
+  m_MixLevel: ca884fb14fb2f5742b7708e2940ee9fb
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -53,6 +67,7 @@ AudioMixerController:
   - guids:
     - dd7ff2e3b90e81143994d8f514529a67
     - ff6d970c2b70327438427013450fae6e
+    - c1cdc162296f01e4980dacffdfedce2e
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -67,6 +82,7 @@ AudioMixerGroupController:
   m_GroupID: dd7ff2e3b90e81143994d8f514529a67
   m_Children:
   - {fileID: -7801082478028362499}
+  - {fileID: 7122230686720824372}
   m_Volume: 471781ac5e8623f44adc1f09d3a74de8
   m_Pitch: 34a1b0781ad8b3e4a9bb1a0ef54cc202
   m_Send: 00000000000000000000000000000000
@@ -99,5 +115,27 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 8dca43196565a7a42b754707010cc4a7
-  m_FloatValues: {}
+  m_FloatValues:
+    fbd765252eef99e4b8c896f75b8c33e8: 0
+    471781ac5e8623f44adc1f09d3a74de8: 0
+    bd3b278e4f263d348964ab1be5216ad4: 0
   m_TransitionOverrides: {}
+--- !u!243 &7122230686720824372
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: InstrumentMusic
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c1cdc162296f01e4980dacffdfedce2e
+  m_Children: []
+  m_Volume: bd3b278e4f263d348964ab1be5216ad4
+  m_Pitch: 74f8ab7d3fdd10b4aba6d2f6943a0d87
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6043361278357623787}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
