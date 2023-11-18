@@ -3878,7 +3878,7 @@ GameObject:
   - component: {fileID: 7975687776691471142}
   - component: {fileID: 5275956435326586025}
   m_Layer: 0
-  m_Name: Ragdoll Euridice 2
+  m_Name: Ragdoll Euridice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
