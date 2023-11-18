@@ -6664,7 +6664,7 @@ GameObject:
   - component: {fileID: 1995796211701545414}
   - component: {fileID: 663229879795176230}
   m_Layer: 0
-  m_Name: Guard
+  m_Name: Gate Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6699,7 +6699,7 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
