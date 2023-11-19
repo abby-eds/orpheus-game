@@ -27,18 +27,17 @@ public class GateGuardAI : Charmable
 
     protected override void OnNeutral()
     {
-
+        gate.gateAngleChange = -1;
     }
 
     protected override void OnCharmed()
     {
         gate.gateAngleChange = 1;
         
-        gate.gateAngleChange = 0;
     }
 
     protected override void OnAsleep()
     {
-
+        gate.gateAngleChange = 0;
     }
 }

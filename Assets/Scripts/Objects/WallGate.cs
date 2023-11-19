@@ -5,8 +5,9 @@ using UnityEngine;
 public class WallGate : MonoBehaviour
 {
     public float gateAngleChange = 0;
-    public float currentGateAngle = 60;
+    public float currentGateAngle = 0;
     public GameObject gate;
+    private bool move;
 
     // Start is called before the first frame update
     void Start()
@@ -15,9 +16,27 @@ public class WallGate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        gate.transform.Rotate(new Vector3(0, gateAngleChange, 0));
-        currentGateAngle = gate.transform.localRotation.eulerAngles.y;
+        move = false;
+      
+        if (gateAngleChange > 0 && currentGateAngle < 90)
+        {
+            // opening & not all the way open
+            move = true;
+        } else if (gateAngleChange < 0 && currentGateAngle > 0)
+        {
+            // closing & not all the way closed
+            move = true;
+        }
+
+        if (move)
+        {
+            gate.transform.Rotate(new Vector3(0, gateAngleChange, 0));
+            currentGateAngle += gateAngleChange;
+        }
+
+        
+
     }
 }
