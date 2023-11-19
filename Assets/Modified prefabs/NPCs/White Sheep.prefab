@@ -3090,7 +3090,7 @@ NavMeshAgent:
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.13
+  m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &6604935757294379401
@@ -3131,6 +3131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
+  maxWaitTime: 6
 --- !u!114 &5596970257516481566
 MonoBehaviour:
   m_ObjectHideFlags: 0

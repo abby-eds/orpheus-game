@@ -3525,6 +3525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
+  maxWaitTime: 6
 --- !u!114 &2559666017234666070
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class RandomWander : MonoBehaviour
     private NavMeshAgent agent;
     public float range = 10.0f;
     private float minWaitTime = 0;
-    private float maxWaitTime = 4f;
+    public float maxWaitTime = 4f;
     private bool waiting = true;
     private float waitTime = 0;
     private float walkSpeed = 3f;
