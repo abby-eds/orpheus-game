@@ -28376,8 +28376,9 @@ GameObject:
   - component: {fileID: 2523363528271450416}
   - component: {fileID: 2523363528271450418}
   - component: {fileID: 2523363528271450420}
-  - component: {fileID: 2523363528271450419}
   - component: {fileID: 2523363528271450421}
+  - component: {fileID: 2523363528271450422}
+  - component: {fileID: 2523363528271450419}
   m_Layer: 0
   m_Name: Goat
   m_TagString: Untagged
@@ -28502,6 +28503,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 360
+--- !u!114 &2523363528271450422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523363528271450410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b1e523759e9f34a82a86c86d3da186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2523363528282174106
 GameObject:
   m_ObjectHideFlags: 0
