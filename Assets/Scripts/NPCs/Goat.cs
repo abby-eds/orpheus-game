@@ -1,49 +1,64 @@
-// RandomPointOnNavMesh
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Goat : MonoBehaviour
+public class Goat : Charmable
 {
-    public NavMeshAgent agent;
-    public float range = 10.0f;
+    private RandomWander wander;
+    private NavMeshAgent agent;
+    private Animator anim;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
+        wander = GetComponent<RandomWander>();
         agent = GetComponent<NavMeshAgent>();
+        wander.setAgent(agent);
+        anim = GetComponent<Animator>();
     }
 
-    private void Update()
+    // Update is called once per frame
+    protected override void Update()
     {
-        //print("speed" + agent.speed);
-        //print("path" + agent.pathPending);
-        //print("rem" + agent.remainingDistance);
-        //print("stop" + agent.stoppingDistance);
-        if (!agent.pathPending && agent.remainingDistance < agent.stoppingDistance)
+        base.Update();
+
+        switch(Status)
         {
-            // at point, make new destination
-            Vector3 point;
-            if (RandomPoint(agent.transform.position, range, out point))
-            {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-                 agent.SetDestination(point);
-               
-            }
+            case CharmStatus.Hostile:
+                break;
+
+            case CharmStatus.Neutral:
+                // wander around
+                wander.Wander();
+                break;
+            case CharmStatus.Charmed:
+                // this should never happen
+                break;
+            case CharmStatus.Asleep:
+                // don't move at all
+                break;
         }
-        
+        anim.SetFloat("Speed", agent.velocity.sqrMagnitude);
     }
 
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    protected override void OnHostile()
     {
-        Vector3 randomPoint = center + Random.insideUnitSphere * range;
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-        {
-            result = hit.position;
-            return true;
-        }
 
-        result = Vector3.zero;
-        return false;
+    }
+
+    protected override void OnNeutral()
+    {
+    }
+
+    protected override void OnCharmed()
+    {
+
+
+    }
+
+    protected override void OnAsleep()
+    {
 
     }
 }

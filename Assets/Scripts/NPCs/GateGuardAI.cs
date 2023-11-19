@@ -17,7 +17,6 @@ public class GateGuardAI : Charmable
     {
         base.Update();
         
-        
     }
 
     protected override void OnHostile()

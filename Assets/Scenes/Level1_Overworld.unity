@@ -5833,6 +5833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sheep
       objectReference: {fileID: 0}
+    - target: {fileID: 8185963723970810583, guid: c36cdfacfaab1584c887c605bc8e7b2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22217,6 +22221,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5114113375370423972, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
+      propertyPath: onStartScreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9064058565157435317, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 277.9
@@ -28367,6 +28375,7 @@ GameObject:
   - component: {fileID: 2523363528271450417}
   - component: {fileID: 2523363528271450416}
   - component: {fileID: 2523363528271450418}
+  - component: {fileID: 2523363528271450420}
   - component: {fileID: 2523363528271450419}
   m_Layer: 0
   m_Name: Goat
@@ -28394,7 +28403,7 @@ NavMeshAgent:
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: -0.13
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &2523363528271450417
@@ -28432,7 +28441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7657876f885aff143baef2c421427088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 2523363528271450416}
   range: 10
 --- !u!95 &2523363528271450419
 Animator:
@@ -28444,7 +28452,7 @@ Animator:
   m_GameObject: {fileID: 2523363528271450410}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1215e98cc02a91340b3a9af5af091f14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 67dfe180f81166c4795308a309178971, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -28455,6 +28463,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2523363528271450420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523363528271450410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2731cf35b589f94aafd30582eafc045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  willpower: 120
+  asleepThreshold: 60
+  charmedThreshold: 60
+  neutralThreshold: 90
+  maxWillpower: 120
+  asleepRegen: 1
+  charmedRegen: 1
+  neutralRegen: 1
+  hostileRegen: 1
+  regenDelayDuration: 3
+  immunityDuration: 0
+  resistaceDuration: 1
+  healthbarOffset: 2
 --- !u!1 &2523363528282174106
 GameObject:
   m_ObjectHideFlags: 0
