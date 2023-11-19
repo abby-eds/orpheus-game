@@ -20,9 +20,9 @@ public class Goat : Charmable
         vision = GetComponent<Vision>();
         wander.setAgent(agent);
         ram = GetComponent<Ram>();
-        ram.setAgent(agent);
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        ram.setup(agent, player, this.gameObject);
     }
 
     // Update is called once per frame

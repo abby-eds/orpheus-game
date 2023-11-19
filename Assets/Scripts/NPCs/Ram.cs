@@ -6,10 +6,14 @@ public class Ram : MonoBehaviour
 {
     private NavMeshAgent agent;
     private float ramSpeed = 12f;
+    private GameObject player;
+    private GameObject goat;
 
-    public void setAgent(NavMeshAgent agent)
+    public void setup(NavMeshAgent agent, GameObject player, GameObject goat)
     {
         this.agent = agent;
+        this.goat = goat;
+        this.player = player;
     }
     public bool goRam(GameObject player)
     {
@@ -17,7 +21,8 @@ public class Ram : MonoBehaviour
         agent.speed = ramSpeed;
         agent.SetDestination(player.transform.position);
         
-        if (agent.remainingDistance < 1)
+        float distance = Vector3.Distance(goat.transform.position, player.transform.position);
+        if (distance < 1)
         {
             // hit em
             player.GetComponent<PlayerHealth>().TakeDamage();
