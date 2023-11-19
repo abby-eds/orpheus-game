@@ -28377,6 +28377,7 @@ GameObject:
   - component: {fileID: 2523363528271450418}
   - component: {fileID: 2523363528271450420}
   - component: {fileID: 2523363528271450419}
+  - component: {fileID: 2523363528271450421}
   m_Layer: 0
   m_Name: Goat
   m_TagString: Untagged
@@ -28488,6 +28489,19 @@ MonoBehaviour:
   immunityDuration: 0
   resistaceDuration: 1
   healthbarOffset: 2
+--- !u!114 &2523363528271450421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523363528271450410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb8bb69968ecf148a6ec79fa6d72a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 360
 --- !u!1 &2523363528282174106
 GameObject:
   m_ObjectHideFlags: 0

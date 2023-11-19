@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyVision : MonoBehaviour
+public class Vision : MonoBehaviour
 {
-    private float fieldOfViewAngle = 110f;
-    public bool playerInSight = false;
+    [Range(0, 360)]
+    public float fieldOfViewAngle = 110f;
+    private bool playerInSight = false;
     private GameObject player;
     private float sightTimeStep = 0.5f;
+
+    public bool isPlayerInSight()
+    {
+        return playerInSight;
+    }
     private void CheckSight()
     {
         playerInSight = false;
