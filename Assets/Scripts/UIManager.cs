@@ -13,9 +13,11 @@ public class UIManager : MonoBehaviour
     public AudioSource instrumentSong;
 
     [Header("Menus")]
+    public GameObject startScreen;
     public GameObject pauseMenu;
     public GameObject controlsMenu;
     public GameObject settingsMenu;
+    public bool onStartScreen;
     private bool paused;
     private bool backMenu;
 
@@ -34,7 +36,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (onStartScreen) Pause();
+        else Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -48,7 +51,7 @@ public class UIManager : MonoBehaviour
         }
         foreach(Healthbar h in healthbars)
         {
-            h.transform.localPosition = (Camera.main.WorldToScreenPoint(h.charmable.transform.position + Vector3.up * 1.5f) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
+            h.UpdatePosition();
         }
     }
 
@@ -79,7 +82,8 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         backgroundSong.Pause();
         instrumentSong.Pause();
-        pauseMenu.SetActive(true);
+        if (onStartScreen) startScreen.SetActive(true);
+        else pauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
 
@@ -90,14 +94,21 @@ public class UIManager : MonoBehaviour
         backgroundSong.UnPause();
         instrumentSong.UnPause();
         pauseMenu.SetActive(false);
-        controlsMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void StartGame()
+    {
+        startScreen.SetActive(false);
+        onStartScreen = false;
+        Unpause();
     }
 
     public void BackToPauseMenu()
     {
         backMenu = false;
-        pauseMenu.SetActive(true);
+        if (onStartScreen) startScreen.SetActive(true);
+        else pauseMenu.SetActive(true);
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
     }
@@ -107,6 +118,7 @@ public class UIManager : MonoBehaviour
         backMenu = true;
         controlsMenu.SetActive(true);
         pauseMenu.SetActive(false);
+        startScreen.SetActive(false);
     }
 
     public void ToSettingsMenu()
@@ -114,6 +126,7 @@ public class UIManager : MonoBehaviour
         backMenu = true;
         settingsMenu.SetActive(true);
         pauseMenu.SetActive(false);
+        startScreen.SetActive(false);
     }
 
     public void Exit()

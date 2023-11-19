@@ -323,6 +323,7 @@ MonoBehaviour:
   regenDelayDuration: 5
   immunityDuration: 0
   resistaceDuration: 1
+  healthbarOffset: 1
 --- !u!1 &587406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   regenDelayDuration: 5
   immunityDuration: 0
   resistaceDuration: 1
+  healthbarOffset: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +612,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81406f164fbccc24a9a2c6c46c67861d, type: 2}
+  - {fileID: 2100000, guid: 6086dcb0db7766b4e9d081b1c6860fb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -655,11 +657,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!82 &772210040 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4329531925430459580, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-  m_PrefabInstance: {fileID: 3875701403594279523}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866481550
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +718,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81406f164fbccc24a9a2c6c46c67861d, type: 2}
+  - {fileID: 2100000, guid: 3cdd3d921df774a0caa644e951e6d2c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -827,7 +824,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81406f164fbccc24a9a2c6c46c67861d, type: 2}
+  - {fileID: 2100000, guid: 6086dcb0db7766b4e9d081b1c6860fb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -933,7 +930,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81406f164fbccc24a9a2c6c46c67861d, type: 2}
+  - {fileID: 2100000, guid: 6086dcb0db7766b4e9d081b1c6860fb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1039,7 +1036,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81406f164fbccc24a9a2c6c46c67861d, type: 2}
+  - {fileID: 2100000, guid: 6086dcb0db7766b4e9d081b1c6860fb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1216,11 +1213,7 @@ MonoBehaviour:
   regenDelayDuration: 5
   immunityDuration: 0
   resistaceDuration: 1
---- !u!82 &1674941444 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6829739211029010080, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-  m_PrefabInstance: {fileID: 3875701403594279523}
-  m_PrefabAsset: {fileID: 0}
+  healthbarOffset: 1
 --- !u!1 &1891716039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,70 +1327,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[0].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[0].g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[0].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[1].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[1].g
-      value: 0.6666665
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[1].r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[2].g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141019427290970923, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: songColors.Array.data[2].r
-      value: 0.33333325
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329531925430459580, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329531925430459580, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ba77bc9a556f799448b0d060c56c0039, type: 3}
-    - target: {fileID: 4329531925430459580, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329531925430459580, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 7122230686720824372, guid: 02d1b178e820044429d22f645761d36b, type: 2}
-    - target: {fileID: 5114113375370423972, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: backgroundSong
-      value: 
-      objectReference: {fileID: 1674941444}
-    - target: {fileID: 5114113375370423972, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: instrumentSong
-      value: 
-      objectReference: {fileID: 772210040}
-    - target: {fileID: 6829739211029010080, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c4ee8fa4b9d12ad45bb5940d2c742966, type: 3}
-    - target: {fileID: 6829739211029010080, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9064058565157435317, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
