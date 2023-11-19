@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public bool hasKey = false;
     public bool nearby = false;
     private bool open = false;
     private Animator anim;
