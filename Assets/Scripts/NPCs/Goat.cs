@@ -58,6 +58,7 @@ public class Goat : Charmable
                 break;
             case CharmStatus.Asleep:
                 // don't move at all
+                agent.ResetPath();
                 break;
         }
         anim.SetFloat("Speed", agent.velocity.sqrMagnitude);

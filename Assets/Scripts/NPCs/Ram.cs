@@ -5,8 +5,7 @@ using UnityEngine.AI;
 public class Ram : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private float ramSpeed = 4f;
-    private float stopSpeed = 0f;
+    private float ramSpeed = 12f;
 
     public void setAgent(NavMeshAgent agent)
     {
@@ -22,6 +21,7 @@ public class Ram : MonoBehaviour
         {
             // hit em
             player.GetComponent<PlayerHealth>().TakeDamage();
+            agent.ResetPath();
             return true;
         }
 

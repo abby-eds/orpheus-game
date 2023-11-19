@@ -28482,9 +28482,9 @@ MonoBehaviour:
   charmedThreshold: 60
   neutralThreshold: 90
   maxWillpower: 120
-  asleepRegen: 1
+  asleepRegen: 4
   charmedRegen: 1
-  neutralRegen: 1
+  neutralRegen: 2
   hostileRegen: 1
   regenDelayDuration: 3
   immunityDuration: 0
