@@ -25,7 +25,7 @@ public class Goat : MonoBehaviour
             if (RandomPoint(agent.transform.position, range, out point))
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-                agent.destination = point;
+                 agent.SetDestination(point);
                
             }
         }
