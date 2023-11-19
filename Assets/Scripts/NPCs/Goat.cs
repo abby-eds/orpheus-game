@@ -71,6 +71,7 @@ public class Goat : Charmable
 
     protected override void OnNeutral()
     {
+        agent.ResetPath();
     }
 
     protected override void OnCharmed()
