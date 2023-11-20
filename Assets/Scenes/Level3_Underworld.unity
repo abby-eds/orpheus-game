@@ -1622,7 +1622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &49786460
 Transform:
   m_ObjectHideFlags: 0
@@ -40579,6 +40579,8 @@ MonoBehaviour:
   ring: {fileID: 0}
   indicator: {fileID: 0}
   notePrefab: {fileID: 831845964333837362, guid: f6c578c1ee6b03040b260263693f9c2f, type: 3}
+  backgroundSong: {fileID: 0}
+  instrumentSong: {fileID: 0}
   ringRadius: 200
   songDuration: 3
   numNotes: 6
@@ -99999,7 +100001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2093635678
 Transform:
   m_ObjectHideFlags: 0
