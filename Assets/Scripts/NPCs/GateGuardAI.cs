@@ -26,13 +26,14 @@ public class GateGuardAI : Charmable
 
     protected override void OnNeutral()
     {
+        if (gate.gateAngleChange != -1) GetComponent<Animator>().SetTrigger("Interact");
         gate.gateAngleChange = -1;
     }
 
     protected override void OnCharmed()
     {
+        if (gate.gateAngleChange != 1) GetComponent<Animator>().SetTrigger("Interact");
         gate.gateAngleChange = 1;
-        
     }
 
     protected override void OnAsleep()
