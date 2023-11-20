@@ -49,7 +49,11 @@ public class UIManager : MonoBehaviour
             else if (paused) Unpause();
             else Pause();
         }
-        foreach(Healthbar h in healthbars)
+    }
+
+    private void LateUpdate()
+    {
+        foreach (Healthbar h in healthbars)
         {
             h.UpdatePosition();
         }

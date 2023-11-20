@@ -14,6 +14,8 @@ public class RingMusic : MonoBehaviour
     public AudioSource instrumentSong;
     private Animator anim;
     public Animator lyreAnim;
+    public GameObject lyre;
+    public GameObject mockLyre;
     private PlayerHealth playerHealth;
     private InteractableDetector interactions;
     public float ringRadius = 100;
@@ -114,7 +116,8 @@ public class RingMusic : MonoBehaviour
     {
         int streakEnabled = (songIndex == 0 && interactions.CharmablesInRange())
                           || (songIndex == 1 && interactions.SpectralsInRange())
-                          || (songIndex == 2 && interactions.SculptablesInRange()) ? 1 : 0;
+                          || (songIndex == 2 && interactions.SculptablesInRange())
+                          || streak == 0 ? 1 : 0;
         switch (quality)
         {
             case NoteQuality.Perfect: streak += streakPerfect * streakEnabled; break;
@@ -165,6 +168,10 @@ public class RingMusic : MonoBehaviour
         delay = 0f;
         noteIndex = 0;
         RemoveAllNotes();
+        backgroundSong.Stop();
+        instrumentSong.Stop();
+        backgroundSong.Play();
+        instrumentSong.Play();
         indicator.GetComponent<Image>().color = songColors[songIndex];
         songDuration = songDurations[songIndex];
     }
@@ -262,7 +269,7 @@ public class RingMusic : MonoBehaviour
             if (!playerHealth.dead)
             {
                 // Check for player input to switch songs
-                if (Input.mouseScrollDelta.y != 0)
+                if (Input.mouseScrollDelta.y != 0 && numSongs > 1)
                 {
                     if (Input.mouseScrollDelta.y > 0)
                     {
