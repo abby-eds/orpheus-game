@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
+    private float movementMultiplier;
     public float rotateSpeed;
     public float jumpHeight = 1;
     public Transform cameraAnchor;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private Animator anim;
+    private RingMusic ringMusic;
     private PlayerHealth playerHealth;
     private float movementX;
     private float movementZ;
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        ringMusic = GetComponent<RingMusic>();
         playerHealth = GetComponent<PlayerHealth>();
         jumpVelocity = Mathf.Sqrt(Physics.gravity.magnitude * 2 * jumpHeight);
     }
@@ -133,9 +136,10 @@ public class PlayerMovement : MonoBehaviour
 
             // footRay = new Ray(transform.position + Vector3.up, movement);
             // Debug.DrawRay(footRay.origin, footRay.direction * 0.5f, Color.red);
+            movementMultiplier = ((ringMusic.songLevel > 0) ? 0.75f : 1);
             if (!blocked) // This looks dumb but it excludes the case of when you're in contact with a slope
             {
-                rb.AddForce(movement * movementSpeed - horizontalVelocity, ForceMode.VelocityChange);
+                rb.AddForce(movement * movementSpeed * movementMultiplier - horizontalVelocity, ForceMode.VelocityChange);
             }
         }
         else
@@ -152,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
         }
         anim.SetFloat("Forwards", movementZ);
         anim.SetFloat("Sideways", movementX);
+        anim.SetFloat("Movement Speed", movementMultiplier);
 
         Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
         Debug.DrawRay(cameraRay.origin, cameraRay.direction * (maxCameraDistance + 1));

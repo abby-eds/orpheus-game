@@ -53,7 +53,7 @@ public class RingMusic : MonoBehaviour
     public int level2Threshold;
     public int level3Threshold;
     public int streakMax;
-    private int songLevel;
+    public int songLevel { get; private set; }
 
     [Header("Song Multipliers")]
     public float charmMultiplier;
