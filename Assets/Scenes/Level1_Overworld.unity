@@ -25688,7 +25688,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5114113375370423972, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
       propertyPath: onStartScreen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9064058565157435317, guid: 244444f1ce5996b40a199462fc6f844b, type: 3}
       propertyPath: m_LocalPosition.x
