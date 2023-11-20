@@ -131,7 +131,7 @@ public class RingMusic : MonoBehaviour
         if (streak > streakMax) streak = streakMax;
         if (streak < 0) streak = 0;
 
-        if (songLevel > 0) songVolume = 0.4f + 0.2f * songLevel;
+        if (songLevel > 0) songVolume = 0.7f + 0.1f * songLevel;
         else songVolume = 0;
         
 
@@ -315,6 +315,11 @@ public class RingMusic : MonoBehaviour
                 }
             }
         }
+        if (backgroundSong.volume < 0.8f)
+        {
+            backgroundSong.volume += 0.1f * Time.deltaTime;
+            if (backgroundSong.volume > 0.8f) backgroundSong.volume = 0.8f;
+        }
         if (instrumentSong.volume < songVolume)
         {
             instrumentSong.volume += Time.deltaTime;
@@ -325,7 +330,6 @@ public class RingMusic : MonoBehaviour
             instrumentSong.volume -= 0.2f * Time.deltaTime;
             if (instrumentSong.volume < songVolume) instrumentSong.volume = songVolume;
         }
-        //instrumentSong.volume = Mathf.Lerp(instrumentSong.volume, songVolume, 0.02f);
     }
 
     enum NoteQuality

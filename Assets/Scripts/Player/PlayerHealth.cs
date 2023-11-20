@@ -71,6 +71,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 dead = true;
                 anim.SetBool("Die", true);
+                UIManager.UI.Invoke("ToGameOverMenu", 2);
             }
         }
     }
