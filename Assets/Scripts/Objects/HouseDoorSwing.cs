@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     public bool nearby = false;
     private bool open = false;
     private Animator anim;
+    private GameObject player;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Door : MonoBehaviour
         {
             open = !open;
             anim.SetBool("Open", open);
+            if (player != null) player.GetComponent<Animator>().SetTrigger("Interact");
         }
     }
 
@@ -26,6 +28,7 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            player = other.gameObject;
             nearby = true;
         }
     }
@@ -34,6 +37,7 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            player = null;
             nearby = false;
         }
     }
