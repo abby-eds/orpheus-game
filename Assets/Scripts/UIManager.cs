@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager UI { get; private set; }
     private List<Healthbar> healthbars = new List<Healthbar>();
+    public PlayerHealth playerHealth;
     public GameObject healthbarParent;
     public GameObject healthbarPrefab;
     public AudioSource backgroundSong;
     public AudioSource instrumentSong;
 
     [Header("Menus")]
+    public GameObject startScreen;
+    public GameObject startMenu;
     public GameObject pauseMenu;
     public GameObject controlsMenu;
     public GameObject settingsMenu;
+    public GameObject gameOverMenu;
+    public bool onStartScreen;
     private bool paused;
     private bool backMenu;
 
@@ -34,21 +40,36 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (onStartScreen)
+        {
+            Pause();
+            startScreen.SetActive(true);
+            startMenu.SetActive(true);
+        }
+        else
+        {
+            startScreen.SetActive(false);
+            startMenu.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !playerHealth.dead)
         {
             if (backMenu) BackToPauseMenu();
             else if (paused) Unpause();
             else Pause();
         }
-        foreach(Healthbar h in healthbars)
+    }
+
+    private void LateUpdate()
+    {
+        foreach (Healthbar h in healthbars)
         {
-            h.transform.localPosition = (Camera.main.WorldToScreenPoint(h.charmable.transform.position + Vector3.up * 1.5f) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
+            h.UpdatePosition();
         }
     }
 
@@ -79,7 +100,8 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         backgroundSong.Pause();
         instrumentSong.Pause();
-        pauseMenu.SetActive(true);
+        if (onStartScreen) startMenu.SetActive(true);
+        else pauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
 
@@ -90,14 +112,22 @@ public class UIManager : MonoBehaviour
         backgroundSong.UnPause();
         instrumentSong.UnPause();
         pauseMenu.SetActive(false);
-        controlsMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void StartGame()
+    {
+        startMenu.SetActive(false);
+        onStartScreen = false;
+        startScreen.SetActive(false);
+        Unpause();
     }
 
     public void BackToPauseMenu()
     {
         backMenu = false;
-        pauseMenu.SetActive(true);
+        if (onStartScreen) startMenu.SetActive(true);
+        else pauseMenu.SetActive(true);
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
     }
@@ -107,6 +137,7 @@ public class UIManager : MonoBehaviour
         backMenu = true;
         controlsMenu.SetActive(true);
         pauseMenu.SetActive(false);
+        startMenu.SetActive(false);
     }
 
     public void ToSettingsMenu()
@@ -114,6 +145,18 @@ public class UIManager : MonoBehaviour
         backMenu = true;
         settingsMenu.SetActive(true);
         pauseMenu.SetActive(false);
+        startMenu.SetActive(false);
+    }
+
+    public void ToGameOverMenu()
+    {
+        gameOverMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Exit()

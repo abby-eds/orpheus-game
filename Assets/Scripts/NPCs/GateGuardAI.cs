@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GateGuardAI : Charmable
 {
+    public WallGate gate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,7 @@ public class GateGuardAI : Charmable
     protected override void Update()
     {
         base.Update();
+        
     }
 
     protected override void OnHostile()
@@ -23,16 +26,18 @@ public class GateGuardAI : Charmable
 
     protected override void OnNeutral()
     {
-
+        if (gate.gateAngleChange != -1) GetComponent<Animator>().SetTrigger("Interact");
+        gate.gateAngleChange = -1;
     }
 
     protected override void OnCharmed()
     {
-
+        if (gate.gateAngleChange != 1) GetComponent<Animator>().SetTrigger("Interact");
+        gate.gateAngleChange = 1;
     }
 
     protected override void OnAsleep()
     {
-
+        gate.gateAngleChange = 0;
     }
 }

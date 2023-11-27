@@ -31,6 +31,8 @@ public class Charmable : MonoBehaviour
     public float resistaceDuration = 1;
     private float resistanceTime = 0;
 
+    public float healthbarOffset = 2;
+
     public CharmStatus Status { get; private set; }
 
     // Start is called before the first frame update

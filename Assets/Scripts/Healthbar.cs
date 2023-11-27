@@ -46,4 +46,10 @@ public class Healthbar : MonoBehaviour
         neutralBar.value = charmable.willpower;
         hostileBar.value = charmable.willpower;
     }
+
+    public void UpdatePosition()
+    {
+        Vector3 enemyPosition = charmable.transform.position + Vector3.up * charmable.healthbarOffset;
+        transform.localPosition = (Camera.main.WorldToScreenPoint(enemyPosition) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
+    }
 }

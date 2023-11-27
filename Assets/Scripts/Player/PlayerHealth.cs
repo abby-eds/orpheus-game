@@ -16,8 +16,8 @@ public class PlayerHealth : MonoBehaviour
     public float healthDisplayDuration = 1;
     private float healthDisplayTimer;
 
-    private Color fullHeart = Color.HSVToRGB(0, 0.8f, 0.8f);
-    private Color emptyHeart = Color.HSVToRGB(0, 0.4f, 0.2f);
+    public Color fullHeart;
+    public Color emptyHeart;
 
     public bool takeDamage;
     public bool heal;
@@ -71,6 +71,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 dead = true;
                 anim.SetBool("Die", true);
+                UIManager.UI.Invoke("ToGameOverMenu", 2);
             }
         }
     }
