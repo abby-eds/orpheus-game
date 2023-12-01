@@ -81,6 +81,17 @@ public class RingMusic : MonoBehaviour
             new NoteData(NoteType.Left, 2.4f, true),
         };
         songDurations[0] = 3.6f;
+
+        songs[1] = new List<NoteData>()
+        {
+            new NoteData(NoteType.Left, 0.5f, true),
+            new NoteData(NoteType.Left, 1f, true),
+            new NoteData(NoteType.Left, 1.2f, true),
+             new NoteData(NoteType.Left, 1.5f, true),
+            new NoteData(NoteType.Left, 2f, true)
+        };
+        songDurations[1] = 2f;
+
         songDuration = songDurations[songIndex];
     }
 
