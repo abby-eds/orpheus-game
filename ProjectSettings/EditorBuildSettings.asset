@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level1_Overworld.unity
+    guid: b3e4f7ff967b5b141b577ee80ddcfe89
+  - enabled: 1
+    path: Assets/Scenes/Level2_Descent.unity
+    guid: c8157cbc4a8f62e4d9394fb3f5a3d174
+  - enabled: 1
+    path: Assets/Scenes/Level2.5_Mines.unity
+    guid: ee1317e8012b49f4d800956c93e9e1d2
+  - enabled: 1
+    path: Assets/Scenes/Level3_Underworld.unity
+    guid: ca788daa108d44513a0a6f1f5ce69134
   m_configObjects: {}

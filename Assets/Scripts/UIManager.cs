@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !playerHealth.dead)
         {
             if (backMenu) BackToPauseMenu();
-            else if (paused) Unpause();
+            else if (paused && !onStartScreen) Unpause();
             else Pause();
         }
     }
@@ -156,7 +156,7 @@ public class UIManager : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneTransition.Transition.TransitionToScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Exit()

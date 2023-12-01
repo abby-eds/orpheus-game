@@ -12,6 +12,8 @@ public class RingMusic : MonoBehaviour
     public GameObject notePrefab;
     public AudioSource backgroundSong;
     public AudioSource instrumentSong;
+    public AudioClip[] backgroundSongs;
+    public AudioClip[] instrumentSongs;
     private Animator anim;
     public Animator lyreAnim;
     public GameObject lyre;
@@ -81,6 +83,21 @@ public class RingMusic : MonoBehaviour
             new NoteData(NoteType.Left, 2.4f, true),
         };
         songDurations[0] = 3.6f;
+        songs[1] = new List<NoteData>()
+        {
+            new NoteData(NoteType.Left, 0f, true),
+            new NoteData(NoteType.Left, 0.25f, true),
+            new NoteData(NoteType.Left, 0.5f, true),
+            new NoteData(NoteType.Left, 1f, true),
+            new NoteData(NoteType.Left, 1.5f, true),
+            new NoteData(NoteType.Left, 2.0f, true),
+            new NoteData(NoteType.Left, 2.25f, true),
+            new NoteData(NoteType.Left, 2.5f, true),
+            new NoteData(NoteType.Left, 3f, true),
+            new NoteData(NoteType.Left, 3.5f, true),
+        };
+        songDurations[0] = 3.6f;
+        songDurations[1] = 4.0f;
         songDuration = songDurations[songIndex];
     }
 
@@ -170,6 +187,8 @@ public class RingMusic : MonoBehaviour
         RemoveAllNotes();
         backgroundSong.Stop();
         instrumentSong.Stop();
+        backgroundSong.clip = backgroundSongs[songIndex];
+        instrumentSong.clip = instrumentSongs[songIndex];
         backgroundSong.Play();
         instrumentSong.Play();
         indicator.GetComponent<Image>().color = songColors[songIndex];

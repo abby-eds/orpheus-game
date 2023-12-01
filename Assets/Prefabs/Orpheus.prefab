@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 7212052324358947939}
   - component: {fileID: 912390917407866675}
   - component: {fileID: 5114113375370423972}
+  - component: {fileID: 3715279723651160880}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -265,12 +266,13 @@ RectTransform:
   - {fileID: 2732680773756716728}
   - {fileID: 7554335106490909102}
   - {fileID: 391109771817848964}
+  - {fileID: 3912255592317360752}
+  - {fileID: 4541672291217782761}
   - {fileID: 1045606854061136714}
   - {fileID: 1197724254818285850}
   - {fileID: 8613226872008604608}
   - {fileID: 7201953809371929552}
   - {fileID: 8515093321096923146}
-  - {fileID: 3912255592317360752}
   - {fileID: 8725741186981383077}
   m_Father: {fileID: 9064058565157435317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,6 +368,19 @@ MonoBehaviour:
   settingsMenu: {fileID: 1339090894071091124}
   gameOverMenu: {fileID: 3310599316010652088}
   onStartScreen: 1
+--- !u!114 &3715279723651160880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306731315340663354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60bd8ad494e34241be19edbd3bac407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePanel: {fileID: 3447054269697619444}
 --- !u!1 &318895325028361848
 GameObject:
   m_ObjectHideFlags: 0
@@ -9835,6 +9850,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7189342780208501147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4541672291217782761}
+  - component: {fileID: 1920640890087617136}
+  - component: {fileID: 3447054269697619444}
+  m_Layer: 5
+  m_Name: TransitionFade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4541672291217782761
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7189342780208501147}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5532304020348411260}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1920640890087617136
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7189342780208501147}
+  m_CullTransparentMesh: 1
+--- !u!114 &3447054269697619444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7189342780208501147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7340366751105256204
 GameObject:
   m_ObjectHideFlags: 0
@@ -12521,13 +12611,21 @@ MonoBehaviour:
   notePrefab: {fileID: 831845964333837362, guid: f6c578c1ee6b03040b260263693f9c2f, type: 3}
   backgroundSong: {fileID: 6829739211029010080}
   instrumentSong: {fileID: 4329531925430459580}
+  backgroundSongs:
+  - {fileID: 8300000, guid: c4ee8fa4b9d12ad45bb5940d2c742966, type: 3}
+  - {fileID: 8300000, guid: 2e6aa2cba7dbc1b43a47b3efe0f7a8a8, type: 3}
+  - {fileID: 0}
+  instrumentSongs:
+  - {fileID: 8300000, guid: ba77bc9a556f799448b0d060c56c0039, type: 3}
+  - {fileID: 8300000, guid: 16518bbbdec94574f958ce19a3cd0e80, type: 3}
+  - {fileID: 0}
   lyreAnim: {fileID: 4833592762386570}
   lyre: {fileID: 1742804651663478693}
   mockLyre: {fileID: 0}
   ringRadius: 200
   songDurations: []
   numNotes: 6
-  numSongs: 1
+  numSongs: 2
   songColors:
   - {r: 1, g: 0, b: 1, a: 0.5019608}
   - {r: 0, g: 0.6666665, b: 1, a: 0.5019608}
