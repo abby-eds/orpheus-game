@@ -19,6 +19,7 @@ public class RingMusic : MonoBehaviour
     public GameObject song1Empty;
     public GameObject song2Empty;
     public GameObject song3Empty;
+    public CanvasGroup songCanvas;
     public Image streakMeterFilled;
     public Image streakMeterEmpty;
     private float streakMeterFillAmount = 0.14f;
@@ -45,6 +46,8 @@ public class RingMusic : MonoBehaviour
     private float songDuration;
     private float songTime;
     private float delay;
+    public float quietDelay;
+    public float quietTime;
     private float songVolume = 0;
 
     private List<Note> notes = new List<Note>();
@@ -276,7 +279,8 @@ public class RingMusic : MonoBehaviour
     {
         // Calculate how close the player was to perfect timing
         float value = Mathf.Abs(hitNote.currentTime - hitNote.loopTime);
-        if (value <= leewayOk)
+        if (quietDelay >= songDuration) { } // do nothing
+        else if (value <= leewayOk)
         {
             // Will be used to display a burst
             GameObject ringBurst = null;
@@ -300,6 +304,7 @@ public class RingMusic : MonoBehaviour
             ringBurst.GetComponent<Image>().color = songColors[songIndex];
         }
         else HitNote(NoteQuality.Early);
+        quietDelay = 0;
     }
 
     // Update is called once per frame
@@ -319,6 +324,22 @@ public class RingMusic : MonoBehaviour
             }
             else
             {
+                if (quietDelay < songDuration)
+                {
+                    quietDelay += Time.deltaTime;
+                    if (quietDelay > songDuration) quietDelay = songDuration;
+                }
+                if (quietDelay >= songDuration && quietTime < songDuration / 4)
+                {
+                    quietTime += Time.deltaTime;
+                    if (quietTime > songDuration / 4) quietTime = songDuration / 4;
+                }
+                else if (quietDelay < songDuration && quietTime > 0)
+                {
+                    quietTime -= Time.deltaTime;
+                    if (quietTime < 0) quietTime = 0;
+                }
+
                 // Advance the overall song time and spawn notes as needed
                 songTime = backgroundSong.time % songDuration;
                 if (noteIndex < songs[songIndex].Count && songTime >= songs[songIndex][noteIndex].delay)
@@ -355,7 +376,7 @@ public class RingMusic : MonoBehaviour
             {
                 if (finished.loop) RefreshNote(finished);
                 else RemoveNote(finished);
-                HitNote(NoteQuality.Late);
+                if (quietTime <= 0) HitNote(NoteQuality.Late);
                 finished = null;
             }
 
@@ -427,6 +448,14 @@ public class RingMusic : MonoBehaviour
         {
             streakMask.fillAmount -= 0.1f * Time.deltaTime;
             if (streakMask.fillAmount < streakMeterFillAmount) streakMask.fillAmount = streakMeterFillAmount;
+        }
+        if (quietDelay >= songDuration)
+        {
+            songCanvas.alpha = 0.05f + 0.7f * (1 - (quietTime / (songDuration / 4)));
+        }
+        else
+        {
+            songCanvas.alpha = 0.75f;
         }
     }
 
