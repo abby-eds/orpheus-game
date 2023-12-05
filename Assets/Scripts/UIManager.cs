@@ -67,9 +67,12 @@ public class UIManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        foreach (Healthbar h in healthbars)
+        if (Time.timeScale > 0)
         {
-            h.UpdatePosition();
+            foreach (Healthbar h in healthbars)
+            {
+                h.UpdatePosition();
+            }
         }
     }
 

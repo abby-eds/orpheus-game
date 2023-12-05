@@ -10,6 +10,7 @@ public class Healthbar : MonoBehaviour
     public Slider neutralBar;
     public Slider charmedBar;
     public Slider asleepBar;
+    public CanvasGroup canvasGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +21,17 @@ public class Healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hostileBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Hostile);
-        neutralBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Neutral);
-        charmedBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Charmed);
-        asleepBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Asleep);
-        asleepBar.value = charmable.willpower;
-        charmedBar.value = charmable.willpower;
-        neutralBar.value = charmable.willpower;
-        hostileBar.value = charmable.willpower;
+        if (Time.timeScale > 0)
+        {
+            hostileBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Hostile);
+            neutralBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Neutral);
+            charmedBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Charmed);
+            asleepBar.gameObject.SetActive(charmable.Status == Charmable.CharmStatus.Asleep);
+            asleepBar.value = charmable.willpower;
+            charmedBar.value = charmable.willpower;
+            neutralBar.value = charmable.willpower;
+            hostileBar.value = charmable.willpower;
+        }
     }
 
     public void AssignEnemy(Charmable charmable)
@@ -51,5 +55,7 @@ public class Healthbar : MonoBehaviour
     {
         Vector3 enemyPosition = charmable.transform.position + Vector3.up * charmable.healthbarOffset;
         transform.localPosition = (Camera.main.WorldToScreenPoint(enemyPosition) - new Vector3(Screen.width / 2, Screen.height / 2, 0)) * 1920 / Screen.width;
+        if (Vector3.Dot(Camera.main.transform.forward, (enemyPosition - Camera.main.transform.position).normalized) > 0) canvasGroup.alpha = 1;
+        else canvasGroup.alpha = 0;
     }
 }

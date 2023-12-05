@@ -920,6 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6021692101688529487}
   - component: {fileID: 5753327617192548511}
+  - component: {fileID: 7958940680804624259}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -968,6 +969,19 @@ MonoBehaviour:
   neutralBar: {fileID: 8766343274660105628}
   charmedBar: {fileID: 568227205426285681}
   asleepBar: {fileID: 2550175146779278366}
+  canvasGroup: {fileID: 7958940680804624259}
+--- !u!225 &7958940680804624259
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315022291590285899}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &3896388533835333425
 GameObject:
   m_ObjectHideFlags: 0
