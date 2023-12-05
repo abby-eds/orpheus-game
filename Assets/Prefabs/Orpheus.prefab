@@ -232,12 +232,12 @@ RectTransform:
   - {fileID: 2510108449776456948}
   - {fileID: 486363627167097173}
   - {fileID: 7313569234799984851}
-  m_Father: {fileID: 3276123862840800916}
+  m_Father: {fileID: 391109771817848964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &5128338243090424171
 CanvasGroup:
@@ -5161,7 +5161,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3448906046222729705}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -5716,8 +5716,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2732680773756716728}
-  - {fileID: 7007473504616876710}
-  - {fileID: 6477537751627744348}
   - {fileID: 391109771817848964}
   m_Father: {fileID: 5532304020348411260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5734,7 +5732,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4066470717331227948}
   m_Enabled: 1
-  m_Alpha: 0.8
+  m_Alpha: 0.75
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -9086,12 +9084,12 @@ RectTransform:
   - {fileID: 3833365193929430767}
   - {fileID: 4674475284699140342}
   - {fileID: 5228401919599552715}
-  m_Father: {fileID: 3276123862840800916}
+  m_Father: {fileID: 391109771817848964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6249359186794351036
 GameObject:
@@ -9743,6 +9741,7 @@ GameObject:
   - component: {fileID: 391109771817848964}
   - component: {fileID: 5842781385376638544}
   - component: {fileID: 944446104321693282}
+  - component: {fileID: 4342790837479782595}
   m_Layer: 5
   m_Name: Ring
   m_TagString: Untagged
@@ -9763,6 +9762,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2335612899935850551}
+  - {fileID: 7007473504616876710}
+  - {fileID: 6477537751627744348}
   m_Father: {fileID: 3276123862840800916}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -9808,6 +9809,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4342790837479782595
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577811143501125474}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6583696025682629539
 GameObject:
   m_ObjectHideFlags: 0
@@ -13926,15 +13939,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ring: {fileID: 6577811143501125474}
   indicator: {fileID: 8834624094175444344}
+  ringBurstOkPrefab: {fileID: 4797817818364308359, guid: a53607c10b91d3e4499021dba4c911c3, type: 3}
+  ringBurstGreatPrefab: {fileID: 4797817818364308359, guid: 86e17788fc9afd04db18120d2109b6fa, type: 3}
+  ringBurstPerfectPrefab: {fileID: 4797817818364308359, guid: 595944cc152fd204d91541b21dc5029b, type: 3}
   song1Orb: {fileID: 7011982877507203057}
   song2Orb: {fileID: 4607199124535102171}
   song3Orb: {fileID: 7678583793678640363}
   song1Empty: {fileID: 3882880407105268392}
   song2Empty: {fileID: 2942175044995376926}
   song3Empty: {fileID: 4952929372843368225}
-  streakMeterFilled: {fileID: 0}
-  streakMeterEmpty: {fileID: 0}
-  streakMeterFillAmount: 0
+  songCanvas: {fileID: 4342790837479782595}
+  streakMeterFilled: {fileID: 1502498137926426724}
+  streakMeterEmpty: {fileID: 4379761241663384870}
   streakMask: {fileID: 9205213954551668793}
   level1Orb: {fileID: 9064980609210067692}
   level2Orb: {fileID: 3505316173279203508}
@@ -13954,10 +13970,10 @@ MonoBehaviour:
   - {fileID: 0}
   lyreAnim: {fileID: 4833592762386570}
   lyre: {fileID: 1742804651663478693}
-  mockLyre: {fileID: 0}
   ringRadius: 200
   songDurations: []
-  numNotes: 6
+  quietDelay: 0
+  quietTime: 0
   numSongs: 2
   songColors:
   - {r: 1, g: 0, b: 1, a: 1}
@@ -13970,15 +13986,12 @@ MonoBehaviour:
   leewayPerfect: 0.05
   leewayGreat: 0.1
   leewayOk: 0.2
-  streakPerfect: 2
-  streakGreat: 1
-  streakOk: 0
-  streakWrong: -6
-  streakEarly: -12
-  streakLate: -12
-  level2Threshold: 12
-  level3Threshold: 24
-  streakMax: 24
+  streakPerfect: 4
+  streakGreat: 2
+  streakOk: 1
+  streakWrong: -8
+  streakEarly: -16
+  streakLate: -16
   charmMultiplier: 5
 --- !u!114 &6779556925947616691
 MonoBehaviour:
@@ -13994,6 +14007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 3
+  healthCanvas: {fileID: 824374162495200059}
   health1: {fileID: 1640518617430699585}
   health2: {fileID: 776558853686941541}
   health3: {fileID: 8721301442689156843}
