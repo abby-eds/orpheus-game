@@ -10,17 +10,18 @@ public class PlayerHealth : MonoBehaviour
     public bool dead { get; private set; } = false;
 
     private Animator anim;
+    public CanvasGroup healthCanvas;
     public Image health1;
     public Image health2;
     public Image health3;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
     public float healthDisplayDuration = 1;
     private float healthDisplayTimer;
 
-    public Color fullHeart;
-    public Color emptyHeart;
-
     public bool takeDamage;
     public bool heal;
+    private bool regen;
 
     // Start is called before the first frame update
     void Start()
@@ -47,17 +48,16 @@ public class PlayerHealth : MonoBehaviour
             healthDisplayTimer -= Time.deltaTime;
             if (healthDisplayTimer < 0) healthDisplayTimer = 0;
             float healthDisplayPercent = healthDisplayTimer / healthDisplayDuration;
-            health1.color = fullHeart * new Color(1, 1, 1, healthDisplayPercent);
-            health2.color = fullHeart * new Color(1, 1, 1, healthDisplayPercent);
-            health3.color = fullHeart * new Color(1, 1, 1, healthDisplayPercent);
+            healthCanvas.alpha = healthDisplayPercent;
         }
     }
 
     public void UpdateHealth()
     {
-        health1.color = health >= 1 ? fullHeart : emptyHeart;
-        health2.color = health >= 2 ? fullHeart : emptyHeart;
-        health3.color = health >= 3 ? fullHeart : emptyHeart;
+        health1.sprite = health >= 1 ? fullHeart : emptyHeart;
+        health2.sprite = health >= 2 ? fullHeart : emptyHeart;
+        health3.sprite = health >= 3 ? fullHeart : emptyHeart;
+        healthCanvas.alpha = 1;
     }
 
     public void TakeDamage()
@@ -73,6 +73,24 @@ public class PlayerHealth : MonoBehaviour
                 anim.SetBool("Die", true);
                 UIManager.UI.Invoke("ToGameOverMenu", 2);
             }
+        }
+    }
+
+    public void Regen()
+    {
+        if (!regen)
+        {
+            regen = true;
+            InvokeRepeating("Heal", 5, 5);
+        }
+    }
+
+    public void CancelRegen()
+    {
+        if (regen)
+        {
+            regen = false;
+            CancelInvoke("Heal");
         }
     }
 
