@@ -8,6 +8,7 @@ public class InteractableDetector : MonoBehaviour
     private List<Charmable> charmables = new List<Charmable>();
     private List<Spectral> spectrals = new List<Spectral>();
     private List<Sculptable> sculptables = new List<Sculptable>();
+    private List<Chatter> chatters = new List<Chatter>();
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,15 @@ public class InteractableDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach(Chatter c in chatters)
+        {
+            if (c.modified)
+            {
+                UIManager.UI.RemoveTextBubble(c);
+                UIManager.UI.AddTextBubble(c);
+                c.modified = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +35,7 @@ public class InteractableDetector : MonoBehaviour
         Charmable charmable = other.GetComponent<Charmable>();
         Spectral spectral = other.GetComponent<Spectral>();
         Sculptable sculptable = other.GetComponent<Sculptable>();
+        Chatter chatter = other.GetComponent<Chatter>();
         if (charmable != null)
         {
             charmables.Add(charmable);
@@ -33,6 +43,11 @@ public class InteractableDetector : MonoBehaviour
         }
         if (spectral != null) spectrals.Add(spectral);
         if (sculptable != null) sculptables.Add(sculptable);
+        if (chatter != null)
+        {
+            chatters.Add(chatter);
+            UIManager.UI.AddTextBubble(chatter);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -40,13 +55,19 @@ public class InteractableDetector : MonoBehaviour
         Charmable charmable = other.GetComponent<Charmable>();
         Spectral spectral = other.GetComponent<Spectral>();
         Sculptable sculptable = other.GetComponent<Sculptable>();
+        Chatter chatter = other.GetComponent<Chatter>();
         if (charmable != null)
         {
             charmables.Remove(charmable);
             UIManager.UI.RemoveHealthbar(charmable);
         }
-        if (spectral != null) spectrals.Add(spectral);
-        if (sculptable != null) sculptables.Add(sculptable);
+        if (spectral != null) spectrals.Remove(spectral);
+        if (sculptable != null) sculptables.Remove(sculptable);
+        if (chatter != null)
+        {
+            chatters.Remove(chatter);
+            UIManager.UI.RemoveTextBubble(chatter);
+        }
     }
 
     public bool CharmablesInRange()

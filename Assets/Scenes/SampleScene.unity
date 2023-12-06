@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 587406475}
   - component: {fileID: 587406474}
   - component: {fileID: 587406478}
+  - component: {fileID: 587406479}
   m_Layer: 0
   m_Name: Elite Enemy
   m_TagString: Untagged
@@ -470,6 +471,24 @@ MonoBehaviour:
   immunityDuration: 0
   resistaceDuration: 1
   healthbarOffset: 1.5
+--- !u!114 &587406479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587406473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acd872a531d5fb44b8fd9574866a82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleType: 0
+  text: I can't let you pass
+  right: 1
+  modified: 0
+  textBubbleXOffset: 0.5
+  textBubbleYOffset: 1.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -11297,7 +11316,8 @@ PrefabInstance:
       value: NewOrpheus
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3355403195087341567, guid: bc65fd92724a54a4eb081e75f79d2f3d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc65fd92724a54a4eb081e75f79d2f3d, type: 3}
