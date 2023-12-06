@@ -6,33 +6,43 @@ public class unrealbox : Spectral
 {
     // Start is called before the first frame update
 
-    public bool turnOn = true;
+    public float timer = 0;
+    public Material opaqueMat;
+    public Material transparentMat;
+    private Renderer rend;
+
     void Start()
     {
-        
+        rend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<MeshRenderer>().enabled = turnOn;
+        //GetComponent<MeshRenderer>().enabled = turnOn;
+        if(timer > 0){
+            timer -= Time.deltaTime;
+            UpdateMaterial(true);
+        }
+        else{
+            UpdateMaterial(false);
+        }
         
     }
 
     public override void ApplySongOfDead(int level){
-        if (level > 0){
-            //change object to new visibility
-            // do I want it to be only shadows??
-            // do I want it to be a faint blue glow
-            turnOn = false;
-            
-        }
-        if (level == 0){
-            //not playing
-            // make objecs solid again.
-            turnOn = true;
+        timer = 1;
 
-        }
+    }
+
+    void UpdateMaterial(bool transparent){
+        if (transparent) {
+        rend.material = transparentMat;
+    }
+    else {
+        rend.material = opaqueMat;
+    }
+
     }
 
 }
