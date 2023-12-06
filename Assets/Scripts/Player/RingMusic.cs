@@ -22,7 +22,7 @@ public class RingMusic : MonoBehaviour
     public CanvasGroup songCanvas;
     public Image streakMeterFilled;
     public Image streakMeterEmpty;
-    private float streakMeterFillAmount = 0.14f;
+    private float streakMeterFillAmount = 0.145f;
     public Image streakMask;
     public Image level1Orb;
     public Image level2Orb;
@@ -206,8 +206,8 @@ public class RingMusic : MonoBehaviour
 
     private void UpdateStreakMeter()
     {
-        if (streak < level2Threshold) streakMeterFillAmount = 0.14f * (1 + ((float)streak / (level2Threshold)));
-        else if (streak <= level3Threshold) streakMeterFillAmount = 0.14f * (1 + ((float)(streak - (level2Threshold)) / ((level3Threshold) - (level2Threshold))));
+        if (streak < level2Threshold) streakMeterFillAmount = 0.145f + (0.13f * ((float)streak / level2Threshold));
+        else if (streak <= level3Threshold) streakMeterFillAmount = 0.145f + (0.13f * ((float)(streak - level2Threshold) / (level3Threshold - level2Threshold)));
         level1Orb.sprite = songLevel >= 1 ? levelOrbFilled : levelOrbEmpty;
         level2Orb.sprite = songLevel >= 2 ? levelOrbFilled : levelOrbEmpty;
         level3Orb.sprite = songLevel >= 3 ? levelOrbFilled : levelOrbEmpty;
@@ -237,9 +237,12 @@ public class RingMusic : MonoBehaviour
         level1Orb.color = songColors[songIndex];
         level2Orb.color = songColors[songIndex];
         level3Orb.color = songColors[songIndex];
+        float oldDuration = songDuration;
         songDuration = songDurations[songIndex];
         level2Threshold = 8 * songs[songIndex].Count;
         level3Threshold = 16 * songs[songIndex].Count;
+        quietDelay = 0;
+        quietTime *= songDuration / oldDuration;
         streakMax = level3Threshold;
         song1Orb.SetActive(songIndex == 0 && numSongs >= 1);
         song2Orb.SetActive(songIndex == 1 && numSongs >= 2);
@@ -279,8 +282,7 @@ public class RingMusic : MonoBehaviour
     {
         // Calculate how close the player was to perfect timing
         float value = Mathf.Abs(hitNote.currentTime - hitNote.loopTime);
-        if (quietDelay >= songDuration) { } // do nothing
-        else if (value <= leewayOk)
+        if (value <= leewayOk)
         {
             // Will be used to display a burst
             GameObject ringBurst = null;
@@ -303,7 +305,7 @@ public class RingMusic : MonoBehaviour
             else RemoveNote(hitNote);
             ringBurst.GetComponent<Image>().color = songColors[songIndex];
         }
-        else HitNote(NoteQuality.Early);
+        else if (quietDelay < songDuration) HitNote(NoteQuality.Early);
         quietDelay = 0;
     }
 
@@ -376,7 +378,7 @@ public class RingMusic : MonoBehaviour
             {
                 if (finished.loop) RefreshNote(finished);
                 else RemoveNote(finished);
-                if (quietTime <= 0) HitNote(NoteQuality.Late);
+                if (streak > 0) HitNote(NoteQuality.Late);
                 finished = null;
             }
 
@@ -449,14 +451,7 @@ public class RingMusic : MonoBehaviour
             streakMask.fillAmount -= 0.1f * Time.deltaTime;
             if (streakMask.fillAmount < streakMeterFillAmount) streakMask.fillAmount = streakMeterFillAmount;
         }
-        if (quietDelay >= songDuration)
-        {
-            songCanvas.alpha = 0.05f + 0.7f * (1 - (quietTime / (songDuration / 4)));
-        }
-        else
-        {
-            songCanvas.alpha = 0.75f;
-        }
+        songCanvas.alpha = 0.1f + 0.8f * (1 - (quietTime / (songDuration / 4)));
     }
 
     enum NoteQuality
