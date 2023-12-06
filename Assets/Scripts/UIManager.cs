@@ -106,10 +106,13 @@ public class UIManager : MonoBehaviour
 
     public void AddTextBubble(Chatter chatter)
     {
-        GameObject tbObject = Instantiate(textBubblePrefab, textBubbleParent.transform);
-        TextBubble tb = tbObject.GetComponent<TextBubble>();
-        tb.AssignChatter(chatter);
-        textBubbles.Add(tb);
+        if (chatter.text != "")
+        {
+            GameObject tbObject = Instantiate(textBubblePrefab, textBubbleParent.transform);
+            TextBubble tb = tbObject.GetComponent<TextBubble>();
+            tb.AssignChatter(chatter);
+            textBubbles.Add(tb);
+        }
     }
 
     public void RemoveTextBubble(Chatter chatter)

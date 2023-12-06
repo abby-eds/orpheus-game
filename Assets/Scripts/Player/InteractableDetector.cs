@@ -14,6 +14,12 @@ public class InteractableDetector : MonoBehaviour
     void Start()
     {
         GetComponent<SphereCollider>().radius = detectRadius;
+        Chatter chatter = GetComponent<Chatter>();
+        if (chatter != null)
+        {
+            chatters.Add(chatter);
+            UIManager.UI.AddTextBubble(chatter);
+        }
     }
 
     // Update is called once per frame

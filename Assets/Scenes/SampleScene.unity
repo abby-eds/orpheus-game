@@ -487,8 +487,8 @@ MonoBehaviour:
   text: I can't let you pass
   right: 1
   modified: 0
-  textBubbleXOffset: 0.5
-  textBubbleYOffset: 1.5
+  textBubbleXOffset: 1
+  textBubbleYOffset: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -11316,8 +11316,7 @@ PrefabInstance:
       value: NewOrpheus
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3355403195087341567, guid: bc65fd92724a54a4eb081e75f79d2f3d, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc65fd92724a54a4eb081e75f79d2f3d, type: 3}
@@ -15409,27 +15408,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &3574789418260536886
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7797921668310179574}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 207a4564d65714355b14d246a963691b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3580242034286740471
 GameObject:
   m_ObjectHideFlags: 0
@@ -29371,21 +29349,6 @@ Transform:
   - {fileID: 8408326737142548426}
   m_Father: {fileID: 6238531441312445259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &7456862423358850124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7797921668310179574}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7460855557335473601
 Transform:
   m_ObjectHideFlags: 0
@@ -34545,23 +34508,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &7797921668310179574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7456862423358850124}
-  - component: {fileID: 3574789418260536886}
-  m_Layer: 0
-  m_Name: Orpheus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &7799723490691542849
 Transform:
   m_ObjectHideFlags: 0
@@ -40746,4 +40692,3 @@ SceneRoots:
   - {fileID: 491420196}
   - {fileID: 1891716043}
   - {fileID: 762847707}
-  - {fileID: 7456862423358850124}
