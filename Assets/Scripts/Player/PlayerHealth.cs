@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
             healthDisplayTimer -= Time.deltaTime;
             if (healthDisplayTimer < 0) healthDisplayTimer = 0;
             float healthDisplayPercent = healthDisplayTimer / healthDisplayDuration;
-            healthCanvas.alpha = healthDisplayPercent;
+            healthCanvas.alpha = 0.1f + 0.8f * healthDisplayPercent;
         }
     }
 

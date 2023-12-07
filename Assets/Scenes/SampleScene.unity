@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 587406475}
   - component: {fileID: 587406474}
   - component: {fileID: 587406478}
+  - component: {fileID: 587406479}
   m_Layer: 0
   m_Name: Elite Enemy
   m_TagString: Untagged
@@ -470,6 +471,24 @@ MonoBehaviour:
   immunityDuration: 0
   resistaceDuration: 1
   healthbarOffset: 1.5
+--- !u!114 &587406479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587406473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acd872a531d5fb44b8fd9574866a82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleType: 0
+  text: I can't let you pass
+  right: 1
+  modified: 0
+  textBubbleXOffset: 1
+  textBubbleYOffset: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -15389,27 +15408,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &3574789418260536886
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7797921668310179574}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 207a4564d65714355b14d246a963691b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3580242034286740471
 GameObject:
   m_ObjectHideFlags: 0
@@ -29351,21 +29349,6 @@ Transform:
   - {fileID: 8408326737142548426}
   m_Father: {fileID: 6238531441312445259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &7456862423358850124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7797921668310179574}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7460855557335473601
 Transform:
   m_ObjectHideFlags: 0
@@ -34525,23 +34508,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &7797921668310179574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7456862423358850124}
-  - component: {fileID: 3574789418260536886}
-  m_Layer: 0
-  m_Name: Orpheus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &7799723490691542849
 Transform:
   m_ObjectHideFlags: 0
@@ -40726,4 +40692,3 @@ SceneRoots:
   - {fileID: 491420196}
   - {fileID: 1891716043}
   - {fileID: 762847707}
-  - {fileID: 7456862423358850124}

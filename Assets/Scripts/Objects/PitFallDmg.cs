@@ -13,9 +13,9 @@ public class PitFallDmg : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player) 
+        if (other.gameObject == player && !other.isTrigger) 
         {
-            Invoke("Fall", 1.25f);
+            Invoke("Fall", 1.0f);
         }
     }
 

@@ -290,6 +290,41 @@ Transform:
   - {fileID: 4907107879319553922}
   m_Father: {fileID: 7999009829639396459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &341765240040699772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3910390659244402321}
+  m_Layer: 5
+  m_Name: TextBubbles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3910390659244402321
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341765240040699772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1382250098929138515}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &398059059727240680
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +843,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697655526248076576}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0.9
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -3666,7 +3701,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5446388971996170486}
-  - component: {fileID: 7943991613378336587}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -3695,18 +3729,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &7943991613378336587
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2870801841135957931}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!1 &2908722275632349896
 GameObject:
   m_ObjectHideFlags: 0
@@ -8788,6 +8810,7 @@ GameObject:
   - component: {fileID: 7002284871181115552}
   - component: {fileID: 4062274459373929408}
   - component: {fileID: 1901433483123121889}
+  - component: {fileID: 3045180660436158309}
   m_Layer: 0
   m_Name: NewOrpheus
   m_TagString: Player
@@ -8884,9 +8907,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.4
-  m_Height: 1.9
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.95, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!135 &3185930659739461977
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9034,6 +9057,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectRadius: 10
+--- !u!114 &3045180660436158309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526983880406426287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acd872a531d5fb44b8fd9574866a82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleType: 1
+  text: 
+  right: 1
+  modified: 0
+  textBubbleXOffset: 0.5
+  textBubbleYOffset: 2
 --- !u!1 &6561716860516116868
 GameObject:
   m_ObjectHideFlags: 0
@@ -10876,6 +10917,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3910390659244402321}
   - {fileID: 2955279180578151028}
   - {fileID: 5446388971996170486}
   - {fileID: 422534959352668326}
@@ -10965,6 +11007,8 @@ MonoBehaviour:
   playerHealth: {fileID: 4062274459373929408}
   healthbarParent: {fileID: 3523885335387361808}
   healthbarPrefab: {fileID: 3315022291590285899, guid: 44b54eda5c7d4cd4c8f02d306878bde2, type: 3}
+  textBubbleParent: {fileID: 341765240040699772}
+  textBubblePrefab: {fileID: 844028327836406389, guid: 3f68ed03be3329b4bbfb3b264c0d3163, type: 3}
   backgroundSong: {fileID: 16216422346104141}
   instrumentSong: {fileID: 3813450769656435425}
   startScreen: {fileID: 871330472150634595}

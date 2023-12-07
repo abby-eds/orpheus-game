@@ -8,9 +8,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager UI { get; private set; }
     private List<Healthbar> healthbars = new List<Healthbar>();
+    private List<TextBubble> textBubbles = new List<TextBubble>();
     public PlayerHealth playerHealth;
     public GameObject healthbarParent;
     public GameObject healthbarPrefab;
+    public GameObject textBubbleParent;
+    public GameObject textBubblePrefab;
     public AudioSource backgroundSong;
     public AudioSource instrumentSong;
 
@@ -73,6 +76,10 @@ public class UIManager : MonoBehaviour
             {
                 h.UpdatePosition();
             }
+            foreach (TextBubble t in textBubbles)
+            {
+                t.UpdatePosition();
+            }
         }
     }
 
@@ -92,6 +99,30 @@ public class UIManager : MonoBehaviour
             {
                 healthbars.Remove(h);
                 Destroy(h.gameObject);
+                break;
+            }
+        }
+    }
+
+    public void AddTextBubble(Chatter chatter)
+    {
+        if (chatter.text != "")
+        {
+            GameObject tbObject = Instantiate(textBubblePrefab, textBubbleParent.transform);
+            TextBubble tb = tbObject.GetComponent<TextBubble>();
+            tb.AssignChatter(chatter);
+            textBubbles.Add(tb);
+        }
+    }
+
+    public void RemoveTextBubble(Chatter chatter)
+    {
+        foreach(TextBubble t in textBubbles)
+        {
+            if (t.chatter == chatter)
+            {
+                textBubbles.Remove(t);
+                Destroy(t.gameObject);
                 break;
             }
         }
