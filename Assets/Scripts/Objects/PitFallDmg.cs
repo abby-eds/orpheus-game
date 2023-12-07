@@ -15,7 +15,7 @@ public class PitFallDmg : MonoBehaviour
     {
         if (other.gameObject == player && !other.isTrigger) 
         {
-            Invoke("Fall", 1.25f);
+            Invoke("Fall", 1.0f);
         }
     }
 
