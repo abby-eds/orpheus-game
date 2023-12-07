@@ -59324,6 +59324,14 @@ PrefabInstance:
       propertyPath: text
       value: Time to go home and see Euridice...
       objectReference: {fileID: 0}
+    - target: {fileID: 7068142990012554344, guid: 9629a8530cd3c48409f803775fdb9dbb, type: 3}
+      propertyPath: right
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068142990012554344, guid: 9629a8530cd3c48409f803775fdb9dbb, type: 3}
+      propertyPath: bubbleType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

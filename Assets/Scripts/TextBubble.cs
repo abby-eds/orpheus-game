@@ -29,7 +29,7 @@ public class TextBubble : MonoBehaviour
     public void AssignChatter(Chatter chatter)
     {
         this.chatter = chatter;
-        if (chatter.bubbleType == Chatter.BubbleType.Speech)
+        if (chatter.bubbleType == BubbleType.Speech)
         {
             bubbleImage.sprite = speechBubble;
             text.text = chatter.text;

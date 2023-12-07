@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerPlayerDialogue : Chatter
+public class TriggerPlayerDialogue : MonoBehaviour
 {
     private GameObject player;
     private Chatter playerChat;
+    public BubbleType bubbleType;
+    public string text;
+    public bool right;
 
     // Start is called before the first frame update
     void Start()

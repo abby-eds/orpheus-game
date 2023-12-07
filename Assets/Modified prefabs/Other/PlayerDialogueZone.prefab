@@ -118,5 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efaf66e12df82b044978adf2b97aa5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleType: 0
   text: 
-  isThought: 1
+  right: 1
