@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3480797904776293506}
   - component: {fileID: 2211976422973552008}
   - component: {fileID: 454952178176354786}
+  - component: {fileID: 5065790777066457020}
   - component: {fileID: 4865099111029623669}
   - component: {fileID: 8191205231729136876}
   m_Layer: 0
@@ -111,7 +112,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -227,7 +228,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0, b: 0, a: 1}
+      minColor: {r: 0.015278174, g: 0.9716981, b: 0.952997, a: 1}
       maxColor: {r: 0.31760997, g: 0.8489369, b: 1, a: 0}
       maxGradient:
         serializedVersion: 2
@@ -292,7 +293,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.57
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -609,7 +610,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -669,15 +670,15 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
-    angle: 25
+    type: 4
+    angle: 3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.26, y: 0.22648676, z: 1}
+    m_Scale: {x: 1, y: 1, z: 0.38}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -756,7 +757,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -993,20 +994,20 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: -1
-          outSlope: -1
+          inSlope: -2.2828915
+          outSlope: -2.2828915
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
+          time: 0.43804097
           value: 0
-          inSlope: -1
-          outSlope: -1
+          inSlope: -2.2828915
+          outSlope: -2.2828915
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.33333334
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -2197,9 +2198,9 @@ ParticleSystem:
     enabled: 0
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -5
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2250,7 +2251,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -2303,9 +2304,9 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -5
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2690,11 +2691,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2851,7 +2852,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 0.3
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -2860,7 +2861,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.7
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3939,7 +3940,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 100
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 1
     ratio: 1
     lifetime:
@@ -3999,7 +4000,7 @@ ParticleSystem:
     textureMode: 0
     textureScale: {x: 1, y: 1}
     ribbonCount: 1
-    shadowBias: 0.5
+    shadowBias: 0.65
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
@@ -4012,7 +4013,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.78842807, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4076,7 +4077,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.2
+      scalar: 0.39
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4130,7 +4131,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.8396226, g: 0.62769735, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4783,7 +4784,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4813,7 +4813,7 @@ ParticleSystemRenderer:
   m_VelocityScale: 0
   m_LengthScale: 2
   m_SortingFudge: 0
-  m_NormalDirection: 1
+  m_NormalDirection: 0
   m_ShadowBias: 0
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
@@ -4846,11 +4846,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420de5a43b9af7f42b505412239f1769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInSpeed: 0.1
+  fadeInSpeed: 0.5
   fadeOutSpeed: 0.1
   fadeDelay: 3
   maxLight: 1
-  range: 19.4
+  range: 13.55
   sighs:
   - {fileID: 8300000, guid: 8a2e7f7409a42be4083f93d849ee4ec4, type: 3}
   - {fileID: 8300000, guid: 6333974aaa67cec4d9bf5dac0673d11c, type: 3}
@@ -4860,13 +4860,35 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7930a77c2dede294c9624350f98f3323, type: 3}
   - {fileID: 8300000, guid: b09a61c807316644ab04c5c418824b23, type: 3}
   - {fileID: 8300000, guid: 6c5d25bac8c6c384588609160b68ee5e, type: 3}
-  hushs:
-  - {fileID: 8300000, guid: 90fc7179719d6a64cbedd28b2801c4d7, type: 3}
-  - {fileID: 8300000, guid: 0371ae7b18e0e3942b6f611c885182b8, type: 3}
-  - {fileID: 8300000, guid: 0e63a0a918243ee45a28c555d773a715, type: 3}
-  - {fileID: 8300000, guid: a446a5da53f1f274d9bc0fe805008d2d, type: 3}
-  - {fileID: 8300000, guid: 5eddb1f4550f79a4c8a09a1225d1302a, type: 3}
-  - {fileID: 8300000, guid: b04ecacce5ffead499db6c7d0a2b64a5, type: 3}
+  hushs: []
+--- !u!114 &5065790777066457020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392687355885135756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36f9b2f5d9a65140a9846b1e925b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  willpower: 120
+  asleepThreshold: 30
+  charmedThreshold: 60
+  neutralThreshold: 90
+  maxWillpower: 120
+  asleepRegen: 1
+  charmedRegen: 1
+  neutralRegen: 0
+  hostileRegen: 0
+  regenDelayDuration: 5
+  immunityDuration: 0
+  resistaceDuration: 1
+  healthbarOffset: 2
+  followSpeed: 1
+  circleDistance: 3
+  circleSpeed: 2
 --- !u!135 &4865099111029623669
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4886,7 +4908,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 19.4
+  m_Radius: 13.55
   m_Center: {x: 0, y: 0, z: 0.65500015}
 --- !u!82 &8191205231729136876
 AudioSource:

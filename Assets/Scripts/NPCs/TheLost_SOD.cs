@@ -27,14 +27,14 @@ public class TheLost : Spectral
     private void OnValidate()
     {
         SphereCollider col = GetComponent<SphereCollider>();
-        if(!col)
+        if (!col)
         {
             col = gameObject.AddComponent<SphereCollider>();
             col.isTrigger = true;
         }
 
         col.radius = range;
-        
+
     }
     void Start()
     {
@@ -65,22 +65,22 @@ public class TheLost : Spectral
         Debug.Log("reveal");
         delaytimer = fadeDelay;
         fadeIn(fadeInSpeed);
-        
+
     }
 
     private void fadeIn(float speed)
     {
-        if(light.intensity <= 0)
+        if (light.intensity <= 0)
         {
-            snd.PlayOneShot(sighs[Random.Range(0,sighs.Length - 1)]);
+            snd.PlayOneShot(sighs[Random.Range(0, sighs.Length - 1)]);
         }
 
         if (light.intensity <= maxLight)
         {
             light.intensity += speed * Time.deltaTime;
         }
-        
-        if(ptcl.startLifetime.constant <= maxPtclLifetime)
+
+        if (ptcl.startLifetime.constant <= maxPtclLifetime)
         {
             ptcl.startLifetime = new ParticleSystem.MinMaxCurve(ptcl.startLifetime.constant + speed * Time.deltaTime);
         }
@@ -93,7 +93,7 @@ public class TheLost : Spectral
         {
             light.intensity -= speed * Time.deltaTime;
         }
-        
+
 
         if (ptcl.startLifetime.constant > 0)
         {
