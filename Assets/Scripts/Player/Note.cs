@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static NoteData;
 
 public class Note
@@ -10,14 +11,17 @@ public class Note
 
     public float loopTime;
     public float currentTime;
+    public float delay;
 
     public GameObject visual;
+    public Image icon;
     public Color color;
 
-    public Note(NoteType noteType, float loopTime, bool loop)
+    public Note(NoteData note, float loopTime)
     {
-        this.noteType = noteType;
+        noteType = note.noteType;
         this.loopTime = loopTime;
-        this.loop = loop;
+        loop = note.loop;
+        delay = note.delay;
     }
 }

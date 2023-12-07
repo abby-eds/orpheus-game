@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class FadeIn : MonoBehaviour
 {
-    public Color targetColor;
     public float fadeTime;
     private float fadeValue;
 
@@ -16,7 +15,7 @@ public class FadeIn : MonoBehaviour
         {
             fadeValue += Time.deltaTime / fadeTime;
             if (fadeValue > 1) fadeValue = 1;
-            gameObject.GetComponent<Image>().color = new Color(targetColor.r, targetColor.g, targetColor.b, targetColor.a * fadeValue);
+            gameObject.GetComponent<CanvasGroup>().alpha = fadeValue;
         }
     }
 }

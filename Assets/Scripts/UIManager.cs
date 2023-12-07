@@ -8,9 +8,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager UI { get; private set; }
     private List<Healthbar> healthbars = new List<Healthbar>();
+    private List<TextBubble> textBubbles = new List<TextBubble>();
     public PlayerHealth playerHealth;
     public GameObject healthbarParent;
     public GameObject healthbarPrefab;
+    public GameObject textBubbleParent;
+    public GameObject textBubblePrefab;
     public AudioSource backgroundSong;
     public AudioSource instrumentSong;
 
@@ -60,16 +63,23 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !playerHealth.dead)
         {
             if (backMenu) BackToPauseMenu();
-            else if (paused) Unpause();
+            else if (paused && !onStartScreen) Unpause();
             else Pause();
         }
     }
 
     private void LateUpdate()
     {
-        foreach (Healthbar h in healthbars)
+        if (Time.timeScale > 0)
         {
-            h.UpdatePosition();
+            foreach (Healthbar h in healthbars)
+            {
+                h.UpdatePosition();
+            }
+            foreach (TextBubble t in textBubbles)
+            {
+                t.UpdatePosition();
+            }
         }
     }
 
@@ -89,6 +99,30 @@ public class UIManager : MonoBehaviour
             {
                 healthbars.Remove(h);
                 Destroy(h.gameObject);
+                break;
+            }
+        }
+    }
+
+    public void AddTextBubble(Chatter chatter)
+    {
+        if (chatter.text != "")
+        {
+            GameObject tbObject = Instantiate(textBubblePrefab, textBubbleParent.transform);
+            TextBubble tb = tbObject.GetComponent<TextBubble>();
+            tb.AssignChatter(chatter);
+            textBubbles.Add(tb);
+        }
+    }
+
+    public void RemoveTextBubble(Chatter chatter)
+    {
+        foreach(TextBubble t in textBubbles)
+        {
+            if (t.chatter == chatter)
+            {
+                textBubbles.Remove(t);
+                Destroy(t.gameObject);
                 break;
             }
         }
@@ -156,7 +190,7 @@ public class UIManager : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneTransition.Transition.TransitionToScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Exit()
