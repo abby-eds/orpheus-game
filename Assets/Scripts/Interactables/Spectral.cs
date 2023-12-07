@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spectral : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,9 @@ public class Spectral : MonoBehaviour
 
     public virtual void ApplySongOfDead(int level)
     {
-
+        Debug.Log("Default Song of Dead level " + level);
     }
+
+
+
 }
