@@ -18,6 +18,8 @@ public class Spectral : MonoBehaviour
 
     public virtual void ApplySongOfDead(int level)
     {
-
+        Debug.Log("Default Song of Dead level " + level);
     }
+
+
 }

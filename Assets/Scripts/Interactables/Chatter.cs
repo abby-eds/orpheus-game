@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BubbleType
+{
+    Speech,
+    Thought,
+}
 public class Chatter : MonoBehaviour
 {
-    public enum BubbleType
-    {
-        Speech,
-        Thought,
-    }
+
     public BubbleType bubbleType;
     public string text;
     public bool right;

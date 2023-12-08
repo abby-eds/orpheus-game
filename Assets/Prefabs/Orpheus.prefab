@@ -405,6 +405,8 @@ MonoBehaviour:
   playerHealth: {fileID: 6779556925947616691}
   healthbarParent: {fileID: 5640305093504844601}
   healthbarPrefab: {fileID: 3315022291590285899, guid: 44b54eda5c7d4cd4c8f02d306878bde2, type: 3}
+  textBubbleParent: {fileID: 0}
+  textBubblePrefab: {fileID: 0}
   backgroundSong: {fileID: 6829739211029010080}
   instrumentSong: {fileID: 4329531925430459580}
   startScreen: {fileID: 4692360582365234114}
