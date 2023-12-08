@@ -127,6 +127,7 @@ public class RingMusic : MonoBehaviour
         song1Empty.SetActive(songIndex != 0 && learnedSongs >= 1);
         song2Empty.SetActive(songIndex != 1 && learnedSongs >= 2);
         song3Empty.SetActive(songIndex != 2 && learnedSongs >= 3);
+        quietTime = songDuration / 4;
     }
 
     /// <summary>
