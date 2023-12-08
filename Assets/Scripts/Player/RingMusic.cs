@@ -54,7 +54,8 @@ public class RingMusic : MonoBehaviour
     private Note finished = null;
     private int noteIndex;
 
-    public int numSongs;
+    private int numSongs = 3;
+    public int learnedSongs;
     private List<NoteData>[] songs;
     public List<Color> songColors;
     public List<Sprite> songIcons;
@@ -105,14 +106,14 @@ public class RingMusic : MonoBehaviour
         songs[1] = new List<NoteData>()
         {
             new NoteData(NoteType.Any, 0f, true),
-            new NoteData(NoteType.Any, 0.25f, true),
             new NoteData(NoteType.Any, 0.5f, true),
             new NoteData(NoteType.Any, 1f, true),
+            new NoteData(NoteType.Any, 1.25f, true),
             new NoteData(NoteType.Any, 1.5f, true),
             new NoteData(NoteType.Any, 2.0f, true),
-            new NoteData(NoteType.Any, 2.25f, true),
             new NoteData(NoteType.Any, 2.5f, true),
             new NoteData(NoteType.Any, 3f, true),
+            new NoteData(NoteType.Any, 3.25f, true),
             new NoteData(NoteType.Any, 3.5f, true),
         };
         songDurations[1] = 4.0f;
@@ -120,12 +121,12 @@ public class RingMusic : MonoBehaviour
         level3Threshold = 16 * songs[songIndex].Count;
         streakMax = level3Threshold;
         songDuration = songDurations[songIndex];
-        song1Orb.SetActive(songIndex == 0 && numSongs >= 1);
-        song2Orb.SetActive(songIndex == 1 && numSongs >= 2);
-        song3Orb.SetActive(songIndex == 2 && numSongs >= 3);
-        song1Empty.SetActive(songIndex != 0 && numSongs >= 1);
-        song2Empty.SetActive(songIndex != 1 && numSongs >= 2);
-        song3Empty.SetActive(songIndex != 2 && numSongs >= 3);
+        song1Orb.SetActive(songIndex == 0 && learnedSongs >= 1);
+        song2Orb.SetActive(songIndex == 1 && learnedSongs >= 2);
+        song3Orb.SetActive(songIndex == 2 && learnedSongs >= 3);
+        song1Empty.SetActive(songIndex != 0 && learnedSongs >= 1);
+        song2Empty.SetActive(songIndex != 1 && learnedSongs >= 2);
+        song3Empty.SetActive(songIndex != 2 && learnedSongs >= 3);
     }
 
     /// <summary>
@@ -244,25 +245,27 @@ public class RingMusic : MonoBehaviour
         quietDelay = 0;
         quietTime *= songDuration / oldDuration;
         streakMax = level3Threshold;
-        song1Orb.SetActive(songIndex == 0 && numSongs >= 1);
-        song2Orb.SetActive(songIndex == 1 && numSongs >= 2);
-        song3Orb.SetActive(songIndex == 2 && numSongs >= 3);
-        song1Empty.SetActive(songIndex != 0 && numSongs >= 1);
-        song2Empty.SetActive(songIndex != 1 && numSongs >= 2);
-        song3Empty.SetActive(songIndex != 2 && numSongs >= 3);
+        song1Orb.SetActive(songIndex == 0 && learnedSongs >= 1);
+        song2Orb.SetActive(songIndex == 1 && learnedSongs >= 2);
+        song3Orb.SetActive(songIndex == 2 && learnedSongs >= 3);
+        song1Empty.SetActive(songIndex != 0 && learnedSongs >= 1);
+        song2Empty.SetActive(songIndex != 1 && learnedSongs >= 2);
+        song3Empty.SetActive(songIndex != 2 && learnedSongs >= 3);
         anim.SetBool("Playing Song", false);
         lyreAnim.SetBool("IsPlaying", false);
     }
 
     public void LearnSong()
     {
-        numSongs++;
-        song1Orb.SetActive(songIndex == 0 && numSongs >= 1);
-        song2Orb.SetActive(songIndex == 1 && numSongs >= 2);
-        song3Orb.SetActive(songIndex == 2 && numSongs >= 3);
-        song1Empty.SetActive(songIndex != 0 && numSongs >= 1);
-        song2Empty.SetActive(songIndex != 1 && numSongs >= 2);
-        song3Empty.SetActive(songIndex != 2 && numSongs >= 3);
+        learnedSongs++;
+        song1Orb.SetActive(songIndex == 0 && learnedSongs >= 1);
+        song2Orb.SetActive(songIndex == 1 && learnedSongs >= 2);
+        song3Orb.SetActive(songIndex == 2 && learnedSongs >= 3);
+        song1Empty.SetActive(songIndex != 0 && learnedSongs >= 1);
+        song2Empty.SetActive(songIndex != 1 && learnedSongs >= 2);
+        song3Empty.SetActive(songIndex != 2 && learnedSongs >= 3);
+        songIndex = learnedSongs - 1;
+        RefreshSong();
     }
 
     /// <summary>
@@ -312,7 +315,7 @@ public class RingMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale > 0 && numSongs > 0)
+        if (Time.timeScale > 0 && learnedSongs > 0)
         {
             if (delay > 0)
             {
@@ -385,17 +388,17 @@ public class RingMusic : MonoBehaviour
             if (!playerHealth.dead)
             {
                 // Check for player input to switch songs
-                if (Input.mouseScrollDelta.y != 0 && numSongs > 1)
+                if (Input.mouseScrollDelta.y != 0 && learnedSongs > 1)
                 {
                     if (Input.mouseScrollDelta.y > 0)
                     {
                         songIndex++;
-                        if (songIndex >= numSongs) songIndex = 0;
+                        if (songIndex >= learnedSongs) songIndex = 0;
                     }
                     else if (Input.mouseScrollDelta.y < 0)
                     {
                         songIndex--;
-                        if (songIndex < 0) songIndex = numSongs - 1;
+                        if (songIndex < 0) songIndex = learnedSongs - 1;
                     }
                     RefreshSong();
                 }
