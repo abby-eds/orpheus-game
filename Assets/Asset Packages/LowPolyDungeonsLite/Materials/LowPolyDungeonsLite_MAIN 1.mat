@@ -23,7 +23,7 @@ Material:
   m_Name: LowPolyDungeonsLite_MAIN 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
-  m_ModifiedSerializedProperties: 16
+  m_ModifiedSerializedProperties: 18
   m_ValidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _GLOSSYREFLECTIONS_OFF
@@ -51,7 +51,8 @@ Material:
     - _Mode: 3
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.5821022, g: 0.9716981, b: 0.94346654, a: 0.24705882}
+    - _Color: {r: 0.3437611, g: 0.84959924, b: 0.9716981, a: 0.12156863}
+    - _EmissionColor: {r: 0.006090912, g: 0.015514096, b: 0.017688677, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5724742563382389973
 MonoBehaviour:
