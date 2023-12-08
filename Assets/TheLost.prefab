@@ -47,7 +47,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5392687355885135756}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4922,8 +4922,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8a2e7f7409a42be4083f93d849ee4ec4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.444
-  m_Pitch: 1
+  m_Volume: 0.278
+  m_Pitch: -1.33
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5100,11 +5100,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2429270208187715771, guid: ee975320234fc844a98ecab293c0e509, type: 3}
       propertyPath: m_Range
-      value: 9.9
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2429270208187715771, guid: ee975320234fc844a98ecab293c0e509, type: 3}
       propertyPath: m_Intensity
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429270208187715771, guid: ee975320234fc844a98ecab293c0e509, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3187631066309276277, guid: ee975320234fc844a98ecab293c0e509, type: 3}
       propertyPath: m_Name
