@@ -6,7 +6,7 @@ using UnityEngine;
 public class TriggerPlayerDialogue : MonoBehaviour
 {
     private GameObject player;
-    private Chatter playerChat;
+    public Chatter playerChat;
     public BubbleType bubbleType;
     public string text;
     public bool right;

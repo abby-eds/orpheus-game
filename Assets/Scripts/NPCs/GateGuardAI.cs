@@ -31,14 +31,14 @@ public class GateGuardAI : Charmable
     {
         if (gate.gateAngleChange != -1) GetComponent<Animator>().SetTrigger("Interact");
         gate.gateAngleChange = -1;
-        chatter.ModifyChatter(BubbleType.Speech, "Halt!", true);
+        chatter.ModifyChatter(BubbleType.Speech, "Halt! The Underworld Path is dangerous!", true);
     }
 
     protected override void OnCharmed()
     {
         if (gate.gateAngleChange != 1) GetComponent<Animator>().SetTrigger("Interact");
         gate.gateAngleChange = 1;
-        chatter.ModifyChatter(BubbleType.Speech, "Oh, okay, you can pass...", true);
+        chatter.ModifyChatter(BubbleType.Speech, "Oh, okay... such a nice song, you can pass.", true);
     }
 
     protected override void OnAsleep()
