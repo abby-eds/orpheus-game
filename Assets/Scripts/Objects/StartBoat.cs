@@ -32,18 +32,28 @@ public class StartBoat : MonoBehaviour
             player.transform.parent = boat.transform;
             player.GetComponent<PlayerMovement>().enabled = false;
 
-            // start rowing
-            anim.SetBool("Rowing", true);
+            // teach song
+            Invoke("TeachSong", 1);
 
             // begin sailing
-            sailing = true;
+            Invoke("StartSailing", 2);
 
-            Invoke("TeachSong", 3);
+
         }
+    }
+
+    void StartSailing()
+    {
+        // start rowing
+        anim.SetBool("Rowing", true);
+
+        // begin sailing
+        sailing = true;
     }
 
     void TeachSong()
     {
+        // teach player new song on way
         chatter.ModifyChatter(BubbleType.Speech, "Heed my voice, and learn my song...", true);
         player.GetComponent<RingMusic>().LearnSong();
     }
