@@ -8,7 +8,9 @@ public class StartBoat : MonoBehaviour
     
     private GameObject player;
     private GameObject boat;
+    private GameObject charon;
     private Animator anim;
+    private Chatter chatter;
     public bool sailing = false;
 
     // Start is called before the first frame update
@@ -16,7 +18,9 @@ public class StartBoat : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         boat = this.gameObject;
-        anim = GameObject.Find("SitCharon").GetComponent<Animator>();
+        charon = GameObject.Find("SitCharon");
+        anim = charon.GetComponent<Animator>();
+        chatter = charon.GetComponent<Chatter>();
     }
 
     // when we get on boat
@@ -33,14 +37,22 @@ public class StartBoat : MonoBehaviour
 
             // begin sailing
             sailing = true;
+
+            Invoke("TeachSong", 3);
         }
+    }
+
+    void TeachSong()
+    {
+        chatter.ModifyChatter(BubbleType.Speech, "Heed my voice, and learn my song...", true);
+        player.GetComponent<RingMusic>().LearnSong();
     }
 
     void FixedUpdate()
     {
         if (sailing)
         {
-            boat.transform.Translate(0.1f, 0, 0);
+            boat.transform.Translate(0.05f, 0, 0);
         }
     }
 }
