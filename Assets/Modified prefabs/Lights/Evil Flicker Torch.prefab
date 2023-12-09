@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6388823885079606662}
   - component: {fileID: 8663252618325098001}
   m_Layer: 0
-  m_Name: Flicker Torch
+  m_Name: Evil Flicker Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2cb987137b739894682ccea9106cd69b, type: 2}
-  - {fileID: 2100000, guid: c14021abfaa46d1498a6155145915532, type: 2}
+  - {fileID: 2100000, guid: c97af65230d736345b1de1fe64b97b2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -169,7 +169,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9529412, g: 0.81960785, b: 0.45490196, a: 1}
+  m_Color: {r: 0.043137256, g: 1, b: 0, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -182,7 +182,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.02
     m_NormalBias: 0.4
-    m_NearPlane: 0.1
+    m_NearPlane: 0.099999994
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -230,5 +230,5 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4288406783
+    rgba: 4278255371
   m_Size: 0.08
