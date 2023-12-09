@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intensity: 0.5
   wobble: {x: 1, y: 1, z: 1}
-  speed: 1
+  speed: 6
   quality: 2
 --- !u!1 &9222988866110790705
 GameObject:
