@@ -8,7 +8,7 @@ public class StartBoat : MonoBehaviour
     
     private GameObject player;
     private GameObject boat;
-    private bool sailing = false;
+    public bool sailing = false;
 
     // Start is called before the first frame update
     void Start()
