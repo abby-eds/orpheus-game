@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 4083978}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 431.01, y: -60.62, z: -85.51}
+  m_LocalPosition: {x: 456.48, y: -60.62, z: -85.51}
   m_LocalScale: {x: 2.0307848, y: 14.851668, z: 25.332884}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7450,8 +7450,29 @@ MonoBehaviour:
   text: 
   right: 0
   modified: 0
-  textBubbleXOffset: 0
-  textBubbleYOffset: 0
+  textBubbleXOffset: 0.4
+  textBubbleYOffset: 1
+--- !u!65 &259999760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259999756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.39, y: 4.54, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &260077255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48757,6 +48778,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e4bce44dc5a7324caf21e78b91d6cc5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 259999759}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e4bce44dc5a7324caf21e78b91d6cc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 259999760}
   m_SourcePrefab: {fileID: 100100000, guid: 9e4bce44dc5a7324caf21e78b91d6cc5, type: 3}
 --- !u!1001 &1496741650
 PrefabInstance:
