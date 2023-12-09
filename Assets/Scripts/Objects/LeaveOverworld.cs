@@ -18,7 +18,7 @@ public class LeaveOverworld : MonoBehaviour
     {
         if (other.gameObject == player && !other.isTrigger && boat.GetComponent<StartBoat>().sailing)
         {
-            SceneTransition.Transition.TransitionToScene("Level2.5_Mines");
+            SceneTransition.Transition.TransitionToScene(3);
         }
     }
 }
