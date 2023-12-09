@@ -571,87 +571,33 @@ MonoBehaviour:
   modified: 0
   textBubbleXOffset: 0.5
   textBubbleYOffset: 2
---- !u!1001 &26376495
-PrefabInstance:
+--- !u!1 &26791460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1451262889763088, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &26791464
+MeshCollider:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1233360980}
-    m_Modifications:
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 38.32164
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 207.1651
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 60.667
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.411652
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -72.86666
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -62.658237
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7076283
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.036030464
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.104647554
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.69786316
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -11.365
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 5.726
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 88.634
-      objectReference: {fileID: 0}
-    - target: {fileID: 1725779320952114830, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 700e4664babe88942a9ae05edc5eacc4, type: 2}
-    - target: {fileID: 8881724730235654326, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_Name
-      value: Rocks_Granite_9 (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8881724730235654326, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8881724730235654326, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26791460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300140, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!4 &31423005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4508691648621678, guid: a25996a7d0674de40a8273b54b50aa7b, type: 3}
@@ -735,6 +681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.057
@@ -774,6 +724,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1696,6 +1650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -65.15933
@@ -1736,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1757,6 +1719,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1797,6 +1763,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1953,6 +1923,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1676609100239073865, guid: f9c5205523faeb24fa0684a25c69b748, type: 3}
   m_PrefabInstance: {fileID: 87833691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &88637152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1297778468147290, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &88637154
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88637152}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &89940928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4406,6 +4403,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7120459816387598768, guid: 32a47656b51849e46a4da7380aa4d3d1, type: 3}
   m_PrefabInstance: {fileID: 167030015}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &167472568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1922659532997342, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+  m_PrefabInstance: {fileID: 1343760814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &167472572
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167472568}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300012, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!4 &167947008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2, type: 3}
@@ -4557,6 +4581,10 @@ PrefabInstance:
     - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_Name
       value: Dungeon_Passage
+      objectReference: {fileID: 0}
+    - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 370700119056002103, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8599,6 +8627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -49.312134
@@ -8638,6 +8670,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9159,6 +9195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -65.15933
@@ -9198,6 +9238,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9373,6 +9417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -49.312134
@@ -9412,6 +9460,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9871,6 +9923,10 @@ PrefabInstance:
     - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_Name
       value: Dungeon_Passage (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 370700119056002103, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11423,6 +11479,10 @@ PrefabInstance:
       value: Rocks_Granite_53
       objectReference: {fileID: 0}
     - target: {fileID: 2278052018548445834, guid: 5f575a055c5dc554d9583007afada297, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278052018548445834, guid: 5f575a055c5dc554d9583007afada297, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -11709,6 +11769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -54.174133
@@ -11748,6 +11812,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12045,6 +12113,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8031339192871210686, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56, type: 3}
   m_PrefabInstance: {fileID: 983804409}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &383194025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1688653802073712, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+  m_PrefabInstance: {fileID: 1343760814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &383194029
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383194025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300010, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!4 &384729197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2, type: 3}
@@ -13666,6 +13761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.954
@@ -13705,6 +13804,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14054,6 +14157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9131165
@@ -14093,6 +14200,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14736,6 +14847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Two Small Area Glows
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1596069
@@ -14783,6 +14898,10 @@ PrefabInstance:
     - target: {fileID: 8598749747895036467, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15532,6 +15651,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c97e0ed288615e0408df360d8e13aa9b, type: 3}
+--- !u!1 &492449128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082569136446370, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &492449132
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492449128}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &497406912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15614,6 +15760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.879
@@ -15653,6 +15803,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16286,6 +16440,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3448647613925869208, guid: c97e0ed288615e0408df360d8e13aa9b, type: 3}
   m_PrefabInstance: {fileID: 519873108}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &521189440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1323921214675046, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &521189444
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521189440}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300132, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &521488258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16630,6 +16811,10 @@ PrefabInstance:
     - target: {fileID: 5178187939624050453, guid: 2931e7d74b0bcc94a802f3ddf109a209, type: 3}
       propertyPath: m_Name
       value: Rocks_Granite_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178187939624050453, guid: 2931e7d74b0bcc94a802f3ddf109a209, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5178187939624050453, guid: 2931e7d74b0bcc94a802f3ddf109a209, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17258,6 +17443,10 @@ PrefabInstance:
       value: Big Area Glow
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -17308,6 +17497,10 @@ PrefabInstance:
     - target: {fileID: 8598749747895036467, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18162,6 +18355,10 @@ PrefabInstance:
       value: Big Area Glow (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -18212,6 +18409,10 @@ PrefabInstance:
     - target: {fileID: 8598749747895036467, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20605,6 +20806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 800616031680524858, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0071106
@@ -20655,6 +20860,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 800616031680524858, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
   m_PrefabInstance: {fileID: 629861381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &632711643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632711644}
+  m_Layer: 6
+  m_Name: River Bits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632711644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632711643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1039390809}
+  - {fileID: 1343760815}
+  m_Father: {fileID: 1233360980}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &632786069
 GameObject:
   m_ObjectHideFlags: 0
@@ -21077,6 +21315,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1698172271569852543, guid: 87728b3f30aba224a8b77291b74e8521, type: 3}
   m_PrefabInstance: {fileID: 651368778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &652022955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1658648846097930, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &652022959
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652022955}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300128, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &653007442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21967,6 +22232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Passage
       objectReference: {fileID: 0}
+    - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 370700119056002103, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_LocalPosition.x
       value: -53.231
@@ -22090,6 +22359,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e780fe1a41d0e6846b1db48da940ae7b, type: 3}
+--- !u!1 &679427518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1076841116689064, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &679427522
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679427518}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300130, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &682489630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22481,6 +22777,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7120459816387598768, guid: 32a47656b51849e46a4da7380aa4d3d1, type: 3}
   m_PrefabInstance: {fileID: 693311225}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &703343612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1123941921910032, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+  m_PrefabInstance: {fileID: 1343760814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &703343616
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703343612}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300008, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &703598222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22650,6 +22973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -97.48312
@@ -22689,6 +23016,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22931,6 +23262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -51.710236
@@ -22970,6 +23305,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23960,6 +24299,10 @@ PrefabInstance:
     - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_Name
       value: Dungeon_Passage (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 370700119056002103, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25065,7 +25408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786992743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torch Free Evil Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26151,6 +26494,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1698172271569852543, guid: 87728b3f30aba224a8b77291b74e8521, type: 3}
   m_PrefabInstance: {fileID: 837116225}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &838917357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1082569136446370, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_Name
+      value: Yard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 515.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -65.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -82.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.6800897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000006699173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7331289
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000003546196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 94.299
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 360
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1082569136446370, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 492449132}
+    - targetCorrespondingSourceObject: {fileID: 1297778468147290, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 88637154}
+    - targetCorrespondingSourceObject: {fileID: 1076841116689064, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 679427522}
+    - targetCorrespondingSourceObject: {fileID: 1658648846097930, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 652022959}
+    - targetCorrespondingSourceObject: {fileID: 1323921214675046, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 521189444}
+    - targetCorrespondingSourceObject: {fileID: 1404703335783400, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1480504465}
+    - targetCorrespondingSourceObject: {fileID: 1046809638255940, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 963049811}
+    - targetCorrespondingSourceObject: {fileID: 1181881406012528, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873468358}
+    - targetCorrespondingSourceObject: {fileID: 1451262889763088, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 26791464}
+    - targetCorrespondingSourceObject: {fileID: 1455157570200302, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1306893217}
+    - targetCorrespondingSourceObject: {fileID: 1341867756303330, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349569889}
+    - targetCorrespondingSourceObject: {fileID: 1244775259588522, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1335109920}
+  m_SourcePrefab: {fileID: 100100000, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
 --- !u!1001 &847254293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27928,6 +28364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.461151
@@ -27967,6 +28407,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29678,6 +30122,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e91522214e45bfb41a6b72b4c03cfec6, type: 3}
+--- !u!1 &963049807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046809638255940, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &963049811
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963049807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300136, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &964134745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30077,6 +30548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9131165
@@ -30116,6 +30591,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31137,6 +31616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.577
@@ -31176,6 +31659,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32070,6 +32557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.171509
@@ -32117,6 +32608,10 @@ PrefabInstance:
     - target: {fileID: 8598749747895036467, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32484,6 +32979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -59.308655
@@ -32523,6 +33022,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32916,6 +33419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.17212
@@ -32955,6 +33462,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33110,6 +33621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.922
@@ -33150,6 +33665,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33165,6 +33684,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6793856369119932956, guid: e42b8e7eee95f8341b219d3747a965fa, type: 3}
   m_PrefabInstance: {fileID: 1719512351}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1039390805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039390809}
+  - component: {fileID: 1039390808}
+  - component: {fileID: 1039390807}
+  - component: {fileID: 1039390806}
+  m_Layer: 6
+  m_Name: Styx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1039390806
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039390805}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1039390807
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039390805}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 700e4664babe88942a9ae05edc5eacc4, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1039390808
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039390805}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1039390809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039390805}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -28.434113, y: -52.079094, z: -63.978085}
+  m_LocalScale: {x: 25.157625, y: 1, z: 3.5785663}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 632711644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1053181961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35107,6 +35732,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1676609100239073865, guid: f9c5205523faeb24fa0684a25c69b748, type: 3}
   m_PrefabInstance: {fileID: 1113147587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1119044602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1278477834106912, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+  m_PrefabInstance: {fileID: 1343760814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1119044606
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119044602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &1120947650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35503,6 +36155,10 @@ PrefabInstance:
     - target: {fileID: 3063820286226909574, guid: 5672a0a83f2ae0542bc1f83f50f5ac45, type: 3}
       propertyPath: m_Name
       value: Rocks_Granite_30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063820286226909574, guid: 5672a0a83f2ae0542bc1f83f50f5ac45, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3063820286226909574, guid: 5672a0a83f2ae0542bc1f83f50f5ac45, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35947,6 +36603,10 @@ PrefabInstance:
       value: Rocks_Granite_34
       objectReference: {fileID: 0}
     - target: {fileID: 1904490542001473375, guid: 975eb6c3b1797fa4a9505f58497c4544, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904490542001473375, guid: 975eb6c3b1797fa4a9505f58497c4544, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -36246,6 +36906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.272125
@@ -36285,6 +36949,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36829,11 +37497,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413424747720366718, guid: 5704d0b8b0a8b934d9cf940a7f7376f7, type: 3}
   m_PrefabInstance: {fileID: 419692363}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1197144214 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1372158264891645213, guid: 93748c99b4f1d3b4390ab5497c87943a, type: 3}
-  m_PrefabInstance: {fileID: 26376495}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1197245973
 PrefabInstance:
@@ -37972,7 +38635,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1093629234}
-  - {fileID: 1197144214}
+  - {fileID: 632711644}
   - {fileID: 510154717}
   - {fileID: 2011514372}
   - {fileID: 632786070}
@@ -41528,6 +42191,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6793856369119932956, guid: e42b8e7eee95f8341b219d3747a965fa, type: 3}
   m_PrefabInstance: {fileID: 1305454567}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1306893213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1455157570200302, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1306893217
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306893213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300142, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &1308551525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42665,6 +43355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9201355
@@ -42705,6 +43399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42715,6 +43413,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
   m_PrefabInstance: {fileID: 1331021424}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1335109916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244775259588522, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1335109920
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335109916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300144, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &1335582254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43144,6 +43869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.245117
@@ -43183,6 +43912,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43268,6 +44001,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4508691648621678, guid: a25996a7d0674de40a8273b54b50aa7b, type: 3}
   m_PrefabInstance: {fileID: 1081800726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1343760814
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 632711644}
+    m_Modifications:
+    - target: {fileID: 1123941921910032, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278477834106912, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492516136545420, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_Name
+      value: Boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492516136545420, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688653802073712, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922659532997342, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -51.483
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -63.731
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.020629972
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9997872
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -182.364
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1278477834106912, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1119044606}
+    - targetCorrespondingSourceObject: {fileID: 1688653802073712, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 383194029}
+    - targetCorrespondingSourceObject: {fileID: 1922659532997342, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 167472572}
+    - targetCorrespondingSourceObject: {fileID: 1123941921910032, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 703343616}
+  m_SourcePrefab: {fileID: 100100000, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+--- !u!4 &1343760815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4095853662096090, guid: d46fbda4f04985547b45fa324d08dd7a, type: 3}
+  m_PrefabInstance: {fileID: 1343760814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1349569885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1341867756303330, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1349569889
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349569885}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300146, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!4 &1352930900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4342671295866887495, guid: 27f210ed52b6c0f409f410ac194d0a7c, type: 3}
@@ -43284,6 +44138,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43324,6 +44182,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43772,7 +44634,7 @@ GameObject:
   - component: {fileID: 1371942818}
   - component: {fileID: 1371942820}
   - component: {fileID: 1371942819}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: TorchLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44169,6 +45031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.025017
@@ -44208,6 +45074,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46598,6 +47468,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4090245462202286094, guid: e91522214e45bfb41a6b72b4c03cfec6, type: 3}
   m_PrefabInstance: {fileID: 1478808929}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1480504461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1404703335783400, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1480504465
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480504461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300134, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1001 &1480553228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49438,6 +50335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.025017
@@ -49478,6 +50379,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -49499,6 +50404,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49539,6 +50448,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49778,7 +50691,7 @@ GameObject:
   - component: {fileID: 1594456616}
   - component: {fileID: 1594456618}
   - component: {fileID: 1594456617}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: TorchLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51799,6 +52712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -54.936127
@@ -51838,6 +52755,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55181,6 +56102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -79.15411
@@ -55220,6 +56145,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57223,6 +58152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -45.873108
@@ -57262,6 +58195,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57956,6 +58893,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3448647613925869208, guid: c97e0ed288615e0408df360d8e13aa9b, type: 3}
   m_PrefabInstance: {fileID: 1871346583}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873468354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181881406012528, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
+  m_PrefabInstance: {fileID: 838917357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1873468358
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873468354}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300138, guid: b336c09f45dc3df458ddd8065bbe4b25, type: 3}
 --- !u!1 &1874165532
 GameObject:
   m_ObjectHideFlags: 0
@@ -58437,6 +59401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9201355
@@ -58476,6 +59444,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58790,6 +59762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 800616031680524858, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0071106
@@ -58939,6 +59915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.057
@@ -58978,6 +59958,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61870,6 +62854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.006439209
@@ -61909,6 +62897,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62079,6 +63071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Flicker Wall Torch (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7586093321967142111, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.922
@@ -62118,6 +63114,10 @@ PrefabInstance:
     - target: {fileID: 7586093321967573247, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222988866110790705, guid: 543ceea99fcd5e84589637c01841f8fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -65220,6 +66220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 800616031680524858, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -53.223114
@@ -67205,6 +68209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jail_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 800616031680425498, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 800616031680524858, guid: cc9f980ee3a12ab49af49ee894ebd89a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0071106
@@ -67634,3 +68642,4 @@ SceneRoots:
   - {fileID: 7439723876670213198}
   - {fileID: 1470682992}
   - {fileID: 314598116}
+  - {fileID: 838917357}
