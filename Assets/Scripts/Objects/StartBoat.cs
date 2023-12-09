@@ -8,6 +8,7 @@ public class StartBoat : MonoBehaviour
     
     private GameObject player;
     private GameObject boat;
+    private Animator anim;
     public bool sailing = false;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class StartBoat : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         boat = this.gameObject;
+        anim = GameObject.Find("SitCharon").GetComponent<Animator>();
     }
 
     // when we get on boat
@@ -25,6 +27,9 @@ public class StartBoat : MonoBehaviour
             // make player child of boat & disable movement
             player.transform.parent = boat.transform;
             player.GetComponent<PlayerMovement>().enabled = false;
+
+            // start rowing
+            anim.SetBool("Rowing", true);
 
             // begin sailing
             sailing = true;
