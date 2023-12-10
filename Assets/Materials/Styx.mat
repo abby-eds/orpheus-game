@@ -41,8 +41,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: 0.304
-    - _DepthStrength: 0.969
+    - _Depth: 0.911
+    - _DepthStrength: 0.124
     - _Float1: 0.1
     - _Float3: 1
     - _Float4: 10000
@@ -52,8 +52,8 @@ Material:
     - _FoamSpeed: 0.5
     - _GlossyReflections: 1
     - _Mettalic: 0.755
-    - _NormalMapWavesSpeed: 0.223
-    - _NormalMapsWavesSize: 6.14
+    - _NormalMapWavesSpeed: 0.5
+    - _NormalMapsWavesSize: 2.44
     - _SMOOTHNESS: 1
     - _SmallWavesSize: 1
     - _SmallWavesSize1: 3

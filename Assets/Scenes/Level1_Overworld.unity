@@ -26880,11 +26880,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1046809638255940, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1076841116689064, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1082569136446370, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Name
@@ -26896,39 +26896,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181881406012528, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1244775259588522, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297778468147290, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1323921214675046, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1341867756303330, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1404703335783400, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1451262889763088, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1455157570200302, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1658648846097930, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4863249073784554, guid: 93a098cd0b1bf9f4d9fdd0930309dd68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37849,7 +37849,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -37914,7 +37914,7 @@ Transform:
   m_GameObject: {fileID: 1195698308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.053033207, z: -0, w: 0.9985928}
-  m_LocalPosition: {x: -53.104126, y: -63.999092, z: -63.738087}
+  m_LocalPosition: {x: -53.104126, y: -63.59, z: -63.738087}
   m_LocalScale: {x: 249.13358, y: 22.186478, z: 45.01971}
   m_ConstrainProportionsScale: 0
   m_Children: []
