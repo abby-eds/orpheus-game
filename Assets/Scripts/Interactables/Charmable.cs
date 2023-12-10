@@ -32,6 +32,9 @@ public class Charmable : MonoBehaviour
     private float resistanceTime = 0;
 
     public float healthbarOffset = 2;
+    public float particleOffset = 0;
+
+    private ParticleSystem particles;
 
     public CharmStatus Status { get; private set; }
 
@@ -126,21 +129,35 @@ public class Charmable : MonoBehaviour
 
     protected virtual void OnHostile()
     {
-        Debug.Log("OnHostile: This method should be overwritten");
+        if (particles != null) particles.Stop();
     }
 
     protected virtual void OnNeutral()
     {
-        Debug.Log("OnNeutral: This method should be overwritten");
+        if (particles != null) particles.Stop();
     }
 
     protected virtual void OnCharmed()
     {
-        Debug.Log("OnCharmed: This method should be overwritten");
+        if (particles == null)
+        {
+            particles = Instantiate(Resources.Load<GameObject>("CharmableParticles"), transform).GetComponent<ParticleSystem>();
+            particles.transform.position += Vector3.up * particleOffset;
+        }
+        particles.Clear();
+        particles.GetComponent<ParticleSystemRenderer>().sharedMaterial = Resources.Load<Material>("Mat_Heart");
+        particles.Play();
     }
 
     protected virtual void OnAsleep()
     {
-        Debug.Log("OnAsleep: This method should be overwritten");
+        if (particles == null)
+        {
+            particles = Instantiate(Resources.Load<GameObject>("CharmableParticles"), transform).GetComponent<ParticleSystem>();
+            particles.transform.position += Vector3.up * particleOffset;
+        }
+        particles.Clear();
+        particles.GetComponent<ParticleSystemRenderer>().sharedMaterial = Resources.Load<Material>("Mat_SleepZ");
+        particles.Play();
     }
 }

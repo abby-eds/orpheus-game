@@ -80,7 +80,7 @@ public class LightFlicker : MonoBehaviour
 
             if (quality == 2)
             {
-                lightSources[i].source.intensity = Mathf.Lerp(lightSources[i].source.intensity, lightSources[i].targetIntensity, Time.deltaTime * 10);
+                lightSources[i].source.intensity = Mathf.Lerp(lightSources[i].source.intensity, lightSources[i].targetIntensity, Time.deltaTime * 1);
                 continue;
             }
 

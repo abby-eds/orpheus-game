@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         if (onStartScreen)
         {
             Pause();
