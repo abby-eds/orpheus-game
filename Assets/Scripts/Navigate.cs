@@ -32,22 +32,28 @@ public class Navigate : Charmable
         rayDistance = 10;
         
     }
-    void Update()
+    protected override void Update()
     {
-       // if(agent.pathPending)
-       //     return;
+
+       base.Update();
+
        if(Status == CharmStatus.Asleep ){
-            //stuff
+            shouldChasePlayer = false;
+            anim.SetFloat("Forwards", 0);
+            agent.ResetPath();
+            return;
+
        }
         else if (shouldChasePlayer){
                 return;
         }
-        else if (!agent.pathPending && agent.remainingDistance < 0.1f)
+        else if (!agent.pathPending && agent.remainingDistance < 0.1f){
                 GotoNextPoint();
-        
+        }
+        anim.SetFloat("Forwards", agent.velocity.sqrMagnitude);
 
         //ANIM UPDATE
-        anim.SetFloat("Forwards", agent.velocity.sqrMagnitude);
+       
 
 
         //RAY
@@ -69,9 +75,10 @@ public class Navigate : Charmable
 
             if( isAngleUnderHalfView
                 &&Physics.Raycast(transform.position + transform.up, enemyToPlayer.normalized, out hit, rayDistance)){
-                    Debug.Log("player Seen!!");
+                    Debug.Log("player Seen!!");// set destination to player location
                     agent.destination = Other.gameObject.transform.position + enemyToPlayer.normalized*2;
 
+                    // broden range on sight
                     fieldOfViewAngle = 200;
                     rayDistance = 12;
                     agent.speed =  4;
@@ -83,7 +90,7 @@ public class Navigate : Charmable
                     }
             }
             else{
-                anim.SetBool("Seen and Close",false);
+                anim.SetBool("Seen and Close",false);//stop running
             }
         }
     }
