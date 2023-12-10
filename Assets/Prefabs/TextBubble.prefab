@@ -54,8 +54,8 @@ MonoBehaviour:
   chatter: {fileID: 0}
   text: {fileID: 7751365645988240075}
   bubbleImage: {fileID: 1525173443248761622}
-  speechBubble: {fileID: 21300000, guid: 7f2b48bd6c7c43d4194b63c1d99c20e7, type: 3}
-  thoughtBubble: {fileID: 21300000, guid: 376f6c7f7c395e44895a781ba04b786d, type: 3}
+  speechBubble: {fileID: 21300000, guid: 8f5c59d119110cd429a22ce50bac1d64, type: 3}
+  thoughtBubble: {fileID: 21300000, guid: 51a1bc6fb337b024eb8482fb10dd6ab8, type: 3}
   xOffset: 0
   canvasGroup: {fileID: 2838310871538659735}
 --- !u!225 &2838310871538659735

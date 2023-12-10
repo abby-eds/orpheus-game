@@ -117,6 +117,18 @@ public class RingMusic : MonoBehaviour
             new NoteData(NoteType.Any, 3.5f, true),
         };
         songDurations[1] = 4.0f;
+        songs[2] = new List<NoteData>()
+        {
+            new NoteData(NoteType.Any, 0.0f, true),
+            new NoteData(NoteType.Any, 0.5f, true),
+            new NoteData(NoteType.Any, 1.0f, true),
+            new NoteData(NoteType.Any, 1.5f, true),
+            new NoteData(NoteType.Any, 2.0f, true),
+            new NoteData(NoteType.Any, 2.5f, true),
+            new NoteData(NoteType.Any, 3.0f, true),
+            new NoteData(NoteType.Any, 3.5f, true),
+        };
+        songDurations[2] = 4.0f;
         level2Threshold = 8 * songs[songIndex].Count;
         level3Threshold = 16 * songs[songIndex].Count;
         streakMax = level3Threshold;
@@ -182,7 +194,7 @@ public class RingMusic : MonoBehaviour
         else playerHealth.CancelRegen();
         UpdateStreakMeter();
 
-        if (songLevel > 0) songVolume = 0.4f + 0.2f * songLevel;
+        if (songLevel > 0) songVolume = 1;
         else songVolume = 0;
 
         switch (quality)
@@ -364,6 +376,7 @@ public class RingMusic : MonoBehaviour
             // Update time for all notes
             foreach (Note p in notes)
             {
+                MoveNote(p);
                 if (p.currentTime < songDuration / 2)
                 {
                     p.currentTime = (songTime - p.delay + songDuration) % songDuration;
@@ -374,7 +387,6 @@ public class RingMusic : MonoBehaviour
                     p.currentTime = (songTime - p.delay + songDuration) % songDuration;
                     p.currentTime = (p.currentTime + songDuration * 3 / 4) % songDuration + songDuration / 4;
                 }
-                MoveNote(p);
             }
 
             // If a note has "finished", handle it
@@ -429,10 +441,10 @@ public class RingMusic : MonoBehaviour
                 }
             }
         }
-        if (backgroundSong.volume < 0.8f)
+        if (backgroundSong.volume < 1)
         {
             backgroundSong.volume += 0.1f * Time.deltaTime;
-            if (backgroundSong.volume > 0.8f) backgroundSong.volume = 0.8f;
+            if (backgroundSong.volume > 1) backgroundSong.volume = 1;
         }
         if (instrumentSong.volume < songVolume)
         {
