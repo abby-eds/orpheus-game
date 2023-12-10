@@ -45,7 +45,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 0.95013666, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 30.34
+  m_Range: 40
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4939,11 +4939,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420de5a43b9af7f42b505412239f1769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInSpeed: 0.5
+  fadeInSpeed: 0.1
   fadeOutSpeed: 0.1
-  fadeDelay: 3
+  fadeDelay: 5
   maxLight: 0
-  range: 13.55
+  range: 20.9
   sighs:
   - {fileID: 8300000, guid: 8a2e7f7409a42be4083f93d849ee4ec4, type: 3}
   - {fileID: 8300000, guid: 6333974aaa67cec4d9bf5dac0673d11c, type: 3}
@@ -5001,7 +5001,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 13.55
+  m_Radius: 20.9
   m_Center: {x: 0, y: 0, z: 0.65500015}
 --- !u!82 &8191205231729136876
 AudioSource:
