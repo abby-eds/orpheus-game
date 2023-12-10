@@ -170,7 +170,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.04184842, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.7126422, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -231,5 +231,5 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278320896
+    rgba: 4290182912
   m_Size: 0.08
