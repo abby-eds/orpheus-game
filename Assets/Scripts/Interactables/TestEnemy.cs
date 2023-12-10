@@ -18,21 +18,21 @@ public class TestEnemy : Charmable
 
     protected override void OnHostile()
     {
-
+        base.OnHostile();
     }
 
     protected override void OnNeutral()
     {
-        
+        base.OnNeutral();
     }
 
     protected override void OnCharmed()
     {
-
+        base.OnCharmed();
     }
 
     protected override void OnAsleep()
     {
-        
+        base.OnAsleep();
     }
 }
