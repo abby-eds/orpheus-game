@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Depth: 1
-    - _DepthStrength: 0.183
+    - _DepthStrength: 0.021
     - _Float1: 0.1
     - _Float3: 1
     - _Float4: 10000
