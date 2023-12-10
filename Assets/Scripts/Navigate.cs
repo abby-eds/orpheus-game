@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Navigate : MonoBehaviour
+public class Navigate : Charmable
 {
     UnityEngine.AI.NavMeshAgent agent;
     Animator anim;
@@ -36,7 +36,10 @@ public class Navigate : MonoBehaviour
     {
        // if(agent.pathPending)
        //     return;
-        if (shouldChasePlayer){
+       if(Status == CharmStatus.Asleep ){
+            //stuff
+       }
+        else if (shouldChasePlayer){
                 return;
         }
         else if (!agent.pathPending && agent.remainingDistance < 0.1f)
@@ -56,8 +59,8 @@ public class Navigate : MonoBehaviour
         //}
     }
 
-    void OnTriggerStay(Collider Other){
-        if(Other.gameObject.CompareTag("Player")){
+    void OnTriggerStay(Collider Other){ // only cares if hostile
+        if(Other.gameObject.CompareTag("Player") && (Status == CharmStatus.Hostile)){
             Debug.Log("Player in range..");
             RaycastHit hit;
             Vector3 enemyToPlayer = Other.gameObject.transform.position - transform.position;
@@ -84,5 +87,25 @@ public class Navigate : MonoBehaviour
             }
         }
     }
-}
 
+    protected override void OnHostile()
+    {
+
+    }
+
+    protected override void OnNeutral()
+    {
+        agent.ResetPath();
+    }
+
+    protected override void OnCharmed()
+    {
+
+
+    }
+
+    protected override void OnAsleep()
+    {
+
+    }
+}
