@@ -40,6 +40,11 @@ public class TheLost : Spectral
     {
         //delaytimer = fadeDelay;
         light = GetComponentInChildren<Light>();
+        if(maxLight <= 0)
+        {
+            maxLight = light.intensity;
+        }
+        light.intensity = 0;
         ptcl = GetComponent<ParticleSystem>().main;
         maxPtclLifetime = ptcl.startLifetime.constant;
         ptcl.startLifetime = new ParticleSystem.MinMaxCurve(0);
