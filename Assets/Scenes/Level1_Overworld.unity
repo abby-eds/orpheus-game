@@ -745,7 +745,7 @@ MonoBehaviour:
   text: 
   right: 0
   modified: 0
-  textBubbleXOffset: 0.5
+  textBubbleXOffset: 1
   textBubbleYOffset: 2
 --- !u!1 &26791460 stripped
 GameObject:
@@ -11314,7 +11314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856295393480211492, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
       propertyPath: m_Name
-      value: NewerOrpheus
+      value: TestOrpheus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856295393480211492, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13567,6 +13571,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1676609100239073865, guid: f9c5205523faeb24fa0684a25c69b748, type: 3}
   m_PrefabInstance: {fileID: 388736320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &394176725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 132.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.254
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -95.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856295393480211492, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
+      propertyPath: m_Name
+      value: OrpheusREAL
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
 --- !u!1001 &395300471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73831,7 +73892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7068142990012554344, guid: 9629a8530cd3c48409f803775fdb9dbb, type: 3}
       propertyPath: text
-      value: Time to go home and see Euridice...
+      value: Time to go<br>home and see Euridice...
       objectReference: {fileID: 0}
     - target: {fileID: 7068142990012554344, guid: 9629a8530cd3c48409f803775fdb9dbb, type: 3}
       propertyPath: right
@@ -73862,4 +73923,5 @@ SceneRoots:
   - {fileID: 7439723876670213198}
   - {fileID: 1470682992}
   - {fileID: 314598116}
+  - {fileID: 394176725}
   - {fileID: 1343760814}
