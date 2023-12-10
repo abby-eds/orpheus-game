@@ -30,7 +30,9 @@ public class StartBoat : MonoBehaviour
         {
             // make player child of boat & disable movement
             player.transform.parent = boat.transform;
-            player.GetComponent<PlayerMovement>().enabled = false;
+            //player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<PlayerMovement>().movementSpeed = 0;
+            player.GetComponent<PlayerMovement>().rotateSpeed = 0;
 
             // teach song
             Invoke("TeachSong", 1);
