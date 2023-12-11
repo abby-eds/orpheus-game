@@ -82,6 +82,6 @@ public class Goat : Charmable
 
     protected override void OnAsleep()
     {
-
+        base.OnAsleep();
     }
 }

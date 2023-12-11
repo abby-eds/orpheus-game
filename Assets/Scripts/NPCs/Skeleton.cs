@@ -78,6 +78,6 @@ public class Skeleton : Charmable
 
     protected override void OnAsleep()
     {
-
+        base.OnAsleep();
     }
 }
