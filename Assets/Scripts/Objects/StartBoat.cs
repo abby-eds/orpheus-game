@@ -94,7 +94,7 @@ public class StartBoat : MonoBehaviour
     void Chat4()
     {
         chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
-        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need<br>a different tune to survive<br>down here...", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need<br>a different<br>tune to survive<br>down here...", true);
     }
 
     void Chat5() 
@@ -104,21 +104,21 @@ public class StartBoat : MonoBehaviour
 
     void Chat6()
     {
-        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "It might just bring you light in a dark time.", true);
     }
 
     void Chat7()
     {
-        chatterPlayer.ModifyChatter(BubbleType.Speech, "Euridice... I'm on my way... hang in there.", false);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
     }
 
     void Chat8()
     {
-        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "Euridice... I'm on my way... hang in there.", false);
     }
     void Chat9()
     {
-        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
     }
 
     void TeachSong()
