@@ -56,6 +56,12 @@ public class StartBoat : MonoBehaviour
 
             Invoke("Chat6", 24);
 
+            Invoke("Chat7", 28);
+
+            Invoke("Chat8", 32);
+
+            Invoke("Chat9", 36);
+
 
         }
     }
@@ -82,7 +88,7 @@ public class StartBoat : MonoBehaviour
     void Chat3()
     {
         chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
-        chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", true);
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", false);
     }
 
     void Chat4()
@@ -97,6 +103,20 @@ public class StartBoat : MonoBehaviour
     }
 
     void Chat6()
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
+    }
+
+    void Chat7()
+    {
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "Euridice... I'm on my way... hang in there.", false);
+    }
+
+    void Chat8()
+    {
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
+    }
+    void Chat9()
     {
         chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
     }
