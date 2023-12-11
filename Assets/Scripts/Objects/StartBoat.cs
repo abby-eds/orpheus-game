@@ -79,6 +79,7 @@ public class StartBoat : MonoBehaviour
 
     void Chat3()
     {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
         chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", true);
     }
 
@@ -91,8 +92,7 @@ public class StartBoat : MonoBehaviour
     void TeachSong()
     {
         // teach player new song on way
-        
-        
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
         player.GetComponent<RingMusic>().LearnSong();
     }
 
