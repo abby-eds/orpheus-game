@@ -58,9 +58,9 @@ public class StartBoat : MonoBehaviour
 
             Invoke("Chat7", 28);
 
-            Invoke("Chat8", 32);
+            Invoke("Chat8", 36);
 
-            Invoke("Chat9", 36);
+            Invoke("Chat9", 40);
 
 
         }
@@ -94,7 +94,7 @@ public class StartBoat : MonoBehaviour
     void Chat4()
     {
         chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
-        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need<br>a different<br>tune to survive<br>down here...", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll<br>need a different<br>tune to survive<br>down here...", true);
     }
 
     void Chat5() 
