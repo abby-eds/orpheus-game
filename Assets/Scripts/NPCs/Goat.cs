@@ -37,7 +37,7 @@ public class Goat : Charmable
                 {
                     // go ram the player
                     // on success, become netural for a bit
-                    if (ram.goRam(player))
+                    if (ram.goRam())
                     {
                         willpower = charmedThreshold;
                     }
@@ -82,6 +82,6 @@ public class Goat : Charmable
 
     protected override void OnAsleep()
     {
-
+        base.OnAsleep();
     }
 }

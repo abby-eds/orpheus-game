@@ -1,4 +1,3 @@
-// RandomPointOnNavMesh
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,7 +14,7 @@ public class Ram : MonoBehaviour
         this.goat = goat;
         this.player = player;
     }
-    public bool goRam(GameObject player)
+    public bool goRam()
     {
         // go to player
         agent.speed = ramSpeed;

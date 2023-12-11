@@ -36,6 +36,7 @@ public class GateGuardAI : Charmable
 
     protected override void OnCharmed()
     {
+        base.OnCharmed();
         if (gate.gateAngleChange != 1) GetComponent<Animator>().SetTrigger("Interact");
         gate.gateAngleChange = 1;
         chatter.ModifyChatter(BubbleType.Speech, "Oh, okay... such a nice song, you can pass.", true);
@@ -43,6 +44,7 @@ public class GateGuardAI : Charmable
 
     protected override void OnAsleep()
     {
+        base.OnAsleep();
         gate.gateAngleChange = 0;
 
         chatter.ModifyChatter(BubbleType.Speech, "Zzz...", true);
