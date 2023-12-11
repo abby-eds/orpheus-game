@@ -52,7 +52,9 @@ public class StartBoat : MonoBehaviour
             // teach song
             Invoke("TeachSong", 16);
 
+            Invoke("Chat5", 20);
 
+            Invoke("Chat6", 24);
 
 
         }
@@ -86,7 +88,17 @@ public class StartBoat : MonoBehaviour
     void Chat4()
     {
         chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
-        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need a different tune to survive down here...", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need<br>a different tune to survive<br>down here...", true);
+    }
+
+    void Chat5() 
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Try something a little more... spiritual...", true);
+    }
+
+    void Chat6()
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
     }
 
     void TeachSong()
