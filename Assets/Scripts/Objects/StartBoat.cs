@@ -10,7 +10,8 @@ public class StartBoat : MonoBehaviour
     private GameObject boat;
     private GameObject charon;
     private Animator anim;
-    private Chatter chatter;
+    private Chatter chatterCharon;
+    private Chatter chatterPlayer;
     public bool sailing = false;
 
     // Start is called before the first frame update
@@ -20,7 +21,8 @@ public class StartBoat : MonoBehaviour
         boat = this.gameObject;
         charon = GameObject.Find("SitCharon");
         anim = charon.GetComponent<Animator>();
-        chatter = charon.GetComponent<Chatter>();
+        chatterCharon = charon.GetComponent<Chatter>();
+        chatterPlayer = player.GetComponent<Chatter>();
     }
 
     // when we get on boat
@@ -34,11 +36,21 @@ public class StartBoat : MonoBehaviour
             player.GetComponent<PlayerMovement>().movementSpeed = 0;
             player.GetComponent<PlayerMovement>().rotateSpeed = 0;
 
-            // teach song
-            Invoke("TeachSong", 1);
 
             // begin sailing
             Invoke("StartSailing", 0);
+
+            // speak to player
+            Invoke("Chat1", 2);
+
+            Invoke("Chat2", 4);
+
+            Invoke("Chat3", 6);
+
+            // teach song
+            Invoke("TeachSong", 8);
+
+
 
 
         }
@@ -53,10 +65,26 @@ public class StartBoat : MonoBehaviour
         sailing = true;
     }
 
+    void Chat1()
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "A close one there, huh.", true);
+    }
+
+    void Chat2()
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "What brings you down to the Styx?", true);
+    }
+
+    void Chat3()
+    {
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", true);
+    }
+
     void TeachSong()
     {
         // teach player new song on way
-        chatter.ModifyChatter(BubbleType.Speech, "Heed my voice, and learn my song...", true);
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need to change that tune of yours to survive down here...", true);
         player.GetComponent<RingMusic>().LearnSong();
     }
 
