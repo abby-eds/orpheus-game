@@ -25,7 +25,7 @@ public class Faucet : MonoBehaviour
         }
     }
     void OnTriggerStay(Collider Other){
-        if(Other.gameObject.CompareTag("Player")){
+        if(Other.gameObject.CompareTag("Player") && !Other.isTrigger){
             if (Input.GetKey(KeyCode.E)){
                 gameObject.GetComponent<Animation>().Play();
                 draining = true;
