@@ -38,7 +38,7 @@ public class StartBoat : MonoBehaviour
             Invoke("TeachSong", 1);
 
             // begin sailing
-            Invoke("StartSailing", 9);
+            Invoke("StartSailing", 0);
 
 
         }
