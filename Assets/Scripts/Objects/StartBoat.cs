@@ -52,7 +52,15 @@ public class StartBoat : MonoBehaviour
             // teach song
             Invoke("TeachSong", 16);
 
+            Invoke("Chat5", 20);
 
+            Invoke("Chat6", 24);
+
+            Invoke("Chat7", 28);
+
+            Invoke("Chat8", 36);
+
+            Invoke("Chat9", 40);
 
 
         }
@@ -79,20 +87,44 @@ public class StartBoat : MonoBehaviour
 
     void Chat3()
     {
-        chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", false);
     }
 
     void Chat4()
     {
         chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
-        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need a different tune to survive down here...", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll<br>need a different<br>tune to survive<br>down here...", true);
+    }
+
+    void Chat5() 
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Try something a little more... spiritual...", true);
+    }
+
+    void Chat6()
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "It might just bring you light in a dark time.", true);
+    }
+
+    void Chat7()
+    {
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
+    }
+
+    void Chat8()
+    {
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "Euridice... I'm on my way... hang in there.", false);
+    }
+    void Chat9()
+    {
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
     }
 
     void TeachSong()
     {
         // teach player new song on way
-        
-        
+        chatterCharon.ModifyChatter(BubbleType.Speech, "", true);
         player.GetComponent<RingMusic>().LearnSong();
     }
 
