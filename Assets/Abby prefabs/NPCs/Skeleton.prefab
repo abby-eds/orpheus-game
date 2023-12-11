@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   maxWaitTime: 4
-  walkSpeed: 3
+  walkSpeed: 0.5
 --- !u!195 &9180846187106081853
 NavMeshAgent:
   m_ObjectHideFlags: 0
