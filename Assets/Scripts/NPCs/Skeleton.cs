@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Goat : Charmable
+public class Skeleton : Charmable
 {
     private RandomWander wander;
     private NavMeshAgent agent;
     private Animator anim;
     private Vision vision;
-    private Ram ram;
+    private SkeletonSwing SkeletonSwing;
     private GameObject player;
 
     // Start is called before the first frame update
@@ -19,10 +19,10 @@ public class Goat : Charmable
         agent = GetComponent<NavMeshAgent>();
         vision = GetComponent<Vision>();
         wander.setAgent(agent);
-        ram = GetComponent<Ram>();
+        SkeletonSwing = GetComponent<SkeletonSwing>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        ram.setup(agent, player, this.gameObject);
+        SkeletonSwing.setup(agent, player, this.gameObject);
     }
 
     // Update is called once per frame
@@ -30,17 +30,13 @@ public class Goat : Charmable
     {
         base.Update();
 
-        switch(Status)
+        switch (Status)
         {
             case CharmStatus.Hostile:
                 if (vision.isPlayerInSight())
                 {
-                    // go ram the player
-                    // on success, become netural for a bit
-                    if (ram.goRam())
-                    {
-                        willpower = charmedThreshold;
-                    }
+                    // approach, then hit
+                    SkeletonSwing.goHit();
                 }
                 else
                 {
