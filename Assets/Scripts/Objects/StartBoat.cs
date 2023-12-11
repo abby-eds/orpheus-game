@@ -45,10 +45,12 @@ public class StartBoat : MonoBehaviour
 
             Invoke("Chat2", 4);
 
-            Invoke("Chat3", 6);
+            Invoke("Chat3", 8);
+
+            Invoke("Chat4", 12);
 
             // teach song
-            Invoke("TeachSong", 8);
+            Invoke("TeachSong", 16);
 
 
 
@@ -80,11 +82,17 @@ public class StartBoat : MonoBehaviour
         chatterPlayer.ModifyChatter(BubbleType.Speech, "My wife died unexpectedly. I have to go save her.", true);
     }
 
+    void Chat4()
+    {
+        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
+        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need a different tune to survive down here...", true);
+    }
+
     void TeachSong()
     {
         // teach player new song on way
-        chatterPlayer.ModifyChatter(BubbleType.Speech, "", true);
-        chatterCharon.ModifyChatter(BubbleType.Speech, "Well, you'll need to change that tune of yours to survive down here...", true);
+        
+        
         player.GetComponent<RingMusic>().LearnSong();
     }
 
