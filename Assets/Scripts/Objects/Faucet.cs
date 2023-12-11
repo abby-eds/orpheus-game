@@ -9,6 +9,7 @@ public class Faucet : MonoBehaviour
     public GameObject water;
     public float waterLevel = 0.8f;
     public bool draining = false;
+    private bool activated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,13 @@ public class Faucet : MonoBehaviour
         }
     }
     void OnTriggerStay(Collider Other){
-        if(Other.gameObject.CompareTag("Player") && !Other.isTrigger){
+        if(Other.gameObject.CompareTag("Player") && !Other.isTrigger && activated == false){
             if (Input.GetKey(KeyCode.E)){
                 gameObject.GetComponent<Animation>().Play();
+                gameObject.GetComponent<AudioSource>().Play();
+                gameObject.GetComponent<ParticleSystem>().Stop();
                 draining = true;
+                activated = true;
             }
         }
     }
