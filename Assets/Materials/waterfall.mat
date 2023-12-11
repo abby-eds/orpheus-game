@@ -52,7 +52,7 @@ Material:
     - _FoamSpeed: 0.5
     - _GlossyReflections: 1
     - _Mettalic: 0.755
-    - _NormalMapWavesSpeed: 0.1
+    - _NormalMapWavesSpeed: 0.794
     - _NormalMapsWavesSize: 2.8
     - _SMOOTHNESS: 1
     - _SmallWavesSize: 1
