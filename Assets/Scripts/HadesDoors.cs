@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HadesDoors : MonoBehaviour
+public class HadesDoors : Sculptable
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool activated = false;
 
-    // Update is called once per frame
-    void Update()
+    public override void ApplySongOfSculpting(int level)
     {
-        
+        Debug.Log("Song of skulpting activaed");
+        if (level > 1 && activated == false){
+            gameObject.GetComponent<Animation>().Play();
+            activated = true;
+        }
+
     }
 }
