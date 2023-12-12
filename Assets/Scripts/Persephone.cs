@@ -93,7 +93,7 @@ public class Persephone : MonoBehaviour
     }
     void Chat12(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "My Husband is beyond the big doors, play your song", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "My Husband is beyond the double doors outside, play your song", true);
     }
     void Chat13(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
