@@ -32,7 +32,7 @@ public class Goat : Charmable
 
 
         int baaChance = Random.Range(0, 100);
-        if (baaChance == 0)
+        if (baaChance == 0 && Status != CharmStatus.Asleep)
         {
             GetComponent<AudioSource>().Play();
         }

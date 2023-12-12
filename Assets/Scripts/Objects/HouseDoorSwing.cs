@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class HouseDoorSwing : MonoBehaviour
 {
     public bool nearby = false;
     private bool open = false;
     private Animator anim;
     private GameObject player;
+    private AudioSource audioSource;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -20,6 +22,7 @@ public class Door : MonoBehaviour
         {
             open = !open;
             anim.SetBool("Open", open);
+            audioSource.Play();
             if (player != null) player.GetComponent<Animator>().SetTrigger("Interact");
         }
     }
