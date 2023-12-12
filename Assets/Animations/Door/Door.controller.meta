@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/HadesCourtBlock.prefab.meta
+guid: d5a938a9d8f704bfe9e8b26c5108d43d
+PrefabImporter:
+========
 guid: 27a456fa511d71d4c8d88b9d5f02dbc3
 NativeFormatImporter:
+>>>>>>>> 54e7a4dad33c3dd70913c4b6815af6cfa390e48c:Assets/Animations/Door/Door.controller.meta
   externalObjects: {}
   mainObjectFileID: 9100000
   userData: 

@@ -6,6 +6,7 @@ public class Persephone : MonoBehaviour
 {
 
     private GameObject Orpheus;
+    private bool activated = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class Persephone : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.gameObject.CompareTag("Player") && !other.isTrigger){
+        if(other.gameObject.CompareTag("Player") && (!other.isTrigger) && (activated == false)){
             Debug.Log("Persephone is triggered");
             Orpheus = other.gameObject;
             
@@ -34,6 +35,13 @@ public class Persephone : MonoBehaviour
             Invoke("Chat9", 28);
             Invoke("Chat10", 32);
 
+            Invoke("songOfStone", 32);
+
+            Invoke("Chat11", 42);
+            Invoke("Chat12", 44);
+            Invoke("Chat13", 50);
+            
+            activated = true;
         }
     }
 
@@ -74,8 +82,24 @@ public class Persephone : MonoBehaviour
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "The song I sing sways trees and moves mountains", true);
     }
+
     void Chat10(){
         Orpheus.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
+    }
+    void Chat11(){
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "Very Good!!", true);
+    }
+    void Chat12(){
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "My Husband is beyond the big doors, play your song", true);
+    }
+    void Chat13(){
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
+    }
+
+    void songOfStone(){
+        Orpheus.GetComponent<RingMusic>().LearnSong();
     }
 }
