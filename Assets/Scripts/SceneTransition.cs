@@ -27,25 +27,25 @@ public class SceneTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fadePercent = 1;
+        fadePercent = 1.5f;
         sceneIndex = -1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fadeIn && fadePercent < 1)
+        if (fadeIn && fadePercent < 1.5f)
         {
             fadePercent += Time.deltaTime;
-            if (fadePercent > 1)
+            if (fadePercent > 1.5f)
             {
-                fadePercent = 1;
+                fadePercent = 1.5f;
                 SceneManager.LoadScene(sceneIndex);
             }
         }
         else if (!fadeIn && fadePercent > 0)
         {
-            fadePercent -= Time.deltaTime;
+            fadePercent -= Time.deltaTime / 2;
             if (fadePercent < 0)
             {
                 fadePercent = 0;
