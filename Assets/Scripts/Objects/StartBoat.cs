@@ -12,7 +12,9 @@ public class StartBoat : MonoBehaviour
     private Animator anim;
     private Chatter chatterCharon;
     private Chatter chatterPlayer;
+    private CharonRowing charonRowing;
     public bool sailing = false;
+    private bool hasRowed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class StartBoat : MonoBehaviour
         anim = charon.GetComponent<Animator>();
         chatterCharon = charon.GetComponent<Chatter>();
         chatterPlayer = player.GetComponent<Chatter>();
+        charonRowing = charon.GetComponent<CharonRowing>();
     }
 
     // when we get on boat
@@ -132,7 +135,18 @@ public class StartBoat : MonoBehaviour
     {
         if (sailing)
         {
-            boat.transform.Translate(0.05f, 0, 0);
+            if (hasRowed)
+            {
+                boat.transform.Translate(0.05f, 0, 0);
+            }
+            
+            if (charonRowing.rowing)
+            {
+                hasRowed = true;
+                boat.transform.Translate(0.05f, 0, 0);
+            }
         }
+
+
     }
 }

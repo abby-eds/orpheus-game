@@ -61,7 +61,7 @@ public class Skeleton : Charmable
         }
         float speed = agent.velocity.sqrMagnitude;
         anim.SetFloat("Speed", speed);
-        if (speed > 0 && !audioSource.isPlaying)
+        if (speed > 0 && !audioSource.isPlaying && Time.timeScale > 0)
         {
             audioSource.Play();
         } 
@@ -73,18 +73,18 @@ public class Skeleton : Charmable
 
     protected override void OnHostile()
     {
-
+        base.OnHostile();
     }
 
     protected override void OnNeutral()
     {
+        base.OnNeutral();
         agent.ResetPath();
     }
 
     protected override void OnCharmed()
     {
-
-
+        base.OnCharmed();
     }
 
     protected override void OnAsleep()

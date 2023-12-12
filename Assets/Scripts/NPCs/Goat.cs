@@ -32,7 +32,7 @@ public class Goat : Charmable
 
 
         int baaChance = Random.Range(0, 100);
-        if (baaChance == 0 && Status != CharmStatus.Asleep)
+        if (baaChance == 0 && Status != CharmStatus.Asleep && Time.timeScale > 0)
         {
             GetComponent<AudioSource>().Play();
         }
@@ -75,18 +75,18 @@ public class Goat : Charmable
 
     protected override void OnHostile()
     {
-
+        base.OnHostile();
     }
 
     protected override void OnNeutral()
     {
+        base.OnNeutral();
         agent.ResetPath();
     }
 
     protected override void OnCharmed()
     {
-
-
+        base.OnCharmed();
     }
 
     protected override void OnAsleep()

@@ -47,7 +47,6 @@ public class SOD_Reveal : Spectral
         Debug.Log("reveal");
         delaytimer = fadeDelay;
         fadeIn(fadeInSpeed);
-
     }
 
     public virtual void fadeOut(float speed)
