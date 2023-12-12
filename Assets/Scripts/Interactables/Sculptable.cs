@@ -18,6 +18,6 @@ public class Sculptable : MonoBehaviour
 
     public virtual void ApplySongOfSculpting(int level)
     {
-
+        Debug.Log("Sculptable: This probably needs to be overwritten");
     }
 }

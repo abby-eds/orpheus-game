@@ -27,6 +27,7 @@ public class Faucet : MonoBehaviour
     }
     void OnTriggerStay(Collider Other){
         if(Other.gameObject.CompareTag("Player") && !Other.isTrigger && activated == false){
+            UIManager.UI.InteractActive(true);
             if (Input.GetKey(KeyCode.E)){
                 gameObject.GetComponent<Animation>().Play();
                 gameObject.GetComponent<AudioSource>().Play();
@@ -34,6 +35,13 @@ public class Faucet : MonoBehaviour
                 draining = true;
                 activated = true;
             }
+        }
+    }
+    private void OnTriggerExit(Collider Other)
+    {
+        if (Other.gameObject.CompareTag("Player") && !Other.isTrigger && activated == false)
+        {
+            UIManager.UI.InteractActive(false);
         }
     }
 }

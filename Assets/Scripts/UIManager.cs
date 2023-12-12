@@ -23,9 +23,12 @@ public class UIManager : MonoBehaviour
     public GameObject controlsMenu;
     public GameObject settingsMenu;
     public GameObject gameOverMenu;
+    public GameObject EToInteract;
+    public GameObject toBeContinued;
     public bool onStartScreen;
     private bool paused;
     private bool backMenu;
+    private bool winGame;
 
     private void Awake()
     {
@@ -60,7 +63,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !playerHealth.dead)
+        if (Input.GetKeyDown(KeyCode.Escape) && !playerHealth.dead && !winGame)
         {
             if (backMenu) BackToPauseMenu();
             else if (paused && !onStartScreen) Unpause();
@@ -186,9 +189,21 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
+    public void InteractActive(bool active)
+    {
+        EToInteract.SetActive(active);
+    }
+
     public void Retry()
     {
         SceneTransition.Transition.TransitionToScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ToBeContinued()
+    {
+        SceneTransition.Transition.ToBeContinued();
+        winGame = true;
+        toBeContinued.SetActive(true);
     }
 
     public void Exit()
