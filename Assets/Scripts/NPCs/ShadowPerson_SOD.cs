@@ -24,4 +24,19 @@ public class ShadowPerson_SOD : SOD_Reveal
             mat.SetFloat("amount", amnt);
         }
     }
+
+    public override void fadeOut(float speed)
+    {
+        var amnt = mat.GetFloat("amount");
+        if (amnt > 0)
+        {
+            amnt -= speed * Time.deltaTime;
+            
+        }
+        else if(amnt != 0)
+        {
+            amnt = 0;
+        }
+        mat.SetFloat("amount", amnt);
+    }
 }
