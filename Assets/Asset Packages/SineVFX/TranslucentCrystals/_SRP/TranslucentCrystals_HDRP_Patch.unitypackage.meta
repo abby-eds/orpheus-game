@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Asset Packages/SineVFX/TranslucentCrystals/_SRP/TranslucentCrystals_HDRP_Patch.unitypackage.meta
 guid: 3829f2d229e9f9b44b6d3f85cb2d6653
+========
+guid: 7adc6aeaebe059f4196b22d7d3f6c066
+folderAsset: yes
+>>>>>>>> 54e7a4dad33c3dd70913c4b6815af6cfa390e48c:Assets/Scripts/Mechanisms.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
