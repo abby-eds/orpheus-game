@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18026398, g: 0.22569051, b: 0.30691218, a: 1}
+  m_IndirectSpecularColor: {r: 0.18026355, g: 0.22568978, b: 0.306911, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11579,7 +11579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1236884005350586771, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8645884005727879073, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: learnedSongs
@@ -13870,7 +13870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1236884005350586771, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645884005727879073, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: learnedSongs
