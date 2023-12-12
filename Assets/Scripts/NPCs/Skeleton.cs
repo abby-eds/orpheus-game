@@ -63,7 +63,6 @@ public class Skeleton : Charmable
         anim.SetFloat("Speed", speed);
         if (speed > 0 && !audioSource.isPlaying)
         {
-            print(speed);
             audioSource.Play();
         } 
         else if (speed <= 0)
