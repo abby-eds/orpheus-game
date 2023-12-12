@@ -25,6 +25,7 @@ public class LyrePickup : MonoBehaviour
                 dialogueZone.text = "Time to go find the entrance<br>to the Underworld...";
                 dialogueZone.playerChat.ModifyChatter(dialogueZone.bubbleType, dialogueZone.text, true);
                 gameObject.SetActive(false);
+                UIManager.UI.InteractActive(false);
             }
         }
     }
