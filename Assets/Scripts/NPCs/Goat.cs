@@ -31,7 +31,7 @@ public class Goat : Charmable
         base.Update();
 
 
-        int baaChance = Random.Range(0, 100);
+        int baaChance = Random.Range(0, 1000);
         if (baaChance == 0)
         {
             GetComponent<AudioSource>().Play();
