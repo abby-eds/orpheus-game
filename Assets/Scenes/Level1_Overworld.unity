@@ -11522,15 +11522,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 525.35
+      value: 518.76
       objectReference: {fileID: 0}
     - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -63.17
+      value: -51.67
       objectReference: {fileID: 0}
     - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -60.13
+      value: -27.21
       objectReference: {fileID: 0}
     - target: {fileID: 364566604430909712, guid: 3f97001a1a4b83f47a5ce887fcce89de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51056,7 +51056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7068142990012554344, guid: 9629a8530cd3c48409f803775fdb9dbb, type: 3}
       propertyPath: text
-      value: Euridice...<br>I need to save her.<br>I need my Lyre
+      value: Euridice...<br>I need to<br>save her.<br>I need my Lyre.
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6762202604651645053, guid: 9629a8530cd3c48409f803775fdb9dbb, type: 3}

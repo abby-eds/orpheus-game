@@ -5,6 +5,7 @@ using UnityEngine;
 public class unseenbox : Spectral{
 
     private float timer = 0;
+    private GameObject Orpheus;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,21 @@ public class unseenbox : Spectral{
         }
         
     }
+
+    void OnCollisionEnter(Collision other){
+        if(other.gameObject.CompareTag("Player") && (gameObject.GetComponent<MeshRenderer>().enabled == false)){
+            Orpheus = other.gameObject;
+            Orpheus.gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Thought, "Ouch! There's something there...?", true);
+            Invoke("turnOffChatter", 2);
+        }
+    }
     public override void ApplySongOfDead(int level){
         timer = 1;
     }
+
+    private void turnOffChatter(){
+        Orpheus.gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Thought, "",true);
+    }
+
+
 }

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class SkeletonSwing : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private float runSpeed = 4f;
+    private float runSpeed = 5f;
     private GameObject player;
     private GameObject skeleton;
     private bool swinging = false;
@@ -29,7 +29,7 @@ public class SkeletonSwing : MonoBehaviour
             swinging = true;
             agent.ResetPath();
             skeleton.GetComponent<Animator>().SetTrigger("Swing");
-            Invoke("Swing", 1);
+            Invoke("Swing", 1f);
             Invoke("StopSwinging", 2);
         }
 
@@ -38,7 +38,7 @@ public class SkeletonSwing : MonoBehaviour
     private void Swing()
     {
         float distance = Vector3.Distance(skeleton.transform.position, player.transform.position);
-        if (distance < 1)
+        if (distance < 2)
         {
             player.GetComponent<PlayerHealth>().TakeDamage();
         }

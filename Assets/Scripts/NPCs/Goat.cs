@@ -30,6 +30,15 @@ public class Goat : Charmable
     {
         base.Update();
 
+
+        int baaChance = Random.Range(0, 100);
+        if (baaChance == 0)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+
+
+
         switch(Status)
         {
             case CharmStatus.Hostile:
