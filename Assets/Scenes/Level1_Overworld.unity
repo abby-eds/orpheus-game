@@ -11564,6 +11564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Orpheus
       objectReference: {fileID: 0}
+    - target: {fileID: 1236884005350586771, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8645884005727879073, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: learnedSongs
       value: 3
@@ -13935,7 +13939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1236884005350586771, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645884005727879073, guid: a6b9755bb2033ab45b99a01e49b6118f, type: 3}
       propertyPath: learnedSongs
