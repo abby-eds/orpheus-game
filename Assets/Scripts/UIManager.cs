@@ -14,8 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject healthbarPrefab;
     public GameObject textBubbleParent;
     public GameObject textBubblePrefab;
-    public AudioSource backgroundSong;
-    public AudioSource instrumentSong;
+    public AudioSource[] songs;
 
     [Header("Menus")]
     public GameObject startScreen;
@@ -133,8 +132,7 @@ public class UIManager : MonoBehaviour
     {
         paused = true;
         Time.timeScale = 0;
-        backgroundSong.Pause();
-        instrumentSong.Pause();
+        foreach(AudioSource s in songs) s.Pause();
         if (onStartScreen) startMenu.SetActive(true);
         else pauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -144,8 +142,7 @@ public class UIManager : MonoBehaviour
     {
         paused = false;
         Time.timeScale = 1;
-        backgroundSong.UnPause();
-        instrumentSong.UnPause();
+        foreach (AudioSource s in songs) s.UnPause();
         pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }

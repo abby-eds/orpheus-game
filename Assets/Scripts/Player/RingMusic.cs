@@ -30,10 +30,8 @@ public class RingMusic : MonoBehaviour
     public Sprite levelOrbFilled;
     public Sprite levelOrbEmpty;
     public GameObject notePrefab;
-    public AudioSource backgroundSong;
-    public AudioSource instrumentSong;
-    public AudioClip[] backgroundSongs;
-    public AudioClip[] instrumentSongs;
+    public AudioSource[] backgroundSongs;
+    public AudioSource[] instrumentSongs;
     private Animator anim;
     public Animator lyreAnim;
     public GameObject lyre;
@@ -48,7 +46,7 @@ public class RingMusic : MonoBehaviour
     private float delay;
     public float quietDelay;
     public float quietTime;
-    private float songVolume = 0;
+    private float[] songVolumes = new float[3] { 0, 0, 0 };
 
     private List<Note> notes = new List<Note>();
     private Note finished = null;
@@ -59,7 +57,7 @@ public class RingMusic : MonoBehaviour
     private List<NoteData>[] songs;
     public List<Color> songColors;
     public List<Sprite> songIcons;
-    private int songIndex;
+    public int songIndex;
 
     [Header("Leeway/Difficulty Settings")]
     public float leewayPerfect;
@@ -90,7 +88,6 @@ public class RingMusic : MonoBehaviour
         interactions = GetComponent<InteractableDetector>();
         delay = 1f;
         noteIndex = 0;
-        songIndex = 0;
         songTime = -1;
         songs = new List<NoteData>[numSongs];
         songDurations = new float[numSongs];
@@ -120,11 +117,16 @@ public class RingMusic : MonoBehaviour
         songs[2] = new List<NoteData>()
         {
             new NoteData(NoteType.Any, 0.0f, true),
+            new NoteData(NoteType.Any, 0.25f, true),
             new NoteData(NoteType.Any, 0.5f, true),
+            new NoteData(NoteType.Any, 0.75f, true),
             new NoteData(NoteType.Any, 1.0f, true),
             new NoteData(NoteType.Any, 1.5f, true),
+
             new NoteData(NoteType.Any, 2.0f, true),
+            new NoteData(NoteType.Any, 2.25f, true),
             new NoteData(NoteType.Any, 2.5f, true),
+            new NoteData(NoteType.Any, 2.75f, true),
             new NoteData(NoteType.Any, 3.0f, true),
             new NoteData(NoteType.Any, 3.5f, true),
         };
@@ -194,8 +196,8 @@ public class RingMusic : MonoBehaviour
         else playerHealth.CancelRegen();
         UpdateStreakMeter();
 
-        if (songLevel > 0) songVolume = 1;
-        else songVolume = 0;
+        if (songLevel > 0) songVolumes[songIndex] = 1;
+        else songVolumes[songIndex] = 0;
 
         switch (quality)
         {
@@ -236,15 +238,13 @@ public class RingMusic : MonoBehaviour
         noteIndex = 0;
         RemoveAllNotes();
         UpdateStreakMeter();
-        backgroundSong.Stop();
-        instrumentSong.Stop();
-        backgroundSong.clip = backgroundSongs[songIndex];
-        instrumentSong.clip = instrumentSongs[songIndex];
-        backgroundSong.volume = 0;
-        instrumentSong.volume = 0;
-        songVolume = 0;
-        backgroundSong.Play();
-        instrumentSong.Play();
+        songVolumes[0] = 0;
+        songVolumes[1] = 0;
+        songVolumes[2] = 0;
+        backgroundSongs[songIndex].Stop();
+        instrumentSongs[songIndex].Stop();
+        backgroundSongs[songIndex].Play();
+        instrumentSongs[songIndex].Play();
         indicator.GetComponent<Image>().color = songColors[songIndex];
         streakMeterEmpty.color = songColors[songIndex];
         streakMeterFilled.color = songColors[songIndex];
@@ -336,8 +336,11 @@ public class RingMusic : MonoBehaviour
                 if (delay <= 0)
                 {
                     delay = 0;
-                    backgroundSong.Play();
-                    instrumentSong.Play();
+                    for(int i = 0; i < numSongs; i++)
+                    {
+                        backgroundSongs[i].Play();
+                        instrumentSongs[i].Play();
+                    }
                 }
             }
             else
@@ -359,7 +362,7 @@ public class RingMusic : MonoBehaviour
                 }
 
                 // Advance the overall song time and spawn notes as needed
-                songTime = backgroundSong.time % songDuration;
+                songTime = backgroundSongs[songIndex].time % songDuration;
                 if (noteIndex < songs[songIndex].Count && songTime >= songs[songIndex][noteIndex].delay)
                 {
                     Note p = new Note(songs[songIndex][noteIndex], songDuration);
@@ -441,21 +444,37 @@ public class RingMusic : MonoBehaviour
                 }
             }
         }
-        if (backgroundSong.volume < 1)
+        for (int i = 0; i < numSongs; i++)
         {
-            backgroundSong.volume += 0.1f * Time.deltaTime;
-            if (backgroundSong.volume > 1) backgroundSong.volume = 1;
+            if (i == songIndex)
+            {
+                if (backgroundSongs[i].volume < 1)
+                {
+                    backgroundSongs[i].volume += 0.25f * Time.deltaTime;
+                    if (backgroundSongs[i].volume > 1) backgroundSongs[i].volume = 1;
+                }
+            }
+            else
+            {
+                if (backgroundSongs[i].volume > 0)
+                {
+                    backgroundSongs[i].volume -= 0.25f * Time.deltaTime;
+                    if (backgroundSongs[i].volume < 0) backgroundSongs[i].volume = 0;
+                }
+            }
+            if (instrumentSongs[i].volume < songVolumes[i])
+            {
+                instrumentSongs[i].volume += Time.deltaTime;
+                if (instrumentSongs[i].volume > songVolumes[i]) instrumentSongs[i].volume = songVolumes[i];
+            }
+            else if (instrumentSongs[i].volume > songVolumes[i])
+            {
+                instrumentSongs[i].volume -= 0.25f * Time.deltaTime;
+                if (instrumentSongs[i].volume < songVolumes[i]) instrumentSongs[i].volume = songVolumes[i];
+            }
         }
-        if (instrumentSong.volume < songVolume)
-        {
-            instrumentSong.volume += Time.deltaTime;
-            if (instrumentSong.volume > songVolume) instrumentSong.volume = songVolume;
-        }
-        if (instrumentSong.volume > songVolume)
-        {
-            instrumentSong.volume -= 0.2f * Time.deltaTime;
-            if (instrumentSong.volume < songVolume) instrumentSong.volume = songVolume;
-        }
+        
+        
         if (streakMask.fillAmount > streakMeterFillAmount + 0.1f) streakMask.fillAmount = streakMeterFillAmount;
         if (streakMask.fillAmount < streakMeterFillAmount)
         {

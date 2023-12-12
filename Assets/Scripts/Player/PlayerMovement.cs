@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private float rotationDelta;
     private bool jump;
     private float jumpVelocity;
-    private bool grounded;
-    private bool blocked;
+    public bool grounded;
+    public bool blocked;
     // private Ray footRay;
     private Vector3 movement;
 
@@ -136,7 +136,8 @@ public class PlayerMovement : MonoBehaviour
 
             // footRay = new Ray(transform.position + Vector3.up, movement);
             // Debug.DrawRay(footRay.origin, footRay.direction * 0.5f, Color.red);
-            movementMultiplier = ((ringMusic.songLevel > 0) ? 0.75f : 1);
+            // movementMultiplier = ((ringMusic.songLevel > 0) ? 0.75f : 1);
+            movementMultiplier = 1;
             if (!blocked) // This looks dumb but it excludes the case of when you're in contact with a slope
             {
                 rb.AddForce(movement * movementSpeed * movementMultiplier - horizontalVelocity, ForceMode.VelocityChange);
@@ -148,25 +149,16 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(-horizontalVelocity, ForceMode.VelocityChange);
             movement = Vector3.zero;
         }
-        if (jump)
+        if (jump && jumpHeight > 0)
         {
             jump = false;
             rb.AddForce(Vector3.up * jumpVelocity, ForceMode.VelocityChange);
             anim.SetTrigger("Jump");
         }
-        anim.SetFloat("Forwards", movementZ);
-        anim.SetFloat("Sideways", movementX);
+        anim.SetFloat("Forwards", movementZ * movementSpeed);
+        anim.SetFloat("Sideways", movementX * movementSpeed);
         anim.SetFloat("Movement Speed", movementMultiplier);
-
-        Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
-        Debug.DrawRay(cameraRay.origin, cameraRay.direction * (maxCameraDistance + 1));
-        RaycastHit[] cameraHits = Physics.RaycastAll(cameraRay, maxCameraDistance + 1, LayerMask.GetMask("Terrain"));
-        float distance = maxCameraDistance;
-        foreach(RaycastHit hit in cameraHits)
-        {
-            if (!hit.collider.isTrigger && hit.distance - minCameraDistance < distance) distance = hit.distance - minCameraDistance; 
-        }
-        playerCam.transform.localPosition = new Vector3(0, 0, -distance);
+        
         // Debug.Log("Grounded: " + grounded);
         grounded = false;
         blocked = false;
@@ -176,6 +168,15 @@ public class PlayerMovement : MonoBehaviour
     {
         // Make the amera follow the player after both the camera's rotation and the player's position have been updated
         cameraAnchor.position = transform.position + Vector3.up;
+        Ray cameraRay = new Ray(cameraAnchor.transform.position, -cameraAnchor.transform.forward);
+        Debug.DrawRay(cameraRay.origin, cameraRay.direction * (maxCameraDistance + 1));
+        RaycastHit[] cameraHits = Physics.RaycastAll(cameraRay, maxCameraDistance + 1, LayerMask.GetMask("Terrain"));
+        float distance = maxCameraDistance;
+        foreach (RaycastHit hit in cameraHits)
+        {
+            if (!hit.collider.isTrigger && hit.distance - minCameraDistance < distance) distance = hit.distance - minCameraDistance;
+        }
+        playerCam.transform.localPosition = new Vector3(0, 0, -distance);
     }
 
     private void OnCollisionStay(Collision collision)
@@ -188,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Vector2 movement2d = new Vector2(movement.x, movement.z);
             Vector2 contact2d = new Vector2(contact.normal.x, contact.normal.z);
-            if(Vector2.Dot(movement2d, contact2d) < -0.1f && contact2d.magnitude > 0.7f)
+            if(Vector2.Dot(movement2d, contact2d) < -0.1f && contact2d.magnitude > 0.7f && contact2d.magnitude < 0.99f)
             {
                 blocked = true;
             }
