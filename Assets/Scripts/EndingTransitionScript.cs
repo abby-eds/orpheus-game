@@ -8,6 +8,8 @@ public class EndingTransitionScript : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("Player") && !other.isTrigger){
             gameObject.GetComponent<AudioSource>().Play();
+            //SceneTransition.Transition.ToBeContinued();
+            UIManager.UI.ToBeContinued();
         }
     }
 }
