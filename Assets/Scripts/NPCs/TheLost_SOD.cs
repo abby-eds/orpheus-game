@@ -32,7 +32,7 @@ public class TheLost : SOD_Reveal
 
     public override void fadeIn(float speed)
     {
-        if (glow.intensity <= 0)
+        if (glow.intensity <= 0 && Time.timeScale > 0)
         {
             snd.PlayOneShot(sighs[Random.Range(0, sighs.Length - 1)]);
         }
