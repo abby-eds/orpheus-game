@@ -48,7 +48,6 @@ public class RandomWander : MonoBehaviour
                 }
             }
         }
-        
     }
 
     private bool RandomPoint(Vector3 center, float range, out Vector3 result)
