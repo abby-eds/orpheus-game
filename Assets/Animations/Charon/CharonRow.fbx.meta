@@ -250,8 +250,8 @@ ModelImporter:
       name: CharonGathering
       takeName: human_male_gathering_01
       internalID: 0
-      firstFrame: 9
-      lastFrame: 50
+      firstFrame: 2
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
