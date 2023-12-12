@@ -38,7 +38,7 @@ public class SkeletonSwing : MonoBehaviour
     private void Swing()
     {
         float distance = Vector3.Distance(skeleton.transform.position, player.transform.position);
-        if (distance < 1)
+        if (distance < 2)
         {
             player.GetComponent<PlayerHealth>().TakeDamage();
         }
