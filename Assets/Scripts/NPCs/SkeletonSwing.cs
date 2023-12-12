@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class SkeletonSwing : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private float runSpeed = 4.5f;
+    private float runSpeed = 2f;
     private GameObject player;
     private GameObject skeleton;
     private bool swinging = false;
