@@ -21,11 +21,20 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _LEATHER3SMOOTHNESS _SKINSMOOTHNESS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _SKINSMOOTHNESS: 0.39
+    m_Colors:
+    - _CLOTH3COLOR: {r: 0.56737274, g: 0.9622642, b: 0.95364535, a: 0}
+    - _CLOTH4COLOR: {r: 0.2415753, g: 0.32156864, b: 0.094117634, a: 0}
+    - _EYESCOLOR: {r: 0, g: 0.8378737, b: 1, a: 1}
+    - _HAIRCOLOR: {r: 0.3207547, g: 0.04219398, b: 0.0257209, a: 0}
+    - _LEATHER1COLOR: {r: 0.7924528, g: 0.13802195, b: 0.056069765, a: 1}
+    - _LEATHER2COLOR: {r: 1.7924528, g: 0.8606843, b: 0.12682447, a: 1}
+    - _LEATHER3COLOR: {r: 0.5176471, g: 0.18816856, b: 0.1490196, a: 1}
+    - _SKINCOLOR: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
   m_BuildTextureStacks: []
