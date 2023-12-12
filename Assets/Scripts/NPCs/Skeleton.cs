@@ -11,6 +11,7 @@ public class Skeleton : Charmable
     private Vision vision;
     private SkeletonSwing SkeletonSwing;
     private GameObject player;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Skeleton : Charmable
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         SkeletonSwing.setup(agent, player, this.gameObject);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,7 +59,17 @@ public class Skeleton : Charmable
                 agent.ResetPath();
                 break;
         }
-        anim.SetFloat("Speed", agent.velocity.sqrMagnitude);
+        float speed = agent.velocity.sqrMagnitude;
+        anim.SetFloat("Speed", speed);
+        if (speed > 0 && !audioSource.isPlaying)
+        {
+            print(speed);
+            audioSource.Play();
+        } 
+        else if (speed <= 0)
+        {
+            audioSource.Stop();
+        }
     }
 
     protected override void OnHostile()
