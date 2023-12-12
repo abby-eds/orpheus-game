@@ -45,6 +45,7 @@ public class SceneTransition : MonoBehaviour
                 {
                     Time.timeScale = 0;
                     Cursor.lockState = CursorLockMode.None;
+                    UIManager.UI.toBeContinued.SetActive(true);
                 }
             }
         }

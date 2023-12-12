@@ -203,7 +203,6 @@ public class UIManager : MonoBehaviour
     {
         SceneTransition.Transition.ToBeContinued();
         winGame = true;
-        toBeContinued.SetActive(true);
     }
 
     public void Exit()
