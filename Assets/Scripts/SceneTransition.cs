@@ -36,11 +36,16 @@ public class SceneTransition : MonoBehaviour
     {
         if (fadeIn && fadePercent < 1.5f)
         {
-            fadePercent += Time.deltaTime;
+            fadePercent += Time.deltaTime / 2;
             if (fadePercent > 1.5f)
             {
                 fadePercent = 1.5f;
-                SceneManager.LoadScene(sceneIndex);
+                if (sceneIndex != -1) SceneManager.LoadScene(sceneIndex);
+                else
+                {
+                    Time.timeScale = 0;
+                    Cursor.lockState = CursorLockMode.None;
+                }
             }
         }
         else if (!fadeIn && fadePercent > 0)
@@ -65,6 +70,13 @@ public class SceneTransition : MonoBehaviour
     public void TransitionToScene(string sceneName)
     {
         sceneIndex = SceneManager.GetSceneByName(sceneName).buildIndex;
+        fadePanel.gameObject.SetActive(true);
+        fadeIn = true;
+    }
+
+    public void ToBeContinued()
+    {
+        sceneIndex = -1;
         fadePanel.gameObject.SetActive(true);
         fadeIn = true;
     }

@@ -33,6 +33,7 @@ public class LyrePickup : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            UIManager.UI.InteractActive(true);
             player = other.gameObject;
             nearby = true;
         }
@@ -42,6 +43,7 @@ public class LyrePickup : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            UIManager.UI.InteractActive(false);
             player = null;
             nearby = false;
         }
