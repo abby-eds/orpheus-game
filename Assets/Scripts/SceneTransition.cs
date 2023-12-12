@@ -61,6 +61,13 @@ public class SceneTransition : MonoBehaviour
         fadePanel.color = new Color(0, 0, 0, fadePercent);
     }
 
+    public void TransitionToNextScene()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        fadePanel.gameObject.SetActive(true);
+        fadeIn = true;
+    }
+
     public void TransitionToScene(int sceneIndex)
     {
         this.sceneIndex = sceneIndex;

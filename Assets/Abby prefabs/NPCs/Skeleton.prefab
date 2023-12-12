@@ -1748,9 +1748,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   willpower: 120
-  asleepThreshold: 30
-  charmedThreshold: 30
-  neutralThreshold: 60
+  asleepThreshold: 60
+  charmedThreshold: 60
+  neutralThreshold: 90
   maxWillpower: 120
   asleepRegen: 1
   charmedRegen: 1

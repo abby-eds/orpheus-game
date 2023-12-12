@@ -3507,7 +3507,7 @@ MonoBehaviour:
   maxWillpower: 120
   asleepRegen: 1
   charmedRegen: 1
-  neutralRegen: 2
+  neutralRegen: 3
   hostileRegen: 1
   regenDelayDuration: 3
   immunityDuration: 0

@@ -48,7 +48,7 @@ public class Goat : Charmable
                     // on success, become netural for a bit
                     if (ram.goRam())
                     {
-                        willpower = charmedThreshold;
+                        willpower = (asleepThreshold + neutralThreshold) / 2;
                     }
                 }
                 else
