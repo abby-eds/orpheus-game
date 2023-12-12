@@ -177,6 +177,7 @@ public class PlayerMovement : MonoBehaviour
             if (!hit.collider.isTrigger && hit.distance - minCameraDistance < distance) distance = hit.distance - minCameraDistance;
         }
         playerCam.transform.localPosition = new Vector3(0, 0, -distance);
+        UIManager.UI.UpdatePopups();
     }
 
     private void OnCollisionStay(Collision collision)

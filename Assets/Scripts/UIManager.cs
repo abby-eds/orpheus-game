@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    public void UpdatePopups()
     {
         if (Time.timeScale > 0)
         {
