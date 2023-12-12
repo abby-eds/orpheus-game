@@ -10,9 +10,12 @@ public class ShadowPerson_SOD : SOD_Reveal
 
     private void Start()
     {
+
         mat = GetComponent<Renderer>().material;
         maxAmnt = mat.GetFloat("amount");
         mat.SetFloat("amount", 0);
+        
+        
     }
 
     public override void fadeIn(float speed)
@@ -31,9 +34,9 @@ public class ShadowPerson_SOD : SOD_Reveal
         if (amnt > 0)
         {
             amnt -= speed * Time.deltaTime;
-            
+
         }
-        else if(amnt != 0)
+        else if (amnt != 0)
         {
             amnt = 0;
         }
