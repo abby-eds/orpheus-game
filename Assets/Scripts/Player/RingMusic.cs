@@ -141,6 +141,12 @@ public class RingMusic : MonoBehaviour
         song1Empty.SetActive(songIndex != 0 && learnedSongs >= 1);
         song2Empty.SetActive(songIndex != 1 && learnedSongs >= 2);
         song3Empty.SetActive(songIndex != 2 && learnedSongs >= 3);
+        indicator.GetComponent<Image>().color = songColors[songIndex];
+        streakMeterEmpty.color = songColors[songIndex];
+        streakMeterFilled.color = songColors[songIndex];
+        level1Orb.color = songColors[songIndex];
+        level2Orb.color = songColors[songIndex];
+        level3Orb.color = songColors[songIndex];
         quietTime = songDuration / 4;
     }
 
