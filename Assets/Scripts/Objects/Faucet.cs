@@ -20,7 +20,7 @@ public class Faucet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (draining && waterLevel > 0 ){
+        if (draining && waterLevel > 0){
             waterLevel -= Time.deltaTime;
             water.transform.position -= Vector3.up * Time.deltaTime;
         }
@@ -39,7 +39,7 @@ public class Faucet : MonoBehaviour
     }
     private void OnTriggerExit(Collider Other)
     {
-        if (Other.gameObject.CompareTag("Player") && !Other.isTrigger && activated == false)
+        if (Other.gameObject.CompareTag("Player") && !Other.isTrigger)
         {
             UIManager.UI.InteractActive(false);
         }

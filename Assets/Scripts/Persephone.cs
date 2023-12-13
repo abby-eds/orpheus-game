@@ -53,9 +53,9 @@ public class Persephone : MonoBehaviour
     }
 
     void Chat3(){
-            gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-            gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech,"I have heard of your travels. What do you seek?", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech,"I have heard of your travels. What do you seek?", true);
     }
+
     void Chat4(){
         Orpheus.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
@@ -64,19 +64,19 @@ public class Persephone : MonoBehaviour
 
     void Chat5(){
         Orpheus.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "ah, you wish to speak with my husband.", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "Ah, you wish to speak with my husband.", true);
     }
     void Chat6(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "Your love must be very strong to travel so far", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "Your love must be very strong to travel so far...", true);
     }
     void Chat7(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "but my husband is not so easily swayed", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "...but my husband is not so easily swayed", true);
     }
     void Chat8(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "Follow my lead", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "Follow my lead...", true);
     }
         void Chat9(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
@@ -93,7 +93,7 @@ public class Persephone : MonoBehaviour
     }
     void Chat12(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
-        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "My Husband is beyond the double doors outside, play your song", true);
+        gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "My Husband is beyond the double doors outside.", true);
     }
     void Chat13(){
         gameObject.GetComponent<Chatter>().ModifyChatter(BubbleType.Speech, "", false);
