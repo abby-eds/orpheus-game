@@ -38,6 +38,7 @@ public class StartBoat : MonoBehaviour
             //player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<PlayerMovement>().movementSpeed = 0;
             player.GetComponent<PlayerMovement>().rotateSpeed = 0;
+            player.GetComponent<PlayerMovement>().jumpHeight = 0;
 
 
             // begin sailing
