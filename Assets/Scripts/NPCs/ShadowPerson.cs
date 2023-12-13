@@ -36,6 +36,23 @@ public class Worker : Charmable
     {
 
         base.Update();
+
+        switch(Status)
+        {
+            case CharmStatus.Hostile:
+                state = State.CHASE;
+                break;
+            case CharmStatus.Neutral:
+                state = State.WORK;
+                break;
+            case CharmStatus.Charmed:
+                state = State.WORK;
+                break;
+        }
+
+
+
+
         switch(state)
         {
             case State.WORK:
@@ -50,25 +67,22 @@ public class Worker : Charmable
         
     }
 
-    protected override void OnNeutral()
-    {
-        state = State.WORK;
-    }
-
-    protected override void OnHostile()
-    {
-        state = State.CHASE;
-    }
-
     private void working()
     {
-        if(transform.position != workZone)
+        if (Vector3.Distance(transform.position, workZone) > nav.stoppingDistance + 1)
         {
             nav.SetDestination(workZone);
         }
         else
         {
             anim.SetTrigger("Work");
+            if(Status == CharmStatus.Neutral)
+            {
+                if (playerInSight(chaseDistance))
+                {
+                    willpower = maxWillpower;
+                }
+            }
         }
     }
 
@@ -76,22 +90,28 @@ public class Worker : Charmable
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance)
         {
-            
-        }
-        else if(playerInSight(chaseDistance))
-        {
-            anim.SetTrigger("Chase");
-            nav.SetDestination(player.transform.position);
+            nav.SetDestination(transform.position);
+            attack();
         }
         else
         {
-            state = State.WORK;
+            anim.SetTrigger("Chase");
+            nav.SetDestination(player.transform.position);
         }
     }
 
     private void attack()
     {
+        
+        anim.SetTrigger("Attack");
+    }
 
+    private void dealDamage()
+    {
+        if(playerInSight(attackDistance))
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage();
+        }
     }
 
     private void OnDrawGizmos()
@@ -105,7 +125,7 @@ public class Worker : Charmable
 
     private bool playerInSight(float distance)
     {
-        Vector3 origin = transform.position + Vector3.up;
+        /*Vector3 origin = transform.position + Vector3.up;
         Vector3 dir = player.transform.position - origin;
         Ray ray = new Ray(origin, dir);
         RaycastHit hit;
@@ -115,5 +135,8 @@ public class Worker : Charmable
         }
 
         return false;
+        */
+
+        return Vector3.Distance(transform.position, player.transform.position) <= distance;
     }
 }
