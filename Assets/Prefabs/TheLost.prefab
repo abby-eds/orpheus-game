@@ -4942,8 +4942,8 @@ MonoBehaviour:
   fadeInSpeed: 0.1
   fadeOutSpeed: 0.1
   fadeDelay: 5
-  maxLight: 0
   range: 20.9
+  maxLight: 0
   sighs:
   - {fileID: 8300000, guid: 8a2e7f7409a42be4083f93d849ee4ec4, type: 3}
   - {fileID: 8300000, guid: 6333974aaa67cec4d9bf5dac0673d11c, type: 3}
@@ -4967,7 +4967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   willpower: 90
-  asleepThreshold: 30
+  asleepThreshold: -1
   charmedThreshold: 60
   neutralThreshold: 90
   maxWillpower: 120
@@ -4979,6 +4979,7 @@ MonoBehaviour:
   immunityDuration: 0
   resistaceDuration: 1
   healthbarOffset: 2
+  particleOffset: 0
   followSpeed: 1
   circleDistance: 3
   circleSpeed: 2
@@ -5012,7 +5013,7 @@ AudioSource:
   m_GameObject: {fileID: 5392687355885135756}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 791521098025521660, guid: 02d1b178e820044429d22f645761d36b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8a2e7f7409a42be4083f93d849ee4ec4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.444
