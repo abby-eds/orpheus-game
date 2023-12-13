@@ -65,7 +65,7 @@ public class Skeleton : Charmable
         {
             audioSource.Play();
         } 
-        else if (speed <= 0)
+        else if (speed <= 0 || Time.timeScale == 0)
         {
             audioSource.Stop();
         }

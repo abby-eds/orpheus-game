@@ -190,7 +190,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Vector2 movement2d = new Vector2(movement.x, movement.z);
             Vector2 contact2d = new Vector2(contact.normal.x, contact.normal.z);
-            if(Vector2.Dot(movement2d, contact2d) < -0.1f && contact2d.magnitude > 0.7f && contact2d.magnitude < 0.99f)
+            if(Vector2.Dot(movement2d, contact2d) < -0.1f && contact2d.magnitude > 0.7f)
             {
                 blocked = true;
             }

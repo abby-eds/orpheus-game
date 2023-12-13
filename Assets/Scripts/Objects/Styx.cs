@@ -6,10 +6,6 @@ using UnityEngine;
 public class Styx : MonoBehaviour
 {
     private GameObject player;
-    public Chatter playerChat;
-    public BubbleType bubbleType;
-    public string text;
-    public bool right;
 
     // Start is called before the first frame update
     void Start()

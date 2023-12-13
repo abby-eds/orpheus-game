@@ -18,7 +18,7 @@ public class Worker : Charmable
     private Vector3 workZone;
     private Animator anim;
     [SerializeField]
-    private float attackDistance = 1;
+    private float attackDistance = 2;
     [SerializeField]
     private float chaseDistance = 1;
     // Start is called before the first frame update

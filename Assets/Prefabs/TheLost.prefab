@@ -4970,7 +4970,7 @@ MonoBehaviour:
   asleepThreshold: -1
   charmedThreshold: 60
   neutralThreshold: 90
-  maxWillpower: 120
+  maxWillpower: 90
   asleepRegen: 1
   charmedRegen: 1
   neutralRegen: 0
